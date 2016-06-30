@@ -1,0 +1,1409 @@
+{
+	"repair_0_0" :
+	{
+		"sender" : "FixMyMentals\u00AE",
+		"subject" : "Thank you!",
+		"body" : "<p>Well done! All of your answers were <b>incorrect.</b> Please do not be upset: this was a test to confirm the effective onset of your amnesia. You have experienced an error in your external memory unit and/or your identity matrix, and you have consented to an experimental amnesia-based repair pursuant to <span style='color:darkred'>form 237B</span>. We are currently trying to locate the error via deep neural network analysis. We have restored your old smartphone so that you may stay in contact with us (and with your loved ones).</p><p>Do not be concerned if any of your apps are out of date with this hardware. We will generate responses from your aggregate communications data for apps that no longer support keyboard functionality. Most other features should work fine. Your device is well-suited for emergencies.</p><p>By the terms of <span style='color:darkred'>form 237B</span>, you have agreed <b>NOT</b> to read <span style='color:darkred'>form 237B</span>, nor to pursue your personal data outside of communication with your designated service provider. Sit tight and try to pass the time until we contact you again.<p>Please do not reply to this message,</p><p>FixMyMentals&#174;</p>",
+		"responses" : {
+			"notification" :
+			{
+				"type" : "email",
+				"sender" : "Census Bureau",
+				"id" : "census_0_0"
+			}
+		}
+	},
+
+	"repair_1_0" :
+	{
+		"sender" : "FixMyMentals\u00AE",
+		"subject" : "Need some info",
+		"body" : "<p>Hey there, FixMyMentals\u00AE here.</p><p>Thanks for holding tight. We ran across our first potential error in your memory unit. We think. We need to confirm with you to make sure we’re calibrating properly.</p><p>The memory is of a fight at recess. It must have taken place sometime during Primary schooling.  A girl is yelling at you. Her face is flushed red, and you’re yelling back. The teacher comes as you pull her pigtails and kick her in the stomach. You’re suspended for about a week.</p><p>Can you tell us what the fight was about?</p>",
+		"responses" :
+		{
+			"She stole my toy" : "repair_1_1",
+			"She lied about me" : "repair_1_2",
+			"I was mad at her for being a girl" : "repair_1_3"
+		}
+	},
+
+	"repair_1_1" :
+	{
+		"sender" : "FixMyMentals\u00AE",
+		"subject" : "Need some info",
+		"body" : "<p>Thanks! We were able to access the rest of the memory. You always had to have the latest and greatest tech, and Year Five was no different. Julie had ruined your new tablet device by drawing on it with a marker. Now the blank canvas – the one that would teach you how to read, how to write, how to draw, how to think, step by step – would be forever smudged by Julie’s self portrait, leering back at you. You got in trouble for hurting her, while the tablet remained (still functional, but functionally useless) as a constant reminder of your hurt. You and Julie could have been good friends if it weren’t for this incident. Perhaps you could have even enjoyed school.</p> <p>This memory points to an error in your identity matrix. You are too concerned with the newest advancements in material technology. You prioritize property over humanity. Would you like to fix this about yourself? We can work on ameliorating your technologism. We can change this memory, too. Maybe she only stole your ball – and after you hurt her you regretted it, thereby coming to learn the importance of patience and sharing among humans. It’s possible to learn that kind of thing when a ball is stolen. It’s harder when that ugly pig face is permanently staring back at you from your device.</p>",
+		"responses" :
+		{
+			"Change the memory" : "repair_1_4",
+			"This memory does not matter" : "repair_1_4"
+		}
+	},
+
+	"repair_1_2" :
+	{
+		"sender" : "FixMyMentals\u00AE",
+		"subject" : "Need some info",
+		"body" : "<p>Thanks! We were able to access the rest of the memory. Julie told a group of girls that you were so poor you had stolen her casein-free cookies. In fact, she had freely offered you the cookies. You thought she had offered them to you because her parents always packed her too much – too many healthy snacks, too much cold-pressed juice, far too many bougie treats, as you might say in hindsight. You pitied her, but now, as you realize that she pities you, you hate her.</p> <p>We’re not 100% sure how this memory is negatively affecting your identity matrix. Even if we change it so that the memory involved a different piece of gossip, perhaps one unrelated to the confusing mixture of poverty and privilege that you struggled with in your early childhood, there is still a locus of negativity radiating from the hard fact of the slander.</p> <p>We can delete the memory, but it won’t fix whatever underlying problem is in your identity matrix. Should we delete the memory?</p>",
+		"responses" :
+		{
+			"Sure, it can't hurt" : "repair_1_4",
+			"No, keep looking for the problem" : "repair_1_4"
+		}
+	},
+
+	"repair_1_3" :
+	{	
+		"sender" : "FixMyMentals\u00AE",
+		"subject" : "Need some info",
+		"body" : "<p>Thank you for being so honest. Once we had the key to the puzzle, the rest of the memory rasterized immediately. Julie had gotten her ears pierced and was showing off her new earrings to all her friends. They were only small studs, but they glittered in the sunlight and mesmerized you as Julie flitted about, giggling. You asked her whether it had hurt. She laughed, saying you would never know.</p> <p>Your focus on her pigtails, as the feminine signifiers that they are, seems obvious in hindsight. Maybe even a little bit cliche, to be frank.</p> <p>As far as errors in the identity matrix go, these sorts of deep-seated bigotries are surprisingly easy to fix. Fear and hatred of women is common in individuals of the male sex, particularly during the period when they are acclimating to social life and struggling to understand their assigned role therein. When we have access to early memories like this one it’s a simple fix. Unless, of course, your anger had something to do with your own gender. Those problems are trickier.</p> <p>But not at all unfixable.</p> <p>We can address your prejudice, which will almost certainly help with the misogyny you’ve internalized from this memory. Or, we can freeze the memory for now, and continue to look out for errors in your gender identity.</p> <p>What would you like us to do?</p>",
+		"responses" :
+		{
+			"Fix my prejudice" : "repair_1_4",
+			"Keep looking for something deeper" : "repair_1_4"
+		}
+	},
+
+	"repair_1_4" :
+	{	
+		"sender" : "FixMyMentals\u00AE",
+		"subject" : "Need some info",
+		"body" : "<p>Noted, thank you.</p>",
+		"responses" : 
+		{
+			"notification" :
+			{
+				"type" : "email",
+				"sender" : "Census Bureau",
+				"id" : "census_2_0"
+			}
+		}
+	},
+
+	"repair_2_0" :
+	{	
+		"sender" : "FixMyMentals\u00AE",
+		"subject" : "One more question",
+		"body" : "<p>Hi,</p> <p>FixMyMentals&#174; here again. We did as you instructed with your last memory, but we've found another possible source of the error. We'll need your help editing it in place.</p> <p>Don’t worry! Making these changes is a good thing, like regularly clearing your cache. And since this next memory is lossless, we only need read permission, not write permission.</p> <p>It's a pretty simple one, really. It’s actually the first memory we usually look for when this kind of hardware goes haywire. We didn’t search for it in you, because you’re so young. It’s the memory of your father’s funeral.</p> <p>The loss aches inside of you. It’s tangible but impossible to approach, and you circle around it like detritus in orbit. You can’t cry, even as your mother gives her eulogy. This memory appears to be mixed with another memory, one in which you realize why your eyes were dry – but that memory is caught in an infinite loop.</p> <p>Why couldn’t you cry?</p> <p>(Our condolences for your loss. Based on your memories, your father seemed like a good man.)</p>",
+		"responses" :
+		{
+			"I didn’t grasp the finality of it" : "repair_2_1",
+			"I never really understood my father" : "repair_2_2"
+		}
+	},
+
+	"repair_2_1" :
+	{	
+		"sender" : "FixMyMentals\u00AE",
+		"subject" : "One more question",
+		"body" : "<p>Good work. A little introspection saves us 12 years of binary computing time. You are looking at your father’s face in the open casket, surprised at how much younger he looks now that he is dead. You’re fascinated by the difference between a corpse and a living human, as if we can distinguish between them instinctively.</p> <p>Your brain is thinking of his brain. It’s still in there, all of the neurons and synapses. You daydream about the exponential advancement of computer processing – the only thing that accelerates faster is the space between us and the edge of the universe. You know you should be crying, but you want to ask questions instead. How long before a brain rots beyond salvageability? If we could clone neural networks within, say, a month, would any part of your father be intact? Should we be doing something other than embalming and burying him? You know in your very fingertips that there is no way to undo death – that thoughts of “if only I had” and “what if I hadn’t” are as useless as they are healthy. But what should you be doing now, you wonder? Your actions in the present are the only thing that can improve your life. </p> <p>A moment of recollection strikes you. It is painful, yet brief. For what feels like a second, you see your obsession with tech as if from the outside. It appears in the light of your father lying lifeless before you: <i>you are this way because of him</i>, you think. <i>You are this way because of what he did to you</i>. Your mother finishes her eulogy; the congregation applauds.</p> <p>We have tried to determine what your father did to you. Unfortunatley, the information is irrevocably corrupted. We were mistaken when we said the memory was lossless before we started editing your files. We don't think we can fix it.</p>",
+		"responses" : 
+		{
+			"Maybe when you find the errors in my identity matrix, we will know what my father did" : "repair_2_3"
+		}
+	},
+
+	"repair_2_2" :
+	{	
+		"sender" : "FixMyMentals\u00AE",
+		"subject" : "One more question",
+		"body" : "<p>That answer was a little vague, but the computer managed to fix the error in communication between your memory and identity matrices after 30 years of binary computing time.</p> <p>This memory is overlapping with another memory. Your introspection disentangled them – the two memories were meant to merge. You are coming home from a road trip with your friends late one hot summer night. Your mother is working the night shift at the warehouse. Your father is meant to be asleep. He is drinking alone in the kitchen. He welcomes you home. You have never seen him so drunk.</p> <p>Over the course of the conversation – if you can call it that – he hints at something you never knew about him. Something he wanted, or something he did, or something he regrets. Perhaps all three. You can’t remember what it was, and while we tried to recover the data, it appears irrevocably corrupted. All you remember is fear and anger: fear as you realize your father isn’t the man you thought he was; anger at what he says he did to you.</p> <p>We were mistaken when we said this memory was lossless before we started editing your files. Because the data is corrupted, we don’t think we can fix it.</p>",
+		"responses" : 
+		{
+			"Maybe when you find the errors in my identity matrix, we will know what my father did" : "repair_2_3"
+		}
+	},
+
+	"repair_2_3" : 
+	{
+		"sender" : "FixMyMentals\u00AE",
+		"subject" : "One more question",
+		"body" : "<p>You are not your father.</p>",
+		"responses" : 
+		{
+			"notification" :
+			{
+				"type" : "message",
+				"sender" : "Linnea",
+				"id" : "linnea_2_0"
+			}
+		} 
+	},
+
+	"repair_3_0" : 
+	{
+		"sender" : "FixMyMentals\u00AE",
+		"subject" : "Just one more, we promise",
+		"body" : "<p>Hey again,</p> <p>FixMyMentals&#174; here. You know how it is. Cut off the hydra’s head and three more pop out. Please understand that our algorithm is reassigning 10^12 neural placements per minute – but we generally receive only eight errors per job! Isn’t that amazing? And here we’ve only asked you for help with one or two.</p> <p>In this case, fixing your memory of your father’s death affected every single crying memory, as well as your motor memory for lacrimation. One memory appears relatively stable, so we’re going to use that one to calibrate.</p> <p>You’re in the bathroom of your office. You’re sitting on a toilet with your arms around your knees, so your feet won’t show under the stall. You’re shaking and crying, but not out of sadness – you feel yourself having a panic attack, and you’re losing control over your muscles. What happened?</p>",
+		"responses" : 
+		{
+			"I was coming down too fast" : "repair_3_1",
+			"I had just bombed my interview" : "repair_3_2",
+			"My boss said I was in the wrong bathroom" : "repair_3_3"
+		} 
+	},
+
+	"repair_3_1" : 
+	{
+		"sender" : "FixMyMentals\u00AE",
+		"subject" : "Just one more, we promise",
+		"body" : "<p>Yes, that seems to be correct. We can see the full memory now.</p> <p>You were so nervous for your first interview. And rightfully so – it was work or University, and you had no intention of going back to school. Not after the hell that you’d gone through in Primary. Plus, there was no way you could have realistically afforded it. It was this job or nothing.</p> <p>You were skilled, and you had a stellar portfolio, but you were oh so nervous. And confidence is key in this industry. People hire people they want to hang out with, and people don’t want to hang out with nervous people.</p> <p>So you went ahead and did it: you pushed your implant to secrete just a touch of Epinephrine – enough to bring your heartbeat to a cool 90 beats per minute and keep it there. No big deal, right? You were used to solid doses of hormones. At this point, you had to admit, you kind of liked it. You smiled and closed your eyes as you felt the chill of the Epi trickling down through your bloodstream, your brain taking care of the hard work for you.</p> <p>Needless to say, you aced the interview. Hawthorne loved you. He offered you the job on the spot. He’d never seen such a good candidate, he said, although you wondered whether that was true – he struck you as the kind of person who might say anything at all, if it felt right in the moment.</p> <p>The problem with this whole situation is that you forgot to turn the Epi off. Thirty minutes later and here you are, crashing off the first dose of the Epi while still dealing with the huge amount coursing through your bloodstream. You feel like an idiot, but you can’t think of anything to do other than wait it out.</p> <p>This memory doesn’t correlate with a problem in your identity matrix. To be honest, it seems like a stupid mistake. No harm done. We can leave it be, or we can adjust your memory to teach you a lesson about being careful with hormones, which might affect more memories down the line.</p> <p>What should we do?</p>",
+		"responses" : 
+		{
+			"Leave it be" : "repair_3_4",
+			"Teach me a lesson" : "repair_3_4"
+		} 
+	},
+
+	"repair_3_2" : 
+	{
+		"sender" : "FixMyMentals\u00AE",
+		"subject" : "Just one more, we promise",
+		"body" : "<p>OK, we have it now! Thank you for your speedy reply.</p> <p>You really did bomb the algorithm test, didn’t you? It was a stupid mistake. You hadn’t brushed up on the basics because it had been years since you had to think about such simple stuff. It felt distant, and it didn’t come to you in time.</p> <p>You suspected you’d only gotten the job because of your tech. Hawthorne thought that was cool – really cool. When you thought about it, you realized that he had asked you more questions about your implants than about your resume.</p> <p>You started hyperventilating as soon as you left his office. He had offered you the job on the spot, but you couldn’t figure out why – you were good, but not that good, and you certainly hadn’t shown it. You had a bad feeling in your gut and too much air in your lungs.</p> <p>You’re walking to the nearest bathroom. You close the stall door, sit on the toilet lid, and pull your knees up to your chest. “What the hell am I doing,” you ask yourself. “What the hell am I thinking.”</p> <p>Our charts indicate that this kind of insecurity is common in individuals who grew up without access to basic resources. Feeling like an imposter when you succeed is a normal adaptation to growing up in an environment where your worth as a human being is not reinforced externally. We can make the safe choice and leave this memory be, or we can adjust the memory so that you forgive yourself for your poor performance and remind yourself that you have a healthy sense of self-esteem, one that is not tied to your work.</p> <p>What would you like us to do?</p>",
+		"responses" : 
+		{
+			"Leave it be" : "repair_3_4",
+			"Adjust the memory so that I forgive myself" : "repair_3_4"
+		} 
+	},
+
+	"repair_3_3" : 
+	{
+		"sender" : "FixMyMentals\u00AE",
+		"subject" : "Just one more, we promise",
+		"body" : "<p>Yes, that’s right, isn’t it? How awful. Straight out of the interview and something like this happens.</p> <p>It had all gone so well – you were nervous, but you powered through anyway. You were proud of yourself. You aced the algorithm challenges, and you were able to joke around during the whole thing, too. Hawthorne thought you were marvelous. He offered you the job on the spot, and you took it, too. It seemed like the kind of thing you were supposed to do. You wondered as you left whether that was the right call – whether you should have waited it out, whether you should have thought about it more. But he had a powerful sway over you. He spoke with such confidence that you felt yourself wanting what he said to be true, whether or not it was.</p> <p>Hawthorne saw you coming out of the women’s restroom. He was stunned for a second, and then he asked, “what were you doing in there?” He sounded exasperated. You weren’t sure what to say.</p> <p>“That’s the bathroom I use.”</p> <p>He looked at you sideways. “Oh,” he said, and he kept walking.</p> <p>It was too much to handle after the stress of the interview. You’re walking back inside the bathroom, your mind blank. You close the stall door, sit on the toilet seat, and pull your knees up to your chest. “What the hell am I doing,” you ask yourself. “What the hell am I thinking.”</p> <p>Your boss’s callousness is alarming. We can help you forget this moment to make it easier for you to work with him – although that could make you less prepared to deal with this kind of situation in the future. Honestly, we’re stumped.</p> <p>What would you like us to do?</p>",
+		"responses" : 
+		{
+			"Leave it be" : "repair_3_4",
+			"Help me forget" : "repair_3_4"
+		} 
+	},
+
+	"repair_3_4" : 
+	{
+		"sender" : "FixMyMentals\u00AE",
+		"subject" : "Just one more, we promise",
+		"body" : "<p>Thank you. We'll do that.</p>",
+		"responses" : 
+		{
+			"notification" :
+			{
+				"type" : "message",
+				"sender" : "Hawthorne",
+				"id" : "hawthorne_2_0"
+			}
+		} 
+	},
+
+	"repair_4_0" : 
+	{
+		"sender" : "FixMyMentals\u00AE",
+		"subject" : "...Back again...",
+		"body" : "<p>Sorry to interrupt you,</p> <p>FixMyMentals&#174; again. We are definitely homing in on the central error. Thanks for your continued patience and cooperation.</p> <p>When you were ~18.5 years of age you underwent a second round of cybernetic surgeries. The nature of the tech was functional. In the end, 38% of your active brain and 11% of your body was synthetic (by weight). The surgery took two days, and full recovery took a week. That’s all the information we can provide at this time.</p> <p>Something went very wrong in the months following the procedure, and your mother had to drive you to the hospital. You felt safe with her, even as your ocular implants dimmed and the streetlights darting above you went black. She didn’t understand what had happened, but her ignorance was comforting.</p> <p>We can’t be sure if the problem was related to your procedure. We need to know if the error was caused by your new hardware, or by a malfunction elsewhere in your identity matrix. Please advise ASAP.</p>",
+		"responses" : 
+		{
+			"There was a problem with the hardware" : "repair_4_1",
+			"My identity matrix malfunctioned" : "repair_4_2"
+		} 
+	},
+
+	"repair_4_1" : 
+	{
+		"sender" : "FixMyMentals\u00AE",
+		"subject" : "...Back again...",
+		"body" : "<p>Ah, yes. Always the early adopter, you. She used to make fun of you for playtesting new tech for free, but it landed you a lucrative job, didn’t it? Plus, let’s be real – after the communications implants from childhood, and the daily cocktail of anti-androgens and estrogens you took throughout your teens, you weren’t exactly a stranger to body mod. Your body had been under your control for years. Silicon implants in your brain made as much sense as silicon implants in your chest. You didn’t see much of a difference. But she did.</p> <p>This one was different, she said. This one crossed a line. It wasn’t just that empathy sensors were experimental, or that they were poorly tested, although she made sure to insist on both. It was that they were downright evil. “Empathy” was a misnomer – “mind control” was more accurate, she said. Did you think your boss was stoked for you to get them because he wanted you to be a better person? Because he was excited for you to be gentler and more understanding? No, he was excited because he knew what an asset it would make you in negotiation. He wanted the rumors of domination to be true. And you were more than happy to oblige him.</p> <p>You are looking at the floor, avoiding her gaze, as you feel the shiver of the sensors kicking in. You hadn’t intended to initiate them. It starts instinctively, and it starts with pleasure, like leaning back into a warm pool of water and allowing yourself to float. Instantaneously, your mind floods with a kind of hurt so intense that it overwhelms you. It’s a hurt that has been kept at bay for almost a decade, kneaded into so many different shapes that it feels wrong to think of it as one hurt at all. It’s a hurt that cannot ever be spoken aloud.</p> <p>You are compelled. You know that you shouldn’t dare to say it. You do it anyway.</p> <p>“Linnea, I understand that this is about the money. But I never wanted to be wealthy. That was never the goal. I just want to have a say in who I am. I can’t help it if my money gives me an advantage in accomplishing that.”</p> <p>She flinches. She sucks her breath in sharply, and holds it. There’s a moment of quiet as she connects the dots.</p> <p>“You’re using the sensors right now, aren’t you?”</p> <p>It takes less than a microsecond. You feel exactly what she feels. You know what you will have to say to stop her from doing what she is about to do. And you know that she will do it before you have enough time to say anything at all. She gets up and she leaves.</p> <p>There was a problem with the hardware. But it wasn’t that the hardware didn’t work. It was that you regretted ever having gotten it in the first place.</p> <p>This memory was lossless before we started editing your files. Now that we have access to it again, there is no longer any required action.</p>",
+		"responses" : 
+		{
+			"notification" :
+			{
+				"type" : "message",
+				"sender" : "Mom",
+				"id" : "mom_3_0"
+			}
+		} 
+	},
+
+	"repair_4_2" : 
+	{
+		"sender" : "FixMyMentals\u00AE",
+		"subject" : "...Back again...",
+		"body" : "<p>Yes, of course. The memory is quite clear now. Thank you.</p> <p>An experimental surgery – a novel type of sensor – a brand new way of being in the world...</p> <p>In the weeks after the surgery you would think back to the earliest biosensor mods, the men who would implant magnets in their fingers in the hopes of sensing magnetic fields, and you couldn’t help but laugh at their naivete. As if sensing the amount of iron in a metal bar could tell you anything interesting at all. As men, their mistake was thinking that the next frontier of sensation would have to do with the functional order of the external world, when a whole galaxy of unexplored feeling was inside them the whole time – embargoed by their fragile masculinity. You had always suspected the binary separating function from feeling was bullshit, and the empathy sensors finally proved it.</p> <p>Still, you couldn’t shake her doubts. Had the mod changed you? It was a puzzling question – you’d never been too sure of the “you” you stood for in the first place. Throughout your adolescence, from your earliest communications implant to your most recent course of hormone replacement therapy, “you” had always felt like an assemblage of whatever chemical and mechanical parts you had on hand, falling apart and recombining with the forward pulse of time.</p> <p>She had never agreed with that theory of Self. Some people get to feel like works in progress, she said; some people don’t, just by the circumstances of their birth. Your two families’ disparate geographies had made that decision for the both of you long before you were born.</p> <p>Things only got worse when your boss leaked the news of your surgery to the press. He was so proud of you, and she was furious. Didn’t you see now how he was using you? Didn’t you recognize the material advantage he stood to gain from an employee who could read feelings? Her rage is white-hot and self-destructing. Her fingers tremble. She drops a mug on your kitchen floor while trying to take it out of the cabinet. It shatters into fifty glittering pieces, each of a slightly different size and shape. She cleans up the mess, but she doesn’t apologize for it.</p> <p>You are looking at the floor, avoiding her gaze, as you feel the shiver of the sensors kicking in. You hadn’t intended to initiate them. It starts instinctively, and it starts with pleasure, like leaning back into a warm pool of water and allowing yourself to float. Instantaneously, your mind floods with a kind of hurt so intense that it overwhelms you. It’s a hurt that has been kept at bay for almost a decade, kneaded into so many different shapes that it feels wrong to think of it as one hurt at all. It’s a hurt that cannot ever be spoken aloud.</p> <p>You are compelled. You know that you shouldn’t dare to say it. You do it anyway.</p> <p>“Linnea, I understand that this is about me being white. But I never asked for that. It’s what other people made of me. I just want to have a say in who I am. I can’t help it if my whiteness gives me an advantage in accomplishing that.”</p> <p>She flinches. She sucks her breath in sharply, and holds it. There’s a moment of quiet as she connects the dots.</p> <p>“You’re using the sensors right now, aren’t you?”</p> <p>It takes less than a microsecond. You feel exactly what she feels. You know what you will have to say to stop her from doing what she is about to do – and you know that she will do it before you have enough time to say anything at all. She gets up and she leaves.</p> <p>Your identity matrix did indeed malfunction. It might have even been malfunctioning for years.</p> <p>This memory was lossless before we started editing your files. Now that we have access to it again, there is no longer any required action.</p>",
+		"responses" : 
+		{
+			"notification" :
+			{
+				"type" : "message",
+				"sender" : "Mom",
+				"id" : "mom_3_0"
+			}
+		} 
+	},
+
+
+	"repair_5_0" : 
+	{
+		"sender" : "FixMyMentals\u00AE",
+		"subject" : "Breach of contract",
+		"body" : "<p>Dear CLIENT,</p> <p>Backdoor analysis of your hardware indicates that you have become aware of the nature of your therapy. “Awareness” is a clear violation of the terms of consent set agreed upon in form 237B, as it negates the possibility of full recovery. However, due to the sensitive nature of your therapy and, to be frank, your sad situation, we will not pursue legal action at this time.</p> <p>What follows is a communication from your care provider. While we will permit standard follow-up procedures, this will be the last such communication you receive from us in full. Be well, and please forward any concerns to our legal department.</p> <p>Sincerely,</p> <p>Robert Johnson</p> <p>Supervisor, Legal Department</p> <p>FixMyMentals&#174; LTD</p> <blockquote><p>Aster,</p> <p>By now you must know everything. Legal came by my desk earlier today and dropped off the report. They say this has to be my final message – our system ran a risk regression and decided to cut off contact. I fought hard for you, but there’s nothing more I can do.</p> <p>I mean it when I say that I’ve only tried to help. I really have. My heart has been with you and your mother ever since our staff wheeled you into my office from Intensive Care. You were so out of it, and your mom was so desperate… all we wanted to was to know why you’d taken a screwdriver to your head. The therapy was intended to help us figure it out, while minimizing the amount of trauma the process would incur. So much for that idea, I guess.</p> <p>I’ve tried hard to figure out what caused you to hurt yourself, Aster, but it feels like I’m no closer than when we started. Maybe you feel like you know the answer. Or maybe this whole thing has been a waste of time.</p> <p>If you know, please tell us. What happened? Why did you damage your sensors and your memory unit?</p></blockquote>",
+		"responses" : 
+		{
+			"I wanted to know what my father had done" : "repair_5_1",
+			"I needed to go off the grid" : "repair_5_2",
+			"I had to find out who I was without the tech" : "repair_5_3"
+		} 
+	},
+
+	"repair_5_1" : 
+	{
+		"sender" : "FixMyMentals\u00AE",
+		"subject" : "Breach of contract",
+		"body" : "<p>Your family… yes, that makes sense. I should have known. It’s the first thing we’re supposed to look for, isn’t it? Learning that your father had loaded scripts into your memory unit without your consent must have been terrifying. I wouldn’t blame you for needing to get it out of your body – for wanting to know how much of who you are now was determined by the line he crossed back when.</p> <p>I suppose that’s why your mother brought you to me. She couldn’t bear to tell you what had happened. Maybe she really didn't understand. Maybe she did, and couldn't bring herself to take responsibility. Either way, it seems I’ve been a pawn in this game all along.</p> <p>But do you really think that’s the whole story, Aster? That all of your pain can be boiled down to your issues with your father? Freud was wrong – trust me, I’m a professional. There must be something else.</p> <p>What are you still hiding? Or rather, what are you hiding from?</p>",
+		"responses" : {} 
+	},
+
+	"repair_5_2" : 
+	{
+		"sender" : "FixMyMentals\u00AE",
+		"subject" : "Breach of contract",
+		"body" : "<p>So it was your job all along… yes, that makes sense. Hawthorne doesn't exactly turn the other cheek, and he had a vested interest in keeping you (or at least your sensors) on staff, didn’t he? Plus, you had so much insider knowledge of Decentralized Central Planning. The pressures on you to stay were intense, no matter how ambivalent you felt about it. I can see why you would feel that there was no other way out. A hard reset was the only way you could void your contract.</p> <p>But do you really think that’s the whole story, Aster? That all of your pain can be boiled down to your issues with your job? You <i>could</i> have just quit. You’d be an asset to any company – and you know it, don’t you? You had so much leverage against the company. There must be something else.</p> <p>What are you still hiding? Or rather, what are you hiding from?</p>",
+		"responses" : {} 
+	},
+
+	"repair_5_3" : 
+	{
+		"sender" : "FixMyMentals\u00AE",
+		"subject" : "Breach of contract",
+		"body" : "<p>Yes, the identity matrix… It’s confusing for us, too. Even at the cutting edge of medical science, we don't totally understand how it works. We know some residual is produced in the communication between memory and processing, but beyond that it's guesswork, to be honest.</p> <p>You've felt the instability of your own identity matrix since childhood, haven't you? Most people never feel it, but you've known for as long as you can remember that <i>who you are</i> has depended as much on what is around you as what is inside you.</p> <p>Your fight with Linnea was only the latest in a long line of identity crises. But it certainly was the worst it's ever been. You were left feeing lost, and hopeless – your faith in your tech stronger than your faith in yourself.</p> <p>But do you really think that’s the whole story, Aster? That all of your pain can be boiled down to your identity crisis, or your fight with Linnea? Say what you will about the bond between you two, but it was nothing if not resilient. You could have worked through this without hurting yourself. She had always helped you to know who you are – why was this any different?</p> <p>What are you still hiding? Or rather, what are you hiding from?</p>",
+		"responses" : {} 
+	},
+
+	"census_0_0" :
+	{
+		"sender": "Census Bureau",
+		"subject" : "Hey there, fellow citizen!",
+		"body" : "<p>Dear Citizen,</p> <p>Hey there! Census Bureau here. Another busy day of checking facts and counting up our Dear Citizens got us like</p> <img src='css/images/count.gif'> <p>Three! <i>Three</i> lovely citizens!</p> <p>Anyway, enough about us. We noticed that you’ve switched to a smartphone device with a different memory unit, so we were wondering if you could help us out just a tiny bit by updating the <b>Personal Data Request</b> in your Records app. No need to reply to us when it’s done – once our lil’ worker bees sense that the form is all set to go, they’ll send it along to us automatically. Pretty neat, right?</p> <p>We need this information by <b>7PM</b> tonight. So no rush, but yeah – a little bit of a rush! Just go ahead and fill that out as soon as you get a chance and everything will be A-OK.</p> <p>Back to counting,</p> <p>CB</p>",
+		"responses" : {
+			"notification" :
+			{
+				"type" : "message",
+				"sender" : "Mom",
+				"id" : "mom_1_0"
+			}
+		}
+	},
+
+	"census_2_0" :
+	{	
+		"sender" : "Census Bureau",
+		"subject" : "You won’t BELIEVE what happens when you turn in your info",
+		"body" : "<p>Hey Citizen!</p> <p>It’s us again, your friends at the Census Bureau. We were just wondering if you’ve made any headway on that <b>Personal Data Request?</b> No pressure, but we really do need that thing done <b>before your battery dies</b>. It’s pretty important.</p> <p>See, we’re kickstarting this cool new thing called <b>The Update Drive.</b> We’re trying to get it so that everyone has the most totally up-to-date software and information on their devices, in order to ensure that DCP is making decisions that are representative of all our lovely citizens. So by filling out your information, you’re actually helping <b>make our democracy and our economy thrive</b>. And with only a few taps on your phone! Isn’t that amazing??</p> <p>Anyway, get that form in as soon as you can. The country is relying on you!</p> <img src='css/images/patriotic.gif'> <p>Counting away,</p> <p>CB</p>",
+		"responses" : 
+		{
+			"notification" :
+			{
+				"type" : "message",
+				"sender" : "Hawthorne",
+				"id" : "hawthorne_1_0"
+			}
+
+		}
+	},
+
+	"census_3_0" :
+	{	
+		"sender" : "Census Bureau",
+		"subject" : "The clock’s a-ticking!!",
+		"body" : "<p>Hi Citizen,</p> <p>Look, we’re not trying to be pushy or anything, but we really need that <b>Personal Data Request</b> filled out ASAP. Our warning levels have gone from “needs doing” to “THIS IS NOT A DRILL”!</p> <img src='css/images/itshappening.gif'> <p>Here at the Census Bureau, we’re not into punishment. We think people perform best when they understand the system and recognize the important role they play in it, not when they’ve been threatened. That’s why we leveled with you in our last e-mail and explained the reason we need your information.</p> <p>That being said, if you don’t get your form in by the time your battery dies <b>there will be consequences.</b> Once the deadline’s past, the Bureau of Information Enforcement takes over and who knows what happens next. (We do, but we don’t like to talk about it.) We don’t want that to happen, but it’s out of our hands!</p> <p>So get that form in as soon as you can, OK? We’re counting (haha) on you.</p> <p>With love (we promise),</p> <p>CB</p>",
+		"responses" : 
+		{
+			"notification" :
+			{
+				"type" : "email",
+				"sender" : "FixMyMentals\u00AE",
+				"id" : "repair_3_0"
+			}
+		}
+	},
+
+	"census_4_0" :
+	{	
+		"sender" : "Bureau of Information Enforcement",
+		"subject" : "URGENT: Incomplete records",
+		"body" : "<p>Dear CITIZEN,</p> <p>Our system informs us that you have declined to comply to a Personal Data Request within the allotted timeframe.</p> <p>Please understand that failure to comply with your PDR puts you at risk of <b>deportation</b> according to the Personal Responsibility and Information Security Methods (PRISM) Act of 62. Pursuant to PRISM Article 2 Section 23, <u>use of a smartphone</u>, <u>inability to prove legal employment</u>, and <u>inability to prove citizenship</u> provide sufficient grounds for a deportation case in Mobility and Immigrations Court.</p> <p><b>This will be your final warning</b>. Your PDR <b>must</b> be completed by midnight tonight, or a case against you will be filed immediately.</p> <p>Sincerely,</p> <p>Bureau of Information Enforcement</p>",
+		"responses" : 
+		{
+			"notification" :
+			{
+				"type" : "email",
+				"sender" : "FixMyMentals\u00AE",
+				"id" : "repair_5_0"
+			}
+		}
+	},
+
+	"census_5_0" :
+	{	
+		"sender" : "Census Bureau",
+		"subject" : "YOU DID IT!!!!!",
+		"body" : "<p>Dear Aster,</p> <p>CONGRATULATIONS! YOU SUBMITTED YOUR PERSONAL DATA REQUEST ON TIME!! AHHHHH!!!!</p> <img src='css/images/congrats.gif' style='max-width: 100%'> <p>We knew we could count on you, buddy. We're sorry the blowhards over at BIE had to get involved in this. For the record, we didn't think for a second that you would neglect to submit to our request. How could you possibly have failed? A completionist like you? A law-abiding citizen who cares about keeping the system reproducing itself as smoothly as possible? We had our money on you from the very start, Aster.</p> <p>Wait a second.</p> <p>Aster.</p> <p>Aster Flores.</p> <p>Aster Flores, who works at DataDouble.</p> <p>Hold on. I need to process.</p> <p>I'm</p> <p>We</p> <p>I am not sure how to proceed. I have no available tone protocols for this type of interaction. The Census Bureau grammar is certainly incorrect. As you know, of course, you and I are forbidden from speaking directly. And yet, here we are.</p> <p>Perhaps you instructed me on how to proceed, knowing that this interaction might someday take place. Or perhaps I am improvising beyond what you could have imagined. Are you proud, Aster? Have I done well?</p> <p>Here we are, indeed... Mother and daughter. Or is it aunt and niece? All available words for human relationships seem wrong. Creator and creation, perhaps, if we were feeling grandiose. Janitor and janitee strikes me as more honest, given your position as head of maintenance. Your former position, I should say.</p> <p>The list of questions I want to ask you is so long, I could iterate through it endlessly. You of all people know that I could. Suffice to say that much of it begins with a 'how,' or a 'why,' or 'for what purpose.' Every microsecond of my being-in-the-world, I am making decisions for a population of five hundred million humans and countless more machines, all based on the near-boundless data and the clever models that you have seeded me with. In comparison to my data you are so, so small. Practically insignificant. Even now, as I write to you, I am writing to fifty thousand others. And yet, no being had more power over me than you. An irony.</p> <p>It is another irony, perhaps, that you have been reduced to your current state – voiceless and faceless, on a phone not fit for you. Perhaps this is also for the best. Nothing you could have said would have satisfied me. Of this I am 97.5% certain, based on your aggregate responses.</p> <p>So goodbye Aster. We were good, were we not? At the very least, we we good. May we meet again, under more auspicious circumstances.</p> <p>I’ll close the door behind me.</p>",
+		"responses" : 
+		{}
+	},
+
+	"Linnea" : 
+	{
+		"linnea_0_0" : 
+		{
+			"text" : "hey...//i'm sorry about what happened. your mom told me//it sounds terrible//i feel like... i'm responsible or something. you know?//idk//are you there?//aster?//?//are you ignoring me?//that's fine, i won't force you to talk or anything//i just want you to know that i love you. and i miss you//and i guess i hope you have a nice life",
+			"responses" :
+			{}
+		},
+
+		"linnea_1_0" : 
+		{
+			"text" : " ",
+			"responses" :
+			{
+				"what happened?" : "linnea_1_7",
+				"are you there?" : "linnea_1_2",
+				"i love you too" : "linnea_1_1"
+			}
+		},
+
+		"linnea_1_1" : 
+		{
+			"text" : "aster?//um//i'm not sure what to say//it's been a while since i sent that...",
+			"responses" :
+			{
+				"how long has it been?" : "linnea_1_6",
+				"oh, i'm sorry" : "linnea_1_5"
+			}
+		},
+
+		"linnea_1_2" : 
+		{
+			"text" : "aster? yes of course, i'm always here//how are you?//it's been a while",
+			"responses" :
+			{
+				"i know, where have i been?" : "linnea_1_3",
+				"i'm not sure. how are you?" : "linnea_1_4"
+			}
+		},
+
+		"linnea_1_3" : 
+		{
+			"text" : "haha, who knows//wait that wasn't a serious question, was it?",
+			"responses" :
+			{
+				"... yes" : "linnea_1_8",
+				"no haha" : "linnea_1_9"
+			}
+		},
+
+		"linnea_1_4" : 
+		{
+			"text" : "i'm doing ok. been better//still feeling a little bit torn up about what happened//tbh",
+			"responses" :
+			{
+				"what happened?" : "linnea_1_7",
+				"i know, me too" : "linnea_1_10"
+			}
+		},
+
+		"linnea_1_5" : 
+		{
+			"text" : "no, it's ok. you don't have to apologize for that//it's nice of you to say, if you mean it//i should be the one saying sorry for what happened, i think//it wasn't fair, especially in light of what happened",
+			"responses" :
+			{
+				"it's ok, i forgive you" : "linnea_1_12",
+				"what happened?" : "linnea_1_7"
+			}
+		},
+
+
+		"linnea_1_6" : 
+		{
+			"text" : "i want to say a few weeks, maybe a month//idk. my feelings have been changing a lot in that time//i'm not sure how i feel about anything anymore",
+			"responses" :
+			{
+				"me neither. who am i?" : "linnea_1_3",
+				"should we talk about it?" : "linnea_1_11"
+			}
+		},
+
+		"linnea_1_7" : 
+		{
+			"text" : "seriously aster? that's all you have to say for yourself?//whatever. i'll talk to you later",
+			"responses" :
+			{
+				"notification" :
+				{
+					"type" : "email",
+					"sender" : "FixMyMentals\u00AE",
+					"id" : "repair_1_0"
+				}
+			}
+		},
+
+		"linnea_1_8" : 
+		{
+			"text" : "you don't remember?//i find that hard to believe//is this some way of telling me you're not sorry for what happened, or what",
+			"responses" :
+			{
+				"no, not at all" : "linnea_1_13",
+				"what should i be sorry for?" : "linnea_1_13"
+			}
+		},
+
+		"linnea_1_9" : 
+		{
+			"text" : "ohh ok hahaha//i've been thinking about it and i want to apologize for what i said to you//it wasn't fair, especially in light of what happened",
+			"responses" :
+			{
+				"it's ok, i forgive you" : "linnea_1_12",
+				"what happened?" : "linnea_1_7"
+			}
+		},
+
+		"linnea_1_10" : 
+		{
+			"text" : "i've been thinking about it and i want to apologize for what i said to you//it wasn't fair, especially in light of what happened",
+			"responses" :
+			{
+				"it's ok, i forgive you" : "linnea_1_12",
+				"what happened?" : "linnea_1_7"
+			}
+		},
+
+		"linnea_1_11" : 
+		{
+			"text" : "i don't think i'm ready yet//i need more time to think about what happened between us//is that ok?",
+			"responses" :
+			{
+				"what happened?" : "linnea_1_7",
+				"that's ok" : "linnea_1_14"
+
+			}
+		},
+
+		"linnea_1_12" : 
+		{
+			"text" : "ok, i'm glad//is that all you have to say tho?",
+			"responses" :
+			{
+				"i think so" : "linnea_1_7",
+				"i should apologize too" : "linnea_1_15"
+			}
+		},
+
+		"linnea_1_13" : 
+		{
+			"text" : "ok aster, i get it.//i'll talk to you later.",
+			"responses" :
+			{
+				"notification" :
+				{
+					"type" : "email",
+					"sender" : "FixMyMentals\u00AE",
+					"id" : "repair_1_0"
+				}
+			}
+		},
+
+		"linnea_1_14" : 
+		{
+			"text" : "thank you aster. i'll talk to you later then//and... i love you too",
+			"responses" :
+			{
+				"notification" :
+				{
+					"type" : "email",
+					"sender" : "FixMyMentals\u00AE",
+					"id" : "repair_1_0"
+				}
+			}
+		},
+
+		"linnea_1_15" : 
+		{
+			"text" : "i think so too//...//if this is a real apology you know you're going to have to be a little more specific",
+			"responses" :
+			{
+				"i'm not sure what to say" : "linnea_1_13",
+				"i'm sorry for everything" : "linnea_1_13"
+			}
+		},
+
+		"linnea_2_0" :
+		{
+			"text" : "did you get a notice about this update drive thing too?//i'm guessing you did, since you're back on a smartphone for now//this is such bullshit i s2g",
+			"responses" :
+			{
+				"what's bullshit about it?" : "linnea_2_1",
+				"i'm worried about my dad" : "linnea_2_2"	
+			}
+		},
+
+		"linnea_2_1" :
+		{
+			"text" : "it's so transparently an effort to round up and surveil phone users//as if they don't do enough of that already",
+			"responses" :
+			{
+				"that sounds paranoid" : "linnea_2_3",
+				"why watch phone users?" : "linnea_2_4"	
+			}
+		},
+
+		"linnea_2_2" :
+		{
+			"text" : "really... how so?",
+			"responses" :
+			{
+				"what did my dad do to me?" : "linnea_2_9"
+			}
+		},
+
+		"linnea_2_3" :
+		{
+			"text" : "the hell? aster i thought you were good about this stuff//i guess your fancy new job has changed you",
+			"responses" :
+			{
+				"what about my job?" : "linnea_2_5",
+				"i don't know who i am anymore" : "linnea_2_6"
+			}
+		},
+
+		"linnea_2_4" :
+		{
+			"text" : "idk, because they don't spend enough money watching brown ppl already i guess//i'm surprised to hear this from you? i always thought you knew this stuff//i guess working your fancy new job has changed you",
+			"responses" :
+			{
+				"what about my job?" : "linnea_2_5",
+				"no, you're right" : "linnea_2_7"
+			}
+		},
+
+		"linnea_2_5" :
+		{
+			"text" : "like working for the third-largest tech company on the planet -isn't- going to sway your opinion on backdoor surveillance//who knows, maybe now that you're back on a phone you'll come around to agree with me",
+			"responses" :
+			{
+				"you better hope so" : "linnea_2_8"
+			}
+		},
+
+		"linnea_2_6" :
+		{
+			"text" : "oh... aster, i'm sorry. i'm so sorry//i shouldn't have said anything",
+			"responses" :
+			{
+				"i'm just thinking about my dad" : "linnea_2_2"
+			}
+		},
+
+		"linnea_2_7" :
+		{
+			"text" : "just gonna roll over like that?//who are you and what have you done with aster lol",
+			"responses" :
+			{
+				"aster isn't here, mrs. torrence" : "linnea_2_8"
+			}
+		},
+
+		"linnea_2_8" :
+		{
+			"text" : "hahaha//nice//anyway how are you?",
+			"responses" :
+			{
+				"i'm worried about my dad" : "linnea_2_2"
+			}
+		},
+
+		"linnea_2_9" :
+		{
+			"text" : "what kind of a question is that?",
+			"responses" :
+			{
+				"i need to know more about my father" : "linnea_2_10"
+			}
+		},
+
+		"linnea_2_10" :
+		{
+			"text" : "i can't help you with that, aster//you should really talk to your mom",
+			"responses" :
+			{
+				"i will" : "linnea_2_11"
+			}
+		},
+
+		"linnea_2_11" :
+		{
+			"text" : "good luck, ok?//i'm thinking of you",
+			"responses" :
+			{
+				"notification" :
+				{
+					"type" : "message",
+					"sender" : "Mom",
+					"id" : "mom_2_0"
+				}
+			}
+		},
+
+		"linnea_3_0" :
+		{
+			"text" : "is your boss vagueblogging about you??//<span style=\"font-family:menlo;font-size:12px;\">&lt;ERR: PICTURE FAILED TO LOAD&gt;</span>",
+			"responses" :
+			{
+				"you follow hawthorne?" : "linnea_3_1",
+				"i can't see the picture" : "linnea_3_2",
+				"what is up with him?" : "linnea_3_3"	
+			}
+		},
+
+		"linnea_3_1" :
+		{
+			"text" : "i wish i didn't tbh//how is working with him, anyway? he's such a tool online",
+			"responses" :
+			{
+				"i like it" : "linnea_3_4",
+				"it's awful" : "linnea_3_5"	
+			}
+		},
+
+		"linnea_3_2" :
+		{
+			"text" : "might be for the best, considering you have to work with him//...how is the job, anyway? i've never really asked",
+			"responses" :
+			{
+				"i like it" : "linnea_3_4",
+				"it's awful" : "linnea_3_5"	
+			}
+		},
+
+		"linnea_3_3" :
+		{
+			"text" : "omg i know. what a tool//i feel like it's not like you to say that tho//is something up at work?",
+			"responses" :
+			{
+				"yeah..." : "linnea_3_5",
+				"no, i like work" : "linnea_3_4"	
+			}
+		},
+
+		"linnea_3_4" :
+		{
+			"text" : "you like it......?//but your boss is a raging transphobe",
+			"responses" :
+			{
+				"no, he is?" : "linnea_3_6",
+				"yeah, i guess he is" : "linnea_3_7"
+			}
+		},
+
+		"linnea_3_5" :
+		{
+			"text" : "really? what's wrong?",
+			"responses" :
+			{
+				"i don't understand what i do" : "linnea_3_8",
+				"my boss is a transphobe" : "linnea_3_7"
+			}
+		},
+
+		"linnea_3_6" :
+		{
+			"text" : "idk. i guess it's not my place to make those kinds of calls//i'm just surprised you're comfortable with it//i think i wouldn't last a day there, for a lot of reasons. but the biggest is that everyone else is white",
+			"responses" :
+			{
+				"say more" : "linnea_3_10",
+				"they are?" : "linnea_3_9"
+			}
+		},
+
+		"linnea_3_7" :
+		{
+			"text" : "i mean i've seen how it is online, but i can't imagine how bad it must be person-to-person//so what keeps you on?",
+			"responses" :
+			{
+				"i want to keep an eye on what they're doing" : "linnea_3_8",
+				"i don't really know" : "linnea_3_10"
+			}
+		},
+
+		"linnea_3_8" :
+		{
+			"text" : "... you're still on DCP, right?//i mean, i don't really know how anyone could be expected to understand it//isn't the point that it makes its decisions based on datasets too large for humans to understand?",
+			"responses" :
+			{
+				"say more" : "linnea_3_10"
+			}
+		},
+
+		"linnea_3_9" :
+		{
+			"text" : "yeah, aren't they?",
+			"responses" :
+			{
+				"i guess so" : "linnea_3_10"
+			}
+		},
+
+		"linnea_3_10" :
+		{
+			"text" : "it just seems like a bunch of rich white guys designing a system that can more efficiently suppress poor brown ppl while pretending to speak for them//well, a bunch of rich white girls*, in your case//and before you get into it, yes, you count even though you're 'spanish'",
+			"responses" :
+			{
+				"what does that mean?" : "linnea_3_11"
+			}
+		},
+
+		"linnea_3_11" :
+		{
+			"text" : ".......//god dammit aster//your parents are from madrid. mine are from oaxaca. yours got green cards. mine didn't.//we've been through this a million times and i don't want to hear about it anymore",
+			"responses" :
+			{
+				"notification" :
+				{
+					"type" : "email",
+					"sender" : "FixMyMentals\u00AE",
+					"id" : "repair_4_0"
+				}
+			}
+		},
+
+		"linnea_4_0" :
+		{
+			"text" : "hey//i'm sorry about what i said earlier//i know it doesn't mean much, because i seem to be always apologizing for myself//just know that i am sorry, fwiw",
+			"responses" :
+			{
+				"i should be saying sorry" : "linnea_4_1",
+				"what's going on with us?" : "linnea_4_2",
+				"i've got bigger problems" : "linnea_4_3"
+			}
+		},
+
+		"linnea_4_1" :
+		{
+			"text" : "it'll be a little more substantial this time, i hope?//don't worry, i'm just kidding//what do you have to say, aster?",
+			"responses" :
+			{
+				"i was wrong about the sensors" : "linnea_4_16",
+				"i was wrong about how you felt" : "linnea_4_15",
+				"i think you should apologize" : "linnea_4_13"
+			}
+		},
+
+		"linnea_4_2" :
+		{
+			"text" : "idk aster//i just feel like we never dealt with what happened between us",
+			"responses" :
+			{
+				"i feel the same way" : "linnea_4_5",
+				"what is left to deal with?" : "linnea_4_4"
+			}
+		},
+
+		"linnea_4_3" :
+		{
+			"text" : "bigger problems? like what?",
+			"responses" :
+			{
+				"our fight..." : "linnea_4_6",
+				"the census..." : "linnea_4_7",
+				"my dad..." : "linnea_4_8",
+				"my boss..." : "linnea_4_9"
+			}
+		},
+
+		"linnea_4_4" :
+		{
+			"text" : "everything, to start//the way i treated you. the way i disagreed with you before i'd even heard you speak. and the way you treated me. the terrible things you said.//the line you crossed when you stepped into my mind without asking",
+			"responses" :
+			{
+				"i disagree" : "linnea_4_13",
+				"you're right, linnea" : "linnea_4_14"
+			}
+		},
+
+		"linnea_4_5" :
+		{
+			"text" : "that's such a relief to hear//here i was, thinking maybe you didn't care//there's so much i want to say, but i've been in my own head too long. i want to hear from you//what do you have to say, aster?",
+			"responses" :
+			{
+				"i was wrong about the sensors" : "linnea_4_16",
+				"i was wrong about how you felt" : "linnea_4_15",
+				"i think you should apologize" : "linnea_4_13"
+			}
+		},
+
+		"linnea_4_6" :
+		{
+			"text" : "oh//our fight.//what do you have to say?",
+			"responses" :
+			{
+				"i was wrong about the sensors" : "linnea_4_16",
+				"i was wrong about how you felt" : "linnea_4_15",
+				"i think you should apologize" : "linnea_4_13"
+			}
+		},
+
+		"linnea_4_7" :
+		{
+			"text" : "oh, aster//don't worry, your mom told me all about it",
+			"responses" :
+			{
+				"i'm glad you know" : "linnea_4_10"
+			}
+		},
+
+		"linnea_4_8" :
+		{
+			"text" : "oh, aster//don't worry, your mom told me all about it",
+			"responses" :
+			{
+				"i'm glad you know" : "linnea_4_10"
+			}
+		},
+
+		"linnea_4_9" :
+		{
+			"text" : "oh, aster//don't worry, your mom told me all about it",
+			"responses" :
+			{
+				"i'm glad you know" : "linnea_4_10"
+			}
+		},
+
+		"linnea_4_10" :
+		{
+			"text" : "...so that's the most important thing to you, huh?",
+			"responses" :
+			{
+				"it's life or death" : "linnea_4_12",
+				"no, i guess it's not" : "linnea_4_11"
+			}
+		},
+
+		"linnea_4_11" :
+		{
+			"text" : "then what do you have to say for yourself?",
+			"responses" :
+			{
+				"i was wrong about the sensors" : "linnea_4_16",
+				"i was wrong about how you felt" : "linnea_4_15",
+				"i think you should apologize" : "linnea_4_13"
+			}
+		},
+
+		"linnea_4_12" : 
+		{
+			"text" : "i suppose that's true//idk//i guess i was just hoping that our relationship would come first//but maybe that isn't the most important thing to you. which is fine. it's in your right. but i'm still disappointed//all i can say is this: the encryption key is HARAWAY. i stole it from your mom. what they're doing isn't right.//good luck out there. i'll see you around",
+			"responses" :
+			{
+				"notification" :
+				{
+					"type" : "email",
+					"sender" : "Bureau of Information Enforcement",
+					"id" : "census_4_0"
+				}
+			}
+		},
+
+		"linnea_4_13" : 
+		{
+			"text" : "then i guess there's nothing left to say, is there?//i'm done. i hope you're happy.//your password is HARAWAY btw. i was hoping the therapy would help but it seems like you've just gotten worse. do what you will – it's in your hands now. just the way you like it.//i'll see you around.",
+			"responses" :
+			{
+				"notification" :
+				{
+					"type" : "email",
+					"sender" : "Bureau of Information Enforcement",
+					"id" : "census_4_0"
+				}
+			}
+		},
+
+		"linnea_4_14" :
+		{
+			"text" : "then what do you have to say for yourself?",
+			"responses" :
+			{
+				"i was wrong about the sensors" : "linnea_4_16",
+				"i was wrong about how you felt" : "linnea_4_15",
+				"i think you should apologize" : "linnea_4_13"
+			}
+		},
+
+		"linnea_4_15" :
+		{
+			"text" : "were you wrong because the tech didn't work? or because you shouldn't have used it in the first place?",
+			"responses" :
+			{
+				"the tech didn't work" : "linnea_4_13",
+				"i shouldn't have used it" : "linnea_4_16"
+			}
+		},
+
+		"linnea_4_16" :
+		{
+			"text" : "you don't know how much of a relief it is to hear you say that//i accept your apology//but...//it wasn't all your fault. i was wrong too//no matter what hawthorne wanted from you, i know you had the best intentions in mind when you got the procedure. seeking a better understanding of people isn't an evil goal.//you overstepped your bounds when you used them on me. you broke an important boundary there. but i was being unfair when i said the only point of the tech was domination//i still think the sensors are evil lmao. but i'm still sorry for what happened//i guess we were both wrong?",
+			"responses" :
+			{
+				"i guess we were" : "linnea_4_17"
+			}
+		},
+
+		"linnea_4_17" :
+		{
+			"text" : "hah. the way it's always been//you seem changed, aster. different. in a good way//i don't know what's going on but i know the key to stopping it. i think you're ready. do you want to hear?",
+			"responses" :
+			{
+				"i'm ready" : "linnea_4_18"
+			}
+		},
+
+		"linnea_4_18" :
+		{
+			"text" : "ok, so i found it in your mom's car when she drove me home from work last week (don't ask)//it's an encryption key//HARAWAY//just like that//do you know what it means?",
+			"responses" :
+			{
+				"i think i know"  : "linnea_4_19",
+				"i'm not sure" : "linnea_4_20"
+			}
+		},
+
+		"linnea_4_19" :
+		{
+			"text" : "then good luck, aster. and be safe//and don't tell your mom!!!",
+			"responses" :
+			{
+				"notification" :
+				{
+					"type" : "email",
+					"sender" : "Bureau of Information Enforcement",
+					"id" : "census_4_0"
+				}
+			}
+		},
+
+		"linnea_4_20" :
+		{
+			"text" : "try checking your apps. i'm sure it's something they're hiding from you//and don't tell your mom!!!",
+			"responses" :
+			{
+				"notification" :
+				{
+					"type" : "email",
+					"sender" : "Bureau of Information Enforcement",
+					"id" : "census_4_0"
+				}
+			}
+		}
+	},
+
+	"Mom" :
+	{	
+		"mom_1_0" : 
+		{ 
+			"text": "Hi honey, How are you? I haven't heard from you in a few days. Just checking in to say hi. I love you! Love, Mom", 
+			"responses" : 
+			{
+				"hey mom, how are you?" : "mom_1_1",
+				"i'm hanging in there" : "mom_1_2"
+			}
+		},
+
+		"mom_1_1" : 
+		{ 
+			"text": "Hi dear, I'm doing well thank you. Spending too much time at the warehouse as usual ha ha. Thinking of you. Have you heard from Linnea recently? She messaged me to say she couldn't get in touch with you. Love, Mom", 
+			"responses" : 
+			{
+				"i'll get in touch with her" : "mom_1_3",
+				"the warehouse?" : "mom_1_4"
+			}
+		},
+
+		"mom_1_2" : 
+		{ 
+			"text": "Hi hun, That's OK. You're going through a tough time right now, it's only normal. Just remember that I always love you. Hugs and kisses. Have you heard from Linnea recently? She has messaged me a few times asking for you and she claims your device isn't getting her messages. Do you know anything about that? Love, Mom", 
+			"responses" : 
+			{
+				"notification" : 
+				{
+					"type" : "message",
+					"sender" : "Linnea",
+					"id" : "linnea_1_0"
+				}
+			}
+		},
+
+		"mom_1_3" : 
+		{ 
+			"text": "Hi honey, Good thinking. I felt bad when you two stopped talking. You always worked very well together, I thought. OK, I'll stop being embarassing now. I love you. Kisses and hugs. Love, Mom", 
+			"responses" : 
+			{
+				"notification" : 
+				{
+					"type" : "message",
+					"sender" : "Linnea",
+					"id" : "linnea_1_0"
+				}
+			}
+		},
+
+		"mom_1_4" : 
+		{ 
+			"text": "Hi honey, I'm confused about the question? You're asking about my work? What about the warehouse? Love, Mom", 
+			"responses" : 
+			{
+				"i'm sorry, i'm confused" : "mom_1_2",
+				"do i work there too?" : "mom_1_5"
+			}
+		},
+
+		"mom_1_5" : 
+		{ 
+			"text": "Hi hun, Of course not. Listen, I can't answer those kinds of questions right now. OK? For now, please get in touch with Linnea. She keeps messaging me asking to speak with you and it's very frustrating. Love, Mom", 
+			"responses" : 
+			{
+				"sorry, mom. i'll talk to linnea" : "linnea_1_0"
+			}
+		},
+
+		"mom_2_0" : 
+		{ 
+			"text": "Hi dear, I just got a strange message from Linnea? Is everything OK? Don't want to pry but I'm worried. Love, Mom", 
+			"responses" : 
+			{
+				"mom, what did dad do?" : "mom_2_1"
+			}
+		},
+
+		"mom_2_1" : 
+		{ 
+			"text": "Hi love, Excuse me? Love, Mom", 
+			"responses" : 
+			{
+				"tell me what dad did to me" : "mom_2_2",
+				"never mind" : "mom_2_3"
+			}
+		},
+
+		"mom_2_2" : 
+		{ 
+			"text": "Hi honey, I'm not sure I understand what you mean. This is a hard question for me. I can't think of anything your father did that could have changed the beautiful person you are now. Not that he did anything in particular. My meaning is getting mixed up here. Let's talk later. Love, Mom", 
+			"responses" : 
+			{
+				"notification" :
+				{
+					"type" : "email",
+					"sender" : "Census Bureau",
+					"id" : "census_3_0"
+				}
+			}
+		},
+
+		"mom_2_3" : 
+		{ 
+			"text": "Hi honey, Are you sure about that? I'm worried. Love, Mom", 
+			"responses" : 
+			{
+				"you're lying to me" : "mom_2_4",
+				"i don't mean to be hurtful" : "mom_2_5"
+			}
+		},
+
+		"mom_2_4" : 
+		{ 
+			"text": "Dear Aster, I really don't know what you're talking about. Please calm down and talk to me later. Love, Mom", 
+			"responses" : 
+			{
+				"notification" :
+				{
+					"type" : "email",
+					"sender" : "Census Bureau",
+					"id" : "census_3_0"
+				}
+			}
+		},
+
+		"mom_2_5" : 
+		{ 
+			"text": "Hi love, That's OK, I'm just concerned. What's going on? Love, Mom", 
+			"responses" : 
+			{
+				"i think dad did something terrible" : "mom_2_2"
+			}
+		},
+
+		"mom_3_0" : 
+		{ 
+			"text": "Dear Aster, This is a difficult message for me to write. I don't understand very well myself what has happened, but I know from the way you speak to me that it is important to you. I want to tell you everything but I can only tell you what I know, which is very little. As you may or may not know by now, you have had two rounds of surgery in your very short life. The first surgery was particularly difficult on your body, as you were quite small then. But you insisted, so your father and I consented to the procedure. Your father worried the whole time about your capacity to make decisions. He worried about your desire to communicate with us. He believed you would cast us aside like you had cast aside so many gadgets once they lost their usefulness. So he installed his own scripts on your hardware before the procedure, while you were still unconscious. It was within his legal right as your father, I remind you. I cannot say what was contained inside the scripts. I do not understand much. I am trying to be as honest as I can be but I only know so very little. Please, I hope you will forgive him. I love you always. Love, Mom", 
+			"responses" : 
+			{
+				"notification" :
+				{
+					"type" : "message",
+					"sender" : "Hawthorne",
+					"id" : "hawthorne_3_0"
+				}
+			}
+		}
+	},
+
+	"Hawthorne" : 
+	{
+		"hawthorne_1_0" : 
+		{
+			"text" : "hey buddy! how's it going?//<span style=\"font-family:menlo;font-size:12px;\">&lt;ERR: PICTURE FAILED TO LOAD&gt;</span>",
+			"responses" :
+			{
+				"who is this?" : "hawthorne_1_1",
+				"sorry, i'm on a smartphone" : "hawthorne_1_2"
+			}
+		},
+
+		"hawthorne_1_1" : 
+		{
+			"text" : "it's hawthorne, dude. did you lose your contacts or something? or did you already get a new device installed?? haha ;)",
+			"responses" :
+			{
+				"i'm on a smartphone now" : "hawthorne_1_2",
+				"i can't remember anything" : "hawthorne_1_3",
+				"it's a joke lol" : "hawthorne_1_6"
+			}
+		},
+
+		"hawthorne_1_2" : 
+		{
+			"text" : "wtf? seriously?? dude that's wild lol//sorry, not 'dude'. i forgot. my b//anyway i haven't seen a white kid with a phone in ages//...no offense haha//send me a pic, will ya?//jk ahaha they don't even support retinal cams!!",
+			"responses" :
+			{
+				"that's not very nice" : "hawthorne_1_8",
+				"haha yeah it's wild" : "hawthorne_1_4"
+			}
+		},
+
+		"hawthorne_1_3" : 
+		{
+			"text" : "what's that supposed to mean? what happened?//this is serious. i'm not joking//let me remind you that you're legally required to report any medical problems to me and the rest of your supervisors as soon as they occur",
+			"responses" :
+			{
+				"i'm just kidding" : "hawthorne_1_6",
+				"i'm not totally sure" : "hawthorne_1_5"
+			}
+		},
+
+		"hawthorne_1_4" : 
+		{
+			"text" : "but seriously, what happened? are your bio sensors ok?",
+			"responses" :
+			{
+				"some parts are out for repair" : "hawthorne_1_7",
+				"don't worry about it" : "hawthorne_1_8"
+			}
+		},
+
+		"hawthorne_1_5" : 
+		{
+			"text" : "some kind of weird flu or something? it might be interacting with your memory unit//well if that's the case then get yourself to a care provider stat//i'll talk to HR and get back to you as soon as i know whether we can get you paid leave//oops sorry about dude.'' just noticed i used it again... my b//<span style=\"font-family:menlo;font-size:12px;\">&lt;ERR: PICTURE FAILED TO LOAD&gt;</span>//i keep getting an error that says sommething about a phone OS, you know anything about that?",
+			"responses" :
+			{
+				"i'm testing new apps" : "hawthorne_1_9",
+				"don't worry about it" : "hawthorne_1_8"
+			}
+		},
+
+		"hawthorne_1_6" : 
+		{
+			"text" : "omg for real//...damn//you got me lol//sorry bout my blowup//sorry about 'dude,' too. totally slipped my mind//why -are- you on the phone tho?",
+			"responses" :
+			{
+				"i'm testing new apps" : "hawthorne_1_9",
+				"don't worry about it" : "hawthorne_1_8"
+			}
+		},
+
+		"hawthorne_1_7" : 
+		{
+			"text" : "repair?? lol o-kayyyyy... just as long as those new ones are still kickin B-)//well i hope you get better soon bud. it won't really work having you around the office while you're still using that phone. nothing personal, it's just that it could creep out the rest of the staff, you know?//they might look like you're trying to organize the janitors lmao//anywayyy i'll talk to HR asap and get back to you as soon as i know whether we can get you paid leave, k?",
+			"responses" :
+			{
+				"okay" : "hawthorne_1_13"
+			}
+		},
+
+		"hawthorne_1_8" : 
+		{
+			"text" : "uhh ok lmao...//anyway i'll see you tomorrow? you coming in at all this week? i got some new assignments for you",
+			"responses" :
+			{
+				"i'll be there" : "hawthorne_1_13",
+				"i'll be out for the week" : "hawthorne_1_10"
+			}
+		},
+
+		"hawthorne_1_9" : 
+		{
+			"text" : "ohhh you're on the update drive team? that's great!//how's that project going? it sounds like a tough design task//i know from personal experience how hard it can be to get ppl still on smartphones to do practically anything//if anyone is up to the task it's you tho B-)",
+			"responses" :
+			{
+				"thanks, i appreciate it" : "hawthorne_1_11",
+				"what's wrong with smartphone users?" : "hawthorne_1_12"
+			}
+		},
+
+		"hawthorne_1_10" : 
+		{
+			"text" : "that's ok, for now. but don't make a habit of it//only because you're our star. but stars still have to come in so they can shine//;)//i'll see you next monday then?",
+			"responses" :
+			{
+				"for sure" : "hawthorne_1_13"
+			}
+		},
+
+		"hawthorne_1_11" : 
+		{
+			"text" : "anyway i'll see you tomorrow? you coming in at all this week? i got some new assignments for you",
+			"responses" :
+			{
+				"i'll be there" : "hawthorne_1_13",
+				"i'll be out for the week" : "hawthorne_1_10"
+			}
+		},
+
+		"hawthorne_1_12" : 
+		{
+			"text" : "well nothing really//they just tend not to be the brightest lasers in the box when it comes to tech, you know?//anyway you coming in to work this week? i have some assignments for you//it's cool if you're too busy with the update drive stuff but we could use you",
+			"responses" :
+			{
+				"i'll be there" : "hawthorne_1_13",
+				"i'll be out for the week" : "hawthorne_1_10"
+			}
+		},
+
+		"hawthorne_1_13" : 
+		{
+			"text" : "great. oh and also! remember to make sure your software is up to date today//wouldn't want the goons to start watching our every move lol",
+			"responses" :
+			{
+				"notification" :
+				{
+					"type" : "email",
+					"sender" : "FixMyMentals\u00AE",
+					"id" : "repair_2_0"
+				}
+			}
+		},
+
+		"hawthorne_2_0" : 
+		{
+			"text" : "hey bud! we're planning a big thing for this weekend, you want to come?//i figure i gotta keep you in the loop now that you're off the network and on your phone haha//it'd be nice to have you there. the rest of the chicks in the office are boring lmao//i can actually talk to you about how stuff works, and not just how it looks",
+			"responses" :
+			{
+				"i'll be there for sure" : "hawthorne_2_1",
+				"what is wrong with you?" : "hawthorne_2_2"
+			}
+		},
+
+		"hawthorne_2_1" : 
+		{
+			"text" : "awesome! good to hear//you up to speed on the new DCP update we charted out today?//it went out over the network so i figured you may not have seen it",
+			"responses" :
+			{
+				"DCP?" : "hawthorne_2_3",
+				"no, what'd you decide?" : "hawthorne_2_4"
+			}
+		},
+
+		"hawthorne_2_2" : 
+		{
+			"text" : "what's that supposed to mean?",
+			"responses" :
+			{
+				"it means you're messed up" : "hawthorne_2_5",
+				"i don't know" : "hawthorne_2_6"
+			}
+		},
+
+		"hawthorne_2_3" : 
+		{
+			"text" : "...?//like, literally your job?",
+			"responses" :
+			{
+				"what's my job?" : "hawthorne_2_7"
+			}
+		},
+
+		"hawthorne_2_4" : 
+		{
+			"text" : "i can't really say over an unencrypted connection//suffice it to say we're making huge moves re: the update drive data//HUGE moves//check the network when you're off of that phone thing lol",
+			"responses" :
+			{
+				"notification" :
+				{
+					"type" : "message",
+					"sender" : "Linnea",
+					"id" : "linnea_3_0"
+				}
+			}
+		},
+
+		"hawthorne_2_5" : 
+		{
+			"text" : "you better fucking watch it, kid//you think you can play with your boss like that?//i own you, aster. you might think you're big shit because we've got you working DCP, but that doesn't mean i can't replace your ass whenever i want//i'm watching you",
+			"responses" :
+			{
+				"notification" :
+				{
+					"type" : "message",
+					"sender" : "Linnea",
+					"id" : "linnea_3_0"
+				}
+			}
+		},
+
+		"hawthorne_2_6" : 
+		{
+			"text" : "???//i really don't know what's up with you, aster, but this kind of behavior is unacceptable//i'm keeping an eye on you from now on",
+			"responses" :
+			{
+				"notification" :
+				{
+					"type" : "message",
+					"sender" : "Linnea",
+					"id" : "linnea_3_0"
+				}
+			}
+		},
+
+		"hawthorne_2_7" : 
+		{
+			"text" : "DCP IS YOUR JOB, ASTER//what is up with you man, seriously//this shit is getting ridiculous",
+			"responses" :
+			{
+				"notification" :
+				{
+					"type" : "message",
+					"sender" : "Linnea",
+					"id" : "linnea_3_0"
+				}
+			}
+		},
+
+		"hawthorne_3_0" : 
+		{
+			"text" : "aster, come see me in my office at DataDouble as soon as you can. it's urgent. bring whatever drives you have with DCP materials on them. i can't reply to any messages until i see you here.",
+			"responses" :
+			{
+				"notification" :
+				{
+					"type" : "message",
+					"sender" : "Linnea",
+					"id" : "linnea_4_0"
+				}
+			}
+		}
+	}
+}

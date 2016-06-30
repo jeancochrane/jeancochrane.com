@@ -1,0 +1,97 @@
+{
+	"Mom" :
+	{
+		"mom_1_1":
+		{
+			"text": "Hi honey, How are you? I haven't heard from you in a few days.//Just checking in to say hi. I love you! Love, Mom",
+			"responses": 
+			{ 
+				"hi mom! good thanks :)" : "mom_1_2", 
+				"miss u </3" : "mom_1_3"
+			}
+		},
+		"mom_1_2" :
+		{
+			"text": "Luv U <3",
+			"responses": 
+			{ 
+				"miss u </3" : "mom_1_3" 
+			}
+		},
+		"mom_1_3" : 
+		{
+			"text": "Miss U 2",
+			"responses": {"":["Mail","New email from FixMyMentals®", "repair_1_0"]}
+		}
+	},
+
+	"Hawthorne":
+	[
+		{
+			"text": "hey buddy! how's it going?",
+			"responses": []
+		
+		},
+		{
+			"text": "<span style=\"font-family:menlo;font-size:12px;\">&lt;ERR: PICTURE FAILED TO LOAD&gt;</span>",
+			"responses": []
+		}
+		
+	],
+
+	"Linnea":
+	[
+		{
+			"text": "hey...",
+			"responses": []
+		},
+		{
+			"text": "i'm sorry about what happened. your mom told me",
+			"responses": []
+		},
+		{
+			"text": "it sounds terrible",
+			"responses": []
+		},
+		{
+			"text": "i feel like... i'm responsible or something. you know?",
+			"responses": []
+		},
+		{
+			"text": "idk",
+			"responses": []
+		},
+		{
+			"text": "are you there?",
+			"responses": []
+		},
+		{
+			"text": "aster?",
+			"responses": []
+		},
+		{
+			"text": "?",
+			"responses": []
+		},
+		{
+			"text": "are you ignoring me?",
+			"responses": []
+		},
+		{
+			"text": "that's fine, i won't force you to talk or anything",
+			"responses": []
+		},
+		{
+			"text": "i just want you to know that i love you. and i miss you",
+			"responses": []
+		},
+		{
+			"text": "and i guess i hope you have a nice life",
+			"responses": ["1","2"]
+		},
+		{
+			"time": "",
+			"responses": ["test1","test2"]
+		}
+	]
+}

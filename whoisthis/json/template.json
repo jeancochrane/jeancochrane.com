@@ -1,0 +1,24 @@
+{
+	"mom_1_0" : 
+	{ 
+		"text": "Hi honey, How are you? I haven't heard from you in a few days. Just checking in to say hi. I love you! Love, Mom", 
+		"responses" : 
+			{
+				"hey mom, how are you?" : "mom_1_1",
+				"i'm not feeling too great, but i'm hanging in there" :"mom_1_2"
+			}
+		},
+
+	"repair_1_0" :
+	{
+		"sender" : "FixMyMentals\u00AE",
+		"subject" : "Need some info",
+		"body" : "<p>Hey there, FixMyMentals\u00AE here.</p><p>Thanks for holding tight. We ran across our first potential error in your memory unit. We think. We need to confirm with you to make sure we’re calibrating properly.</p><p>The memory is of a fight at recess. It must have taken place sometime during Primary schooling.  A girl is yelling at you. Her face is flushed red, and you’re yelling back. The teacher comes as you pull her pigtails and kick her in the stomach. You’re suspended for about a week.</p><p>Can you tell us what the fight was about?</p>",
+		"reponses" :
+		{
+			"She stole my toy" : "repair_1_1",
+			"She lied about me" : "repair_1_2",
+			"I was mad at her for being a girl" : "repair_1_3"
+		}
+	}
+}
