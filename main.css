@@ -128,6 +128,15 @@ body {
 /*  --------  THUMBNAILS  --------  */
 /* (must be at least 270w x 202h px -- */
 
+.thumbnail:hover {
+    margin: 0px;
+    -webkit-box-shadow: 5px 10px 59px 0px rgba(0,0,0,0.59);
+    -moz-box-shadow: 5px 10px 59px 0px rgba(0,0,0,0.59);
+    box-shadow: 5px 10px 59px 0px rgba(0,0,0,0.59); 
+    -webkit-transition: box-shadow 0.2s, margin 0.2s;
+    transition: box-shadow 0.2s, margin 0.2s;
+}
+
 #comm_journo {
     background-image: linear-gradient(rgba(178, 51, 157, .5), rgba(178, 51, 157, .5)), url("thumbnails/comm_journo.png");
     background-size: cover;
