@@ -7,6 +7,8 @@ appNameToID =
         'Records' : '#records_nav'
     };
 
+ENDGAME = false;
+
 allNotifications = 
     [];
 
@@ -20,29 +22,49 @@ $(document).ready(function() {
     $(document).on('pagecontainerchange', function(e, ui){
         var activePage = ui.toPage;
         var fromPage = ui.prevPage;
-        if (activePage.id == 'mail_nav') {
-            $('#mail_list').listview('refresh');
+
+        //END OF GAME
+        if ((activePage.attr('id') == 'home') && (ENDGAME)) {
+            $('#endgameoverlay').fadeIn(5000, function(){
+                $('body').children('div').not('body #endgameoverlay').remove();
+                setTimeout(function(){
+                    $('#endgametext').show();
+                }, 3000);
+                setTimeout(function(){
+                    $('#createdby').show();
+                }, 1000);
+            });
         }
-        
+
         $('[data-role="page"]').css({position : ''});
     })
-
     .on('pagecontainerbeforeshow', function(e, ui){
         var activePage = ui.toPage;
         var fromPage = ui.prevPage;
         activePage.find('.ui-listview').listview('refresh');
     })
-
     .on('popupafteropen', '[data-role="popup"]', function(event, ui) {
             $('body').css('overflow', 'hidden').on('touchmove', function(e) {
                  e.preventDefault();
             });
     })
-    
     .on('popupafterclose', '[data-role="popup"]', function(event, ui){
             $('body').css('overflow', 'auto').off('touchmove');
     });
 
+    $('#ignorebtn').click(function(){
+        $('#screensizeoverlay').remove();
+    });
+});
+
+$(window).on('load resize', function() {
+    if ($(window).width() >= $(window).height()*0.9) {
+        $('#screensizeoverlay').show();
+        $('body').children().not('#screensizeoverlay').css({'filter':'blur(5px)'});
+    } else {
+        $('#screensizeoverlay').hide();
+        $('body').children().not('#screensizeoverlay').css({'filter':'blur(0px)'});
+    }
 });
 
 function getNotification(app, notiText, avoidable) {

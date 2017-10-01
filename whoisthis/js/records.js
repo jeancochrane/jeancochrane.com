@@ -54,42 +54,39 @@ $(document).ready(function() {
 		});
 
 		$('#pdr_btn').click(function(){
-			correct = true;
+			var name_check = 
+				(GetVal('#pdr_name') == 'aster flores');
+			var ssn_check = (
+				(GetVal('#pdr_ssn') == '439-65-1970') ||
+				(GetVal('#pdr_ssn') == '439651970') );
+			var dob_check = (
+				(GetVal('#pdr_dob') == '01/26/48') ||
+				(GetVal('#pdr_dob') == '1/26/48') );
+			var race_check = 
+				(GetVal('#pdr_race') == 'white');
+			var sex_check = (
+				(GetVal('#pdr_sex') == 'male') ||
+				(GetVal('#pdr_sex') == 'm') ||
+				(GetVal('#pdr_sex') == 'man') );
+			var gen_check = (
+				(GetVal('#pdr_gen') == 'female') ||
+				(GetVal('#pdr_gen') == 'f') ||
+				(GetVal('#pdr_gen') == 'woman') );
+			var citizen_check = ($('label[for="citizen_yes"]').hasClass('ui-radio-on'));
+			var employed_check = ($('label[for="employed_yes"]').hasClass('ui-radio-on'));
+			var employer_check = (
+				(GetVal('#pdr_employer') == 'datadouble') ||
+				(GetVal('#pdr_employer') == 'data double') );
 
-			if ($('#pdr_name').val().toLowerCase() != 'aster flores') {
-				correct = false;
-			}
-			if ($('#pdr_ssn').val().toLowerCase() != '439-65-1970') {
-				correct = false;
-			}
-			if ($('#pdr_dob').val().toLowerCase() != '01/26/48') {
-				correct = false;
-			}
-			if ($('#pdr_race').val().toLowerCase() != 'white') {
-				correct = false;
-			}
-			if ($('#pdr_sex').val().toLowerCase() != 'male') {
-				correct = false;
-			}
-			if ($('#pdr_gen').val().toLowerCase() != 'female') {
-				correct = false;
-			}
-			if ($('label[for="citizen_no"]').hasClass('ui-radio-on')) {
-				correct = false;
-			}
-			if ($('label[for="employed_no"]').hasClass('ui-radio-on')) {
-				correct = false;
-			}
-			if ($('#pdr_employer').val().toLowerCase() != 'datadouble') {
-				correct = false;
-			}
-			if (correct) {
+			console.log('name: ' + name_check);
+
+			if (name_check && ssn_check && dob_check && race_check && sex_check && gen_check && citizen_check && employed_check && employer_check) 
+			{
 				getNotification('Mail','New mail from Census Bureau', true);
 				receiveMail('census_5_0');
 			}
-
-			else if (!correct) {
-				console.log(correct)
+			else {
+				$('#records_content').effect('shake',{times:2});
 			}
 		});
 	});
@@ -129,6 +126,8 @@ $(document).ready(function() {
 			$('#237B_input').val('');
 		}
 	});
-	
-	
 });
+
+function GetVal (id) {
+	return $(id).val().toLowerCase();
+}

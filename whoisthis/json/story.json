@@ -280,7 +280,7 @@
 	{
 		"sender": "Census Bureau",
 		"subject" : "Hey there, fellow citizen!",
-		"body" : "<p>Dear Citizen,</p> <p>Hey there! Census Bureau here. Another busy day of checking facts and counting up our Dear Citizens got us like</p> <img src='css/images/count.gif'> <p>Three! <i>Three</i> lovely citizens!</p> <p>Anyway, enough about us. We noticed that you’ve switched to a smartphone device with a different memory unit, so we were wondering if you could help us out just a tiny bit by updating the <b>Personal Data Request</b> in your Records app. No need to reply to us when it’s done – once our lil’ worker bees sense that the form is all set to go, they’ll send it along to us automatically. Pretty neat, right?</p> <p>We need this information by <b>7PM</b> tonight. So no rush, but yeah – a little bit of a rush! Just go ahead and fill that out as soon as you get a chance and everything will be A-OK.</p> <p>Back to counting,</p> <p>CB</p>",
+		"body" : "<p>Dear Citizen,</p> <p>Hey there! Census Bureau here. Another busy day of checking facts and counting up our Dear Citizens got us like</p> <img src='css/images/count.gif'> <p>Three! <i>Three</i> lovely citizens!</p> <p>Anyway, enough about us. We noticed that you’ve switched to a smartphone device with a different memory unit, so we were wondering if you could help us out just a tiny bit by updating the <b>Personal Data Request</b> in your Records app. No need to reply to us when it’s done – just hit that big ol' SUBMIT button, and our little worker bees will carry the information straight to us. Pretty neat, huh?</p> <p>Since the clock on your phone doesn't seem to be working, let's just say we need this information <b>by the time your phone dies</b> tonight. So no rush, but yeah – a little bit of a rush! Just go ahead and fill that out as soon as you get a chance and everything will be A-OK.</p> <p>Back to counting,</p> <p>CB</p>",
 		"responses" : {
 			"notification" :
 			{
@@ -1067,7 +1067,12 @@
 			"text": "Hi hun, Of course not. Listen, I can't answer those kinds of questions right now. OK? For now, please get in touch with Linnea. She keeps messaging me asking to speak with you and it's very frustrating. Love, Mom", 
 			"responses" : 
 			{
-				"sorry, mom. i'll talk to linnea" : "linnea_1_0"
+				"notification" : 
+				{
+					"type" : "message",
+					"sender" : "Linnea",
+					"id" : "linnea_1_0"
+				}
 			}
 		},
 
