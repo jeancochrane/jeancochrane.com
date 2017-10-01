@@ -8,6 +8,16 @@ body {
   font-family: "Source Sans Pro", sans-serif;
 }
 
+a {
+  text-decoration: none;
+  color: lightcoral;
+}
+
+a:visited {
+  text-decoration: none;
+  color: dimgrey;
+}
+
 /* ---- button ---- */
 
 .button {
@@ -390,6 +400,32 @@ body {
     background-repeat: none;
 }
 
+#test {
+    background-image: linear-gradient(rgba(195, 85, 177, 0.7), rgba(195, 85, 177, 0.7)), url("thumbnails/education.png");
+    background-size: cover;
+    background-repeat: none;
+}
+
+#test:hover {
+    background-image: linear-gradient(rgba(195, 85, 177, 0.6), rgba(195, 85, 177, 0.6)), url("thumbnails/education.png");
+    background-size: cover;
+    background-repeat: none;
+}
+
+/* -- EXPANSION -- */
+/* --------------- */
+
+.expand {
+  display: table; 
+  position: relative;
+  width: 100%;
+  background-color: #e0e0e0;
+  float: left;
+  margin: 5px;
+  -webkit-box-shadow: 2px 2px 13px 0px rgba(0,0,0,0.59);
+    -moz-box-shadow: 2px 2px 13px 0px rgba(0,0,0,0.59);
+      box-shadow: 2px 2px 13px 0px rgba(0,0,0,0.59);
+}
 
 /* -- data type colors -- */
 /* .element-item.comics {

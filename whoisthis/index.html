@@ -54,17 +54,27 @@
 
 <body id="document_body">
 
-<div data-role="page" id="home">
-  <div id="home_header" data-role="header">
-    <div id="right_header">
-      <img id="battery" src="css/images/battery_full.png"/>
-      99%&nbsp;
-    </div>
-    <div id="left_header">&nbsp;No Service&nbsp;</div>
-    <img id="noservice" src="https://cdn3.iconfinder.com/data/icons/can-you-hear-me-now/100/close-connection-512.png" alt="">
-    <div id="header_time">24<span class="blink">:</span>00</div>
+<!-- OVERLAYS -->
+<div id="screensizeoverlay" class="fullpage" style="z-index: 100;background-color: black; opacity: 0.8; display: none">
+  <div id="screensizewarning" class="divcenter">
+    <p style="font-style: italic; color: white; font-size: 20px; text-justify: inter-word;">Please resize your window to smartphone proportions for the best playing experience!</p>
+    <button id="ignorebtn" class="ui-btn ui-shadow ui-corner-all">Ignore</button>
   </div>
-  
+</div>
+
+<div id="endgameoverlay" class="fullpage" style="background-color: black;  display: none">
+  <div id="endgametext" class="divcenter" style="display: none;">
+    <br/><br/><br/><br/><br/>
+    <p style="text-align: center; font-style: italic; color: white; font-size: 20px; text-justify: inter-word; vertical-align: middle;">thank u for playing :)</p>
+  </div>
+  <div id="createdby" class="divcenter" style="display: none">
+    <p style="text-align: center; font-style: italic; color: white; font-size: 20px; text-justify: inter-word;">created by <a class="creator" href="http://twitter.com/thelastbarron/">addie barron</a> and <a class="creator" href="http://jeancochrane.com">jean cochrane</a></p>
+  </div>
+</div>
+
+<!-- PAGES -->
+<div data-role="page" id="home">
+
   <div id="mailoverlay" class="fullpage" style="background-color:white">
     <div id="mailoverlaydiv" style="width: 50%;
                 height: 50%;
@@ -83,6 +93,16 @@
       <input id="mailoverlayinput" type="text" placeholder="Send a Reply">
       <button href="#" id="mailoverlaybtn" class="ui-btn ui-shadow ui-corner-all">Send</button>
     </div>
+  </div>
+
+  <div id="home_header" data-role="header">
+    <div id="right_header">
+      <img id="battery" src="css/images/battery_full.png"/>
+      27%&nbsp;
+    </div>
+    <div id="left_header">&nbsp;No Service&nbsp;</div>
+    <img id="noservice" src="https://cdn3.iconfinder.com/data/icons/can-you-hear-me-now/100/close-connection-512.png" alt="">
+    <div id="header_time">24<span class="blink">:</span>00</div>
   </div>
 
 	<div id="home_apps" data-role="content">
@@ -397,7 +417,6 @@
 	    	   placeholder="Keyboard not supported"
            disabled="disabled"/>
 		<input type="button" id="sendbtn" value="Send" disabled="disabled"/>
-		<input type="button" id="msg_receive" value="Receive"/>
 	</div>
 	
 </div><!-- page -->

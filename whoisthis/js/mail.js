@@ -172,6 +172,10 @@ function setupMailScreen(sender, mailSubject, threadID){
 		});
 		*/
 
+		if (threadID == 'YOUDIDIT') {
+			ENDGAME = true;
+		}
+
 		$('#mail_response_options li a').trigger('ready');
 	}
 }
