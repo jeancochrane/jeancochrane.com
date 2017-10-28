@@ -1,0 +1,31 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="header">
+    <h1 class="game">Jean Cochrane</h1>
+    <p>designs dynamic tools for understanding geography, technology, and distributions of power&mdash;with a commitment to public data and critical design.</p>
+    <p><strong>Sort by category:</strong><p>
+</div>
+<div class="button-group filters-button-group">
+    {% for CATEGORY in WORK_CATEGORIES %}
+        <button class="button" data-filter=".{{ CATEGORY }}">{{ CATEGORY }}</button>
+    {% endfor %}
+</div>
+
+{% for page in pages %}
+    {% if page.type == 'work' %}
+        <div class="grid">
+            <a href="{{ page.url }}">
+                <div class="element-item thumbnail {{ page.category }}"
+                     id="slug"
+                     data-category="{{ page.category }}">
+                    <p class="title">{{ page.title }}</p>
+                    <p class="description">{{ page.summary }}></p>
+                </div>
+            </a>
+        </div>
+    {{ page.title }}
+    {% endif %}
+{% endfor %}
+
+{% endblock %}
