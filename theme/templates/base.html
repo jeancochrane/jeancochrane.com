@@ -5,43 +5,68 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta charset="utf-8">
     <meta name="author" content="Jean Cochrane">
-    <title>{% if article and article.title %}{{ article.title }} - {% endif %}Jean Cochrane</title>
-    <link href="https://fonts.googleapis.com/css?family=Press+Start+2P" rel="stylesheet" type="text/css">
-    <link href='https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,300,600' rel='stylesheet' type='text/css'>
-    <link href="{{ SITEURL }}/theme/static/css/main.css" rel="stylesheet" type="text/css">
+    <title>
+        {% if article and article.title %}
+            {{ article.title }}
+        {% elif page and page.title %}
+            {{ page.title }}
+        {% endif %}
+        {% if article or page %}-{% endif %}
+        Jean Cochrane
+    </title>
+    <link href="https://fonts.googleapis.com/css?family=Press+Start+2P"
+          rel="stylesheet" type="text/css" />
+    <link href='https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,300,600'
+          rel='stylesheet' type='text/css' />
 
     <!-- favicons -->
-    <link rel="apple-touch-icon" sizes="57x57" href="{{ SITEURL }}/theme/static/favicons/apple-touch-icon-57x57.png?v=9BB2LQ0Ooa">
-    <link rel="apple-touch-icon" sizes="60x60" href="{{ SITEURL }}/theme/static/favicons/apple-touch-icon-60x60.png?v=9BB2LQ0Ooa">
-    <link rel="apple-touch-icon" sizes="72x72" href="{{ SITEURL }}/theme/static/favicons/apple-touch-icon-72x72.png?v=9BB2LQ0Ooa">
-    <link rel="apple-touch-icon" sizes="76x76" href="{{ SITEURL }}/theme/static/favicons/apple-touch-icon-76x76.png?v=9BB2LQ0Ooa">
-    <link rel="apple-touch-icon" sizes="114x114" href="{{ SITEURL }}/theme/static/favicons/apple-touch-icon-114x114.png?v=9BB2LQ0Ooa">
-    <link rel="apple-touch-icon" sizes="120x120" href="{{ SITEURL }}/theme/static/favicons/apple-touch-icon-120x120.png?v=9BB2LQ0Ooa">
-    <link rel="apple-touch-icon" sizes="144x144" href="{{ SITEURL }}/theme/static/favicons/apple-touch-icon-144x144.png?v=9BB2LQ0Ooa">
-    <link rel="apple-touch-icon" sizes="152x152" href="{{ SITEURL }}/theme/static/favicons/apple-touch-icon-152x152.png?v=9BB2LQ0Ooa">
-    <link rel="apple-touch-icon" sizes="180x180" href="{{ SITEURL }}/theme/static/favicons/apple-touch-icon-180x180.png?v=9BB2LQ0Ooa">
-    <link rel="icon" type="image/png" href="{{ SITEURL }}/theme/static/favicons/favicon-32x32.png?v=9BB2LQ0Ooa" sizes="32x32">
-    <link rel="icon" type="image/png" href="{{ SITEURL }}/theme/static/favicons/favicon-194x194.png?v=9BB2LQ0Ooa" sizes="194x194">
-    <link rel="icon" type="image/png" href="{{ SITEURL }}/theme/static/favicons/favicon-96x96.png?v=9BB2LQ0Ooa" sizes="96x96">
-    <link rel="icon" type="image/png" href="{{ SITEURL }}/theme/static/favicons/android-chrome-192x192.png?v=9BB2LQ0Ooa" sizes="192x192">
-    <link rel="icon" type="image/png" href="{{ SITEURL }}/theme/static/favicons/favicon-16x16.png?v=9BB2LQ0Ooa" sizes="16x16">
-    <link rel="manifest" href="{{ SITEURL }}/theme/static/favicons/manifest.json?v=9BB2LQ0Ooa">
-    <link rel="mask-icon" href="{{ SITEURL }}/theme/static/favicons/safari-pinned-tab.svg?v=9BB2LQ0Ooa" color="#5bbad5">
-    <link rel="shortcut icon" href="{{ SITEURL }}/theme/static/favicons/favicon.ico?v=9BB2LQ0Ooa">
-    <meta name="apple-mobile-web-app-title" content="jeancochrane.com">
-    <meta name="application-name" content="jeancochrane.com">
-    <meta name="msapplication-TileColor" content="#2d89ef">
-    <meta name="msapplication-TileImage" content="/mstile-144x144.png?v=9BB2LQ0Ooa">
-    <meta name="theme-color" content="#ffffff">
+    <link rel="apple-touch-icon" sizes="57x57"
+          href="/theme/favicons/apple-touch-icon-57x57.png?v=9BB2LQ0Ooa" />
+    <link rel="apple-touch-icon" sizes="60x60"
+          href="/theme/favicons/apple-touch-icon-60x60.png?v=9BB2LQ0Ooa" />
+    <link rel="apple-touch-icon" sizes="72x72"
+          href="/theme/favicons/apple-touch-icon-72x72.png?v=9BB2LQ0Ooa" />
+    <link rel="apple-touch-icon" sizes="76x76"
+          href="/theme/favicons/apple-touch-icon-76x76.png?v=9BB2LQ0Ooa" />
+    <link rel="apple-touch-icon" sizes="114x114"
+          href="/theme/favicons/apple-touch-icon-114x114.png?v=9BB2LQ0Ooa" />
+    <link rel="apple-touch-icon" sizes="120x120"
+          href="/theme/favicons/apple-touch-icon-120x120.png?v=9BB2LQ0Ooa" />
+    <link rel="apple-touch-icon" sizes="144x144"
+          href="/theme/favicons/apple-touch-icon-144x144.png?v=9BB2LQ0Ooa" />
+    <link rel="apple-touch-icon" sizes="152x152"
+          href="/theme/favicons/apple-touch-icon-152x152.png?v=9BB2LQ0Ooa" />
+    <link rel="apple-touch-icon" sizes="180x180"
+          href="/theme/favicons/apple-touch-icon-180x180.png?v=9BB2LQ0Ooa" />
+    <link rel="icon" type="image/png"
+          href="/theme/favicons/favicon-32x32.png?v=9BB2LQ0Ooa" sizes="32x32" />
+    <link rel="icon" type="image/png"
+          href="/theme/favicons/favicon-194x194.png?v=9BB2LQ0Ooa" sizes="194x194" />
+    <link rel="icon" type="image/png"
+          href="/theme/favicons/favicon-96x96.png?v=9BB2LQ0Ooa" sizes="96x96" />
+    <link rel="icon" type="image/png"
+          href="/theme/favicons/android-chrome-192x192.png?v=9BB2LQ0Ooa"
+          sizes="192x192" />
+    <link rel="icon" type="image/png"
+          href="/theme/favicons/favicon-16x16.png?v=9BB2LQ0Ooa" sizes="16x16" />
+    <link rel="manifest" href="/theme/favicons/manifest.json?v=9BB2LQ0Ooa">
+    <link rel="mask-icon" href="/theme/favicons/safari-pinned-tab.svg?v=9BB2LQ0Ooa"
+          color="#5bbad5" />
+    <link rel="shortcut icon" href="/theme/favicons/favicon.ico?v=9BB2LQ0Ooa" />
+    <meta name="apple-mobile-web-app-title" content="jeancochrane.com" />
+    <meta name="application-name" content="jeancochrane.com" />
+    <meta name="msapplication-TileColor" content="#2d89ef" />
+    <meta name="msapplication-TileImage" content="/mstile-144x144.png?v=9BB2LQ0Ooa" />
+    <meta name="theme-color" content="#ffffff" />
     {% block extra_head %}
     {% endblock %}
 </head>
 
 <body>
 <div>
-  <img class="sidebar" src ="{{ SITEURL }}/theme/static/images/icon_music_color.png">
-  <img class="large1" src="{{ SITEURL }}/theme/static/images/icon_comics_color.png">
-  <img class="large2" src="{{ SITEURL }}/theme/static/images/icon_blog_color.png">
+    <img class="sidebar" src ="/theme/images/icon_music_color.png" />
+    <img class="large1" src="/theme/images/icon_comics_color.png" />
+    <img class="large2" src="/theme/images/icon_blog_color.png" />
 </div>
 <div class="content">
     {% block content %}
@@ -51,7 +76,16 @@
 
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.isotope/2.2.2/isotope.pkgd.min.js"></script>
-<script src="{{ SITEURL }}/theme/static/js/filtering.js"></script>
+<link rel="stylesheet"
+      href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
+      integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u"
+      crossorigin="anonymous" />
+<link href="/theme/css/main.css" rel="stylesheet" type="text/css" />
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"
+        integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa"
+        crossorigin="anonymous">
+</script>
+<script src="/theme/js/filtering.js"></script>
 
 {% block extra_js %}
 {% endblock %}

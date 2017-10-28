@@ -5,11 +5,13 @@ from __future__ import unicode_literals
 AUTHOR = 'Jean Cochrane'
 SITENAME = 'Jean Cochrane'
 
-SITEURL = 'http://jeancochrane.com'
-SPLASH_URL = SITEURL + '/come-out'
-PORTFOLIO_URL = SITEURL + '/portfolio'
-ARTICLE_URL = 'blog/{slug}/'
-PAGE_URL = '{slug}/'
+# For local development
+SITEURL = ''
+SPLASH_URL = '/pages/come-out.html'
+PORTFOLIO_URL = '/pages/portfolio.html'
+ARTICLE_URL = '/blog/{slug}.html'
+PAGE_URL = '/pages/{slug}.html'
+RELATIVE_URLS = True
 
 WORK_CATEGORIES = ['code', 'images', 'sounds', 'words']
 
@@ -39,6 +41,3 @@ SOCIAL = (('You can add links in your config file', '#'),
           ('Another social link', '#'),)
 
 DEFAULT_PAGINATION = False
-
-# Uncomment following line if you want document-relative URLs when developing
-#RELATIVE_URLS = True
