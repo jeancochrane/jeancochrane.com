@@ -63,15 +63,37 @@
 </head>
 
 <body>
-<div>
-    <img class="sidebar" src ="/theme/images/icon_music_color.png" />
-    <img class="large1" src="/theme/images/icon_comics_color.png" />
-    <img class="large2" src="/theme/images/icon_blog_color.png" />
-</div>
-<div class="content">
+<nav class="nav navbar-default navbar-transparent">
+    <div class="container nav-container">
+        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse"
+                data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+        </button>
+        <a href="/">
+            <h2 class="main-logo">
+                Jean Cochrane
+            </h2>
+        </a>
+        </h1>
+        <div class="collapse navbar-collapse navbar-right" id="bs-example-navbar-collapse-1">
+            <ul class="nav navbar-nav">
+                <li><a href="#">Action</a></li>
+                <li><a href="#">Another action</a></li>
+                <li><a href="#">Something else here</a></li>
+                <li><a href="#">Separated link</a></li>
+            </ul>
+        </div>
+    </div>
+</nav>
+
+<div class="content-container">
     {% block content %}
     {% endblock %}
 </div>
+
 </body>
 
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>

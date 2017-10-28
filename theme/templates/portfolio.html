@@ -1,30 +1,51 @@
 {% extends 'base.html' %}
 
 {% block content %}
-<div class="header">
-    <h1 class="game">Jean Cochrane</h1>
-    <p>designs dynamic tools for understanding geography, technology, and distributions of power&mdash;with a commitment to public data and critical design.</p>
-    <p><strong>Sort by category:</strong><p>
-</div>
-<div class="button-group filters-button-group">
-    {% for CATEGORY in WORK_CATEGORIES %}
-        <button class="button" data-filter=".{{ CATEGORY }}">{{ CATEGORY }}</button>
-    {% endfor %}
-</div>
-
-{% for page in pages %}
-    {% if page.type == 'work' %}
-        <div class="grid">
-            <a href="{{ page.url }}">
-                <div class="element-item thumbnail {{ page.category }}"
-                     id="slug"
-                     data-category="{{ page.category }}">
-                    <p class="title">{{ page.title }}</p>
-                    <p class="description">{{ page.summary }}></p>
-                </div>
-            </a>
+<div class="container">
+    <div class="row">
+        <div class="col-xs-12 col-sm-6 col-md-5">
+            <h3 class="personal-summary">
+                designs dynamic tools for understanding geography, technology,
+                and distributions of power&mdash;with a commitment to public data
+                and critical design.
+            </h3>
         </div>
-    {% endif %}
-{% endfor %}
+        <div class="col-xs-12 col-sm-6 col-md-7">
+            <img class="sidebar" src ="/theme/images/icon_music_color.png" />
+            <img class="large1" src="/theme/images/icon_comics_color.png" />
+            <img class="large2" src="/theme/images/icon_blog_color.png" />
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-xs-12">
+            <p><strong>Sort by category:</strong><p>
+        </div>
+        <div class="col-xs-12">
+            <div class="button-group filters-button-group">
+                {% for CATEGORY in WORK_CATEGORIES %}
+                    <button class="button" data-filter=".{{ CATEGORY }}">{{ CATEGORY }}</button>
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="grid">
+        {% for page in pages %}
+            {% if page.type == 'work' %}
+                <a href="{{ page.url }}">
+                    <div class="element-item thumbnail {{ page.category }}"
+                        id="slug"
+                        data-category="{{ page.category }}">
+                        <p class="title">{{ page.title }}</p>
+                        <p class="description">{{ page.summary }}></p>
+                    </div>
+                </a>
+            {% endif %}
+        {% endfor %}
+        </div>
+    </div>
+</div>
 
 {% endblock %}
