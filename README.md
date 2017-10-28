@@ -1,3 +1,3 @@
 # Jean Cochrane's portfolio site
 
-Yay!
+Under rapid development. Check back soon.
