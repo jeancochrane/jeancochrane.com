@@ -80,10 +80,42 @@
         </h1>
         <div class="collapse navbar-collapse navbar-right" id="bs-example-navbar-collapse-1">
             <ul class="nav navbar-nav">
-                <li><a href="#">Action</a></li>
-                <li><a href="#">Another action</a></li>
-                <li><a href="#">Something else here</a></li>
-                <li><a href="#">Separated link</a></li>
+                <li>
+                    <a href="{{ PORTFOLIO_URL }}"
+                    {% if PORTFOLIO_URL[1:] in output_file %}
+                        class="active"
+                    {% endif %}>
+                        <i class="glyphicon glyphicon-console" aria-hidden="true"></i>
+                        Work
+                    </a>
+                </li>
+                <li>
+                    <a href="{{ PLAY_URL }}"
+                    {% if PLAY_URL[1:] in output_file %}
+                        class="active"
+                    {% endif %}>
+                        <i class="glyphicon glyphicon-music" aria-hidden="true"></i>
+                        Play
+                    </a>
+                </li>
+                <li>
+                    <a href="{{ WRITING_URL }}"
+                    {% if WRITING_URL[1:] in output_file %}
+                        class="active"
+                    {% endif %}>
+                        <i class="glyphicon glyphicon-align-right" aria-hidden="true"></i>
+                        Writing
+                    </a>
+                </li>
+                <li>
+                    <a href="{{ STATUS_URL }}"
+                    {% if STATUS_URL[1:] in output_file %}
+                        class="active"
+                    {% endif %}>
+                        <i class="glyphicon glyphicon-alert" aria-hidden="true"></i>
+                        Status
+                    </a>
+                </li>
             </ul>
         </div>
     </div>

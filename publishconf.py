@@ -13,6 +13,8 @@ from pelicanconf import *
 SITEURL = 'http://jeancochrane.com'
 SPLASH_URL = '/pages/come-out'
 PORTFOLIO_URL = '/pages/portfolio'
+PLAY_URL = '/pages/play'
+STATUS_URL = '/pages/status'
 ARTICLE_URL = '/blog/{slug}'
 PAGE_URL = 'pages/{slug}'
 RELATIVE_URLS = False

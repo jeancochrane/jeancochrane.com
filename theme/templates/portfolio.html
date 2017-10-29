@@ -4,13 +4,13 @@
 <div class="container">
     <div class="row">
         <div class="col-xs-12 col-sm-6 col-md-5">
-            <h3 class="personal-summary">
+            <h3>
                 designs dynamic tools for understanding geography, technology,
                 and distributions of power&mdash;with a commitment to public data
                 and critical design.
             </h3>
         </div>
-        <div class="col-xs-12 col-sm-6 col-md-7">
+        <div class="col-xs-12 col-sm-6 col-md-7 icon-illustrations">
             <img class="sidebar" src ="/theme/images/icon_music_color.png" />
             <img class="large1" src="/theme/images/icon_comics_color.png" />
             <img class="large2" src="/theme/images/icon_blog_color.png" />
@@ -19,9 +19,7 @@
 
     <div class="row">
         <div class="col-xs-12">
-            <p><strong>Sort by category:</strong><p>
-        </div>
-        <div class="col-xs-12">
+            <p><strong>Filter work by category:</strong><p>
             <div class="button-group filters-button-group">
                 {% for CATEGORY in WORK_CATEGORIES %}
                     <button class="button" data-filter=".{{ CATEGORY }}">{{ CATEGORY }}</button>
