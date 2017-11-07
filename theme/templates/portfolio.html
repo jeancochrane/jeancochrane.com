@@ -36,8 +36,9 @@
                     <div class="element-item thumbnail {{ page.category }}"
                         id="slug"
                         data-category="{{ page.category }}">
-                        <p class="title">{{ page.title }}</p>
-                        <p class="description">{{ page.summary }}></p>
+                        <img src="{{ page.thumbnail }}"></img>
+                        <h3>{{ page.title }}</h3>
+                        <small>{{ page.summary }}</small>
                     </div>
                 </a>
             {% endif %}

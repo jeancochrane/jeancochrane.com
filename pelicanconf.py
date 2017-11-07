@@ -44,3 +44,5 @@ SOCIAL = (('You can add links in your config file', '#'),
           ('Another social link', '#'),)
 
 DEFAULT_PAGINATION = False
+
+PAGE_ORDER_BY = 'order'

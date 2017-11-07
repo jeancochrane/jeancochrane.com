@@ -1,3 +1,5 @@
+/* ---- typography ---- */
+
 * {
   -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;
@@ -8,14 +10,54 @@ body {
   font-family: "Source Sans Pro", sans-serif;
 }
 
-a {
-  text-decoration: none;
+a, a:visited, a:hover {
   color: lightcoral;
 }
 
-a:visited {
-  text-decoration: none;
-  color: dimgrey;
+a, a:visited {
+    text-decoration: none;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  line-height: 1.3 !important;  /* override bootstrap default */
+}
+
+p {
+  font-size: 1.5em;
+}
+
+/* ---- content ---- */
+
+.element-item .title {
+  position: absolute;
+  left: 10px;
+  top: 5px;
+  padding-right: 10px;
+  font-size: 1.7em;
+  font-weight: bold;
+  color: white;
+}
+
+.element-item .description {
+  color: white;
+  position: absolute;
+  left: 10px;
+  bottom: 5px;
+  font-size: 1em;
+}
+
+.glyphicon {
+    padding-right: 5px;
+}
+
+.footer-text {
+    padding-top:20px;
+    padding-bottom:10px;
+    background-color: #ededed;
+}
+
+.grid {
+    margin-bottom: 20px;
 }
 
 /* ---- splash page ---- */
@@ -153,18 +195,6 @@ a:visited {
   background-color: white !important;  /* override bootstrap default */
 }
 
-h1, h2, h3, h4, h5, h6 {
-  line-height: 1.3 !important;  /* override bootstrap default */
-}
-
-p {
-  font-size: 1.5em;
-}
-
-.glyphicon {
-    padding-right: 5px;
-}
-
 /* ---- isotope ---- */
 
 /* clear fix */
@@ -182,11 +212,8 @@ p {
   position: relative;
   float: left;
   width: 30%;
-  height: 200px;
   margin: 5px;
   padding: 10px;
-  background: #888;
-  color: #262524;
 }
 
 .element-item > * {
@@ -194,23 +221,9 @@ p {
   padding: 0;
 }
 
-.element-item .title {
-  position: absolute;
-  left: 10px;
-  top: 5px;
-  padding-right: 10px;
-  font-size: 1.7em;
-  font-weight: bold;
-  color: white;
+.element-item > img {
+    margin-bottom: 10px;
 }
-
-.element-item .description {
-  color: white;
-  position: absolute;
-  left: 10px;
-  bottom: 5px;
-  font-size: 1em;
-} 
 
 /*  --------  THUMBNAILS  --------  */
 /* (must be at least 270w x 202h px -- */
@@ -593,24 +606,6 @@ p {
   }
 }
 
-@media (max-width: 1055px) {
-  .large1 {
-    display:
-  }
-}
-
-@media (max-width: 911px) {
-  .large2 {
-    display: none;
-  }
-}
-
-@media (max-width: 707px) {
-  .large1 {
-    display: none;
-  }
-}
-
 @media (max-width: 680px) {
   .element-item {
     position: relative;
@@ -659,6 +654,14 @@ p {
     height: auto;
     padding-bottom: 10px;
     margin: 0 auto;
+  }
+
+  .large1 {
+    display: none;
+  }
+
+  .large2 {
+    display: none;
   }
 
 /* fix mysterious right alignment on mobile */
