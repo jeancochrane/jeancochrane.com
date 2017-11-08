@@ -22,6 +22,11 @@ h1, h2, h3, h4, h5, h6 {
   line-height: 1.3 !important;  /* override bootstrap default */
 }
 
+.game {
+  font-family: "Press Start 2P", Courier, monospace;
+  color: lightcoral;
+}
+
 p {
   font-size: 1.5em;
 }
@@ -517,79 +522,24 @@ p {
       box-shadow: 2px 2px 13px 0px rgba(0,0,0,0.59);
 }
 
-/* -- data type colors -- */
-/* .element-item.comics {
-  background-color: rgba(178, 51, 157, .5);
-}
-
- .element-item.comics:hover {
-  background-color: rgba(178, 51, 157, .3);
-}
-
-.element-item.data {
-  background: rgba(255, 149, 237, .8);
-}
-
-.element-item.data:hover {
-  background: rgba(255, 149, 237, .6);
-}
-
-.element-item.music {
-  background: rgba(255, 222, 70, 0.9);
-}
-
-.element-item.music:hover {
-  background: rgba(255, 222, 70, 0.6);
-}
-
-.element-item.video {
-  background: rgba(189, 154, 0, .8)
-}
-
-.element-item.video:hover {
-  background: rgba(189, 154, 0, .6)
-}
-
-.element-item.netart {
-  background: rgba(99, 204, 198, 1);
-}
-
-.element-item.netart:hover {
-  background: rgba(99, 204, 198, .8);
-}
-
-.element-item.events {
-  background: rgba(37, 178, 171, 1);
-}
-
-.element-item.events:hover {
-  background: rgba(37, 178, 171, .8);
-} */
-
 /* -- illustrations -- */
 
 .sidebar {
   max-width: 200px;
   height: auto;
-  float: right;
-  padding-right: 0px;
-  margin-left: -5px;
+  display: inline-block;
 }
 
 .large1{
   max-width: 200px;
   height: auto;
-  float: right;
-  padding-right: 0px;
-  margin-left: -10px;
+  display: inline-block;
 }
 
 .large2{
   max-width: 200px;
   height: auto;
-  float: right;
-  padding-right: 0px;
-  margin-left: -5px;
+  display: inline-block;
 }
 
 /* -- media queries -- */
@@ -611,11 +561,8 @@ p {
     position: relative;
     float: left;
     width: 45%;
-    height: 200px;
     margin: 5px;
     padding: 10px;
-    background: #888;
-    color: #262524;
   }
 }
 
@@ -624,11 +571,8 @@ p {
     position: relative;
     float: left;
     width: 100%;
-    height: 250px;
     margin: 5px;
     padding: 10px;
-    background: #888;
-    color: #262524;
   }
 
   .element-item .title {
@@ -649,11 +593,17 @@ p {
     font-size: 1.3em;
   }
 
+  /* fix mysterious right alignment on mobile */
+  .grid {
+    margin-right: 10%;
+  }
+}
+
+@media (max-width: 610px) {
   .sidebar {
     max-width: 100%;
     height: auto;
     padding-bottom: 10px;
-    margin: 0 auto;
   }
 
   .large1 {
@@ -663,11 +613,21 @@ p {
   .large2 {
     display: none;
   }
+}
 
-/* fix mysterious right alignment on mobile */
+@media (min-width: 768px) and (max-width: 988px) {
+  .large1 {
+    display: none;
+  }
 
-  .grid {
-    margin-right: 10%;
+  .large2 {
+    display: none;
+  }
+}
+
+@media (min-width: 989px) and (max-width: 1195px) {
+  .large2 {
+    display: none;
   }
 }
 

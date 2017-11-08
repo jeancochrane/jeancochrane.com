@@ -14,10 +14,6 @@
         {% if article or page %}-{% endif %}
         Jean Cochrane
     </title>
-    <link href="https://fonts.googleapis.com/css?family=Press+Start+2P"
-          rel="stylesheet" type="text/css" />
-    <link href='https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,300,600'
-          rel='stylesheet' type='text/css' />
 
     <!-- favicons -->
     <link rel="apple-touch-icon" sizes="57x57"
@@ -82,28 +78,30 @@
             <ul class="nav navbar-nav">
                 <li>
                     <a href="{{ PORTFOLIO_URL }}"
-                    {% if PORTFOLIO_URL[1:] in output_file %}
+                    {% if PORTFOLIO_URL[1:] in output_file or output_file == 'index.html'%}
                         class="active"
                     {% endif %}>
-                        <i class="glyphicon glyphicon-console" aria-hidden="true"></i>
+                        <i class="fa fa-fw fa-code" aria-hidden="true"></i>
                         Work
                     </a>
                 </li>
+                <!--
                 <li>
                     <a href="{{ PLAY_URL }}"
                     {% if PLAY_URL[1:] in output_file %}
                         class="active"
                     {% endif %}>
-                        <i class="glyphicon glyphicon-music" aria-hidden="true"></i>
+                        <i class="fa fa-fw fa-music" aria-hidden="true"></i>
                         Play
                     </a>
                 </li>
+                -->
                 <li>
                     <a href="{{ WRITING_URL }}"
                     {% if WRITING_URL[1:] in output_file %}
                         class="active"
                     {% endif %}>
-                        <i class="glyphicon glyphicon-align-right" aria-hidden="true"></i>
+                        <i class="fa fa-fw fa-book" aria-hidden="true"></i>
                         Writing
                     </a>
                 </li>
@@ -112,7 +110,7 @@
                     {% if STATUS_URL[1:] in output_file %}
                         class="active"
                     {% endif %}>
-                        <i class="glyphicon glyphicon-alert" aria-hidden="true"></i>
+                        <i class="fa fa-fw fa-exclamation-triangle" aria-hidden="true"></i>
                         Status
                     </a>
                 </li>
@@ -128,24 +126,33 @@
 
 <footer class="container-fluid">
     <div class="row text-center footer-text">
-        <p class="small">Made by Jean, with love. Many thanks to the good folks behind <a href="https://blog.getpelican.com/">Pelican</a>, <a href="https://getbootstrap.com/">Bootstrap</a>, and <a href="https://flickity.metafizzy.co">Flickity</a> for their fabulous open source libraries.</p>
+        <p class="small">Made by Jean, with love. Many thanks to the good folks behind <a href="https://blog.getpelican.com/">Pelican</a>, <a href="https://getbootstrap.com/">Bootstrap</a>, <a href="http://fontawesome.io">Font Awesome</a>, and <a href="https://flickity.metafizzy.co">Flickity</a> for their fabulous open source libraries.</p>
         <p class="small">View the source code <a href="https://github.com/jeancochrane/jeancochrane.com">on GitHub</a>.</p>
     </div>
 </footer>
 
 </body>
 
+<!-- Scripts and stylesheets at the bottom for faster loading -->
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.isotope/2.2.2/isotope.pkgd.min.js"></script>
+
+<link href="https://fonts.googleapis.com/css?family=Press+Start+2P"
+      rel="stylesheet" type="text/css" />
+<link href='https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,300,600'
+      rel='stylesheet' type='text/css' />
 <link rel="stylesheet"
       href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
       integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u"
       crossorigin="anonymous" />
 <link href="/theme/css/main.css" rel="stylesheet" type="text/css" />
+<link href="/theme/css/font-awesome.min.css" rel="stylesheet" type="text/css" />
+
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"
         integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa"
         crossorigin="anonymous">
 </script>
+
 <script src="/theme/js/filtering.js"></script>
 
 {% block extra_js %}

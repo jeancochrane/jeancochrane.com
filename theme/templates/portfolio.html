@@ -10,7 +10,7 @@
                 and critical design.
             </h3>
         </div>
-        <div class="col-xs-12 col-sm-6 col-md-7 icon-illustrations">
+        <div class="col-xs-12 col-sm-6 col-md-7 icon-illustrations text-center">
             <img class="sidebar" src ="/theme/images/icon_music_color.png" />
             <img class="large1" src="/theme/images/icon_comics_color.png" />
             <img class="large2" src="/theme/images/icon_blog_color.png" />
@@ -19,6 +19,8 @@
 
     <div class="row">
         <div class="col-xs-12">
+            <h3 class="game">Work</h4>
+
             <p><strong>Filter work by category:</strong><p>
             <div class="button-group filters-button-group">
                 {% for CATEGORY in WORK_CATEGORIES %}
@@ -29,20 +31,22 @@
     </div>
 
     <div class="row">
-        <div class="grid">
-        {% for page in pages %}
-            {% if page.type == 'work' %}
-                <a href="{{ page.url }}">
-                    <div class="element-item thumbnail {{ page.category }}"
-                        id="slug"
-                        data-category="{{ page.category }}">
-                        <img src="{{ page.thumbnail }}"></img>
-                        <h3>{{ page.title }}</h3>
-                        <small>{{ page.summary }}</small>
-                    </div>
-                </a>
-            {% endif %}
-        {% endfor %}
+        <div class="col-xs-12">
+            <div class="grid">
+            {% for page in pages %}
+                {% if page.type == 'work' %}
+                    <a href="{{ page.url }}">
+                        <div class="element-item thumbnail {{ page.category }}"
+                            id="slug"
+                            data-category="{{ page.category }}">
+                            <img src="{{ page.thumbnail }}"></img>
+                            <h3>{{ page.title }}</h3>
+                            <small>{{ page.summary }}</small>
+                        </div>
+                    </a>
+                {% endif %}
+            {% endfor %}
+            </div>
         </div>
     </div>
 </div>
