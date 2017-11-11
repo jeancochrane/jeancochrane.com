@@ -1,9 +1,12 @@
-.PHONY: clean build serve reload
+.PHONY: clean build build-deploy serve reload deploy
 clean:
 	rm -Rf output
 
 build:
 	pelican -o output -t theme
+
+build-deploy:
+	pelican -o output -t theme -s publishconf.py
 
 serve:
 	(cd output && python -m http.server --bind 127.0.0.1 8000)
@@ -15,5 +18,5 @@ reload:
 
 deploy:
 	make clean
-	make build
-	rsync -av --delete ./output/ /var/www/jeancochrane.com/
+	make build-deploy
+	rsync -av --delete ./output/ /var/www/jeancochrane.com/html/

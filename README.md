@@ -4,7 +4,19 @@ Under rapid development. Check back soon.
 
 ## Developing
 
+First, make a virtualenv with pip:
+
 ```console
+mkvirtualenv jeancochrane.com
+pip install -U -r requirements.txt
+```
+
+Next, use the Makefile to build and serve files:
+
+```console
+# Clean up the output directory, if it exists
+make clean
+
 # Create the output directory
 make build
 
@@ -15,3 +27,10 @@ make serve
 make reload
 ```
 
+## Deployment
+
+SSH into the server, then:
+
+```console
+make deploy
+```
