@@ -4,5 +4,5 @@ template: work
 category: code
 type: work
 order: 3 
-summary: Find the Chicagoland neighborhood that fits your needs, based on a variety of statistics. 
+summary: Find the Chicagoland neighborhood that fits your needs, based on a variety of heuristics. 
 thumbnail: /static/images/thumbnails/divvy.png

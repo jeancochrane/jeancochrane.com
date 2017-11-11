@@ -3,15 +3,18 @@
 {% block content %}
 <div class="container">
     <div class="row">
-        <div class="col-xs-12 col-sm-10 col-sm-offset-1">
-        <h2 class="section-header">
-            <i class="fa fa-fw fa-info-circle"></i>
-            {{ page.title }}
-        </h2>
-        <hr />
+        <div class="col-xs-12 col-sm-10 col-sm-offset-1 col-md-8
+                    col-md-offset-2 content-body">
+            <h2 class="section-header">
+                <i class="fa fa-fw fa-info-circle"></i>
+                {{ page.title }}
+            </h2>
+            <hr />
 
-        {{ page.content }}
+            {{ page.content }}
+        </div>
     </div>
+    <br />
     <div class="row">
         <div class="col-xs-12 col-sm-10 col-sm-offset-1 text-center">
             <a href="{{ GITHUB }}">
@@ -21,6 +24,7 @@
                 <i class="fa fa-fw fa-3x fa-twitter"></i>
             </a>
         </div>
-    </div>>
+    </div>
+    <br />
 </div>
 {% endblock %}

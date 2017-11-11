@@ -12,3 +12,8 @@ reload:
 	make clean
 	make build
 	make serve
+
+deploy:
+	make clean
+	make build
+	rsync -av --delete ./output/ /var/www/jeancochrane.com/
