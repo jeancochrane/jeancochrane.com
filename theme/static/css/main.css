@@ -14,8 +14,13 @@ a, a:visited, a:hover {
   color: lightcoral;
 }
 
+a:hover,
+a:focus {
+  color :#de6464;
+}
+
 a, a:visited {
-    text-decoration: none;
+  text-decoration: none;
 }
 
 h1, h2, h3, h4, h5, h6 {
@@ -51,19 +56,38 @@ p {
   font-size: 1em;
 }
 
-.glyphicon {
-    padding-right: 5px;
-}
-
 .footer-text {
-    padding-top:20px;
-    padding-bottom:10px;
-    background-color: #ededed;
+  padding-top:20px;
+  padding-bottom:10px;
+  background-color: #ededed;
 }
 
 .grid {
-    margin-bottom: 20px;
+  margin-bottom: 20px;
 }
+
+/* ---- override bootstrap pagination defaults ---- */
+
+.pagination > .active > a,
+.pagination > .active > a:focus,
+.pagination > .active > a:hover,
+.pagination > .active > span,
+.pagination > .active > span:focus,
+.pagination > .active > span:hover {
+  background-color: lightcoral;
+  border-color: lightcoral;
+}
+
+.pagination > li > a,
+.pagination > li > span {
+  color: lightcoral;
+}
+
+.pagination > li > a:hover,
+.pagination > li > a:focus {
+  color: #de6464;
+}
+
 
 /* ---- splash page ---- */
 

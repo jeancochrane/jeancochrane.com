@@ -8,16 +8,17 @@ SITENAME = 'Jean Cochrane'
 # For local development
 SITEURL = ''
 SPLASH_URL = '/pages/come-out.html'
-PORTFOLIO_URL = '/pages/portfolio.html'
+PORTFOLIO_URL = '/'
 PLAY_URL = '/pages/play.html'
-WRITING_URL = '/blog'
-STATUS_URL = '/pages/status.html'
+BLOG_URL = '/blog'
+ABOUT_URL = '/about.html'
 ARTICLE_URL = '/blog/{slug}.html'
 PAGE_URL = '/pages/{slug}.html'
 RELATIVE_URLS = True
 
 WORK_CATEGORIES = ['code', 'images', 'sounds', 'words']
 
+# Paths
 PATH = 'content'
 STATIC_PATHS = ['static', 'pages']
 ARTICLE_PATHS = ['blog']
@@ -39,10 +40,23 @@ LINKS = (('Pelican', 'http://getpelican.com/'),
          ('Jinja2', 'http://jinja.pocoo.org/'),
          ('You can modify those links in your config file', '#'),)
 
-# Social widget
-SOCIAL = (('You can add links in your config file', '#'),
-          ('Another social link', '#'),)
+# Social links
+GITHUB = 'https://github.com/jeancochrane'
+TWITTER = 'https://twitter.com/jean_cochrane'
 
-DEFAULT_PAGINATION = False
+# Pagination
+DEFAULT_PAGINATION = 1  # Max articles per page
+PAGINATION_PATTERNS = (
+    (1, '{base_name}/', '{base_name}/index.html'),
+    (2, '{base_name}/page/{number}/', '{base_name}/page/{number}/index.html'),
+)
 
+# Order pages by a custom attribute when pulling them into a template
+# (This lets us define the order we want portfolio thumbnails to appear in)
 PAGE_ORDER_BY = 'order'
+
+# Skip these default pages
+TAG_SAVE_AS = ''
+
+# Save index of blog articles to a custom location
+INDEX_SAVE_AS = 'blog/index.html'
