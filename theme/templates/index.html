@@ -4,7 +4,7 @@
 <div class="container">
     <div class="row">
         <div class="col-xs-12 col-sm-10 col-sm-offset-1">
-            <h2>
+            <h2 class="section-header">
                 <i class="fa fa-fw fa-book"></i>
                 Blog
             </h2>
@@ -12,15 +12,22 @@
 
             {% for post in dates_page.object_list %}
                 {% if post.thumbnail %}
-                    <img class="post-thumbnail" src="{{ post.thumbnail }}"/>
+                    <a href="{{ post.url }}">
+                        <img class="post-thumbnail" src="{{ post.thumbnail }}"/>
+                    </a>
                 {% endif %}
-                <h2 class="post-title">{{ post.title }}</h2>
+                <a href="{{ post.url }}">
+                    <h2 class="post-title">{{ post.title }}</h2>
+                </a>
                 <p class="small text-muted">{{ post.date.strftime('%-d %B %Y') }}</p>
                 <p class="post-summary">{{ post.summary }}</p>
+                <a href="{{ post.url }}">
+                    <p class="small">Read more <i class="fa fa-fw fa-arrow-right"></i></p>
+                </a>
                 {% if post.tags %}
-                    <p>
+                    <p class="small">
                     {% for tag in post.tags %}
-                        <span class="label label-default">{{ post.tag }}</span>
+                        <span class="label label-default">{{ tag }}</span>
                     {% endfor %}
                     </p>
                 <hr />
