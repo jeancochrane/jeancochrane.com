@@ -45,7 +45,7 @@ GITHUB = 'https://github.com/jeancochrane'
 TWITTER = 'https://twitter.com/jean_cochrane'
 
 # Pagination
-DEFAULT_PAGINATION = 1  # Max articles per page
+DEFAULT_PAGINATION = 5  # Max articles per page
 PAGINATION_PATTERNS = (
     (1, '{base_name}/', '{base_name}/index.html'),
     (2, '{base_name}/page/{number}/', '{base_name}/page/{number}/index.html'),
@@ -55,8 +55,9 @@ PAGINATION_PATTERNS = (
 # (This lets us define the order we want portfolio thumbnails to appear in)
 PAGE_ORDER_BY = 'order'
 
-# Skip these default pages
+# Skip these
 TAG_SAVE_AS = ''
+CATEGORY_SAVE_AS = ''
 
 # Save index of blog articles to a custom location
 INDEX_SAVE_AS = 'blog/index.html'

@@ -1,8 +1,10 @@
-title: Test post
-summary: Back at it again!
+title: Testing lots of body text
+summary: A post to test typography for dense blocks of prose.
 date: 2017-10-09
 tags: code, art, design, music
 
+
+## Testing a bunch of body text 
 
 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean eu faucibus ligula, non tincidunt dui. Etiam vestibulum vehicula mi luctus finibus. Vivamus vel arcu sed justo vestibulum accumsan. Quisque sed turpis sem. Vivamus elit turpis, semper a elit ut, maximus iaculis elit. Etiam laoreet eleifend tortor et posuere. Proin ultrices vitae sem ac consectetur. Nunc finibus cursus congue. Vivamus eget dignissim nibh. Vestibulum sollicitudin est a est fermentum, et lobortis leo faucibus. Curabitur eu arcu at felis commodo sollicitudin non at odio. Etiam sit amet est consequat, dapibus dolor id, facilisis lectus. Ut elementum ligula at mi volutpat, sit amet convallis libero consectetur. Pellentesque eget maximus arcu, ac aliquet est.
 
