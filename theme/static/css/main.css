@@ -21,14 +21,19 @@ h1, h2, h3, h4, h5, h6 {
   font-family: "Lora", serif;
 }
 
-.post-body p, .post-body h1, .post-body h2, .post-body h3, .post-body h4,
-.post-body h5, .post-body h6 {
-  text-indent: 50px;
+.post-body p {
+  font-size: 1.4em;
 }
 
-.post-body p {
-  font-size: 1.3em;
+.post-body blockquote {
+  font-size: inherit;
+  color: #777;
 }
+
+.post-thumbnail {
+  margin-top: 20px;
+}
+
 pre {
   margin: 0 0 20px;
 }
