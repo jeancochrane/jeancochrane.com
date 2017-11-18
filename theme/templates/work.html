@@ -6,15 +6,36 @@
         <div class="col-xs-12 text-center">
             <h1>{{ page.title }}</h1>
             <p class="short-bio">{{ page.summary }}</p>
+            <p>
+            {% if page.work_url %}
+                <a alt="Link to the work" href="{{ page.work_url }}">
+                    <span class="fa fa-stack fa-lg">
+                        <i class="fa fa-circle fa-stack-2x"></i>
+                        <i class="fa fa-link fa-stack-1x fa-inverse"></i>
+                    </span>
+                </a>
+            {% endif %}
+            {% if page.code_url %}
+                <a alt="Link to the code" href="{{ page.code_url }}">
+                    <span class="fa fa-stack fa-lg">
+                        <i class="fa fa-circle fa-stack-2x"></i>
+                        <i class="fa fa-code fa-stack-1x fa-inverse"></i>
+                    </span>
+                </a>
+            {% endif %}
+            </p>
             {% if page.thumbnail %}
-                <img class="img img-responsive center-block work-image"
-                     src="{{ page.thumbnail }}" />
+                <a href="{{ page.work_url }}">
+                    <img class="img img-responsive center-block
+                            work-image img-thumbnail"
+                            src="{{ page.thumbnail }}" />
+                </a>
             {% endif %}
         </div>
     </div>
     <div class="row">
         <div class="col-xs-12 col-sm-10 col-sm-offset-1
-                    col-md-8 col-md-offset-2 content-body">
+                    col-md-8 col-md-offset-2 content-body work-body">
             {{ page.content }}
 
             {% if page.footer %}

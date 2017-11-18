@@ -30,8 +30,20 @@ h1, h2, h3, h4, h5, h6 {
   color: #777;
 }
 
-.work-body img {
+.work-body img,
+.post-body img {
   max-width: 100%;
+  margin-bottom: 10px;
+  max-width: 100%;
+  height: auto;
+  padding: 4px;
+  line-height: 1.42857143;
+  background-color: #fff;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  -webkit-transition: all .2s ease-in-out;
+  -o-transition: all .2s ease-in-out;
+  transition: all .2s ease-in-out;
 }
 
 .post-thumbnail {
@@ -86,6 +98,11 @@ a, a:visited {
 
 p {
   font-size: 1.5em;
+}
+
+.content-body ol ul {
+  font-size: 1.5em;
+  margin-bottom: 20px;
 }
 
 .content-body p {
