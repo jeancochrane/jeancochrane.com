@@ -8,7 +8,7 @@ summary: Helping commercial properties in struggling neighborhoods access tax as
 thumbnail: /static/images/work/thrivezones/zone-map.png
 work_url: https://retailthrivezones.com
 
-Through to the City of Chicago’s Retail Thrive Zones program, businesses in low-income
+With the City of Chicago’s Retail Thrive Zones program, businesses in low-income
 neighborhoods are eligible for big breaks on their property taxes. But **the program
 requirements can be a headache**: properties qualify for different incentives
 based on a complicated formula that takes into account their geographic location,
