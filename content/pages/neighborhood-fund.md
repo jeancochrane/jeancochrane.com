@@ -3,7 +3,7 @@ slug: nof
 template: work
 category: code
 type: work
-order: 4
+order: 3 
 summary: Connecting small businesses to grant funding on Chicago's South and West Sides.
 thumbnail: /static/images/work/neighborhood-fund/neighborhood-fund-homepage.jpg
 work_url: https://neighborhoodopportunityfund.com

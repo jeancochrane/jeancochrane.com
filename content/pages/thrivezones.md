@@ -3,7 +3,7 @@ slug: thrivezones
 template: work
 category: code
 type: work
-order: 5
+order: 4 
 summary: Helping commercial properties in struggling neighborhoods access tax assistance. 
 thumbnail: /static/images/work/thrivezones/zone-map.png
 work_url: https://retailthrivezones.com

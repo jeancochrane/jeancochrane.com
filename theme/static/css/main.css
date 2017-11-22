@@ -100,7 +100,8 @@ p {
   font-size: 1.5em;
 }
 
-.content-body ol ul {
+.content-body ol,
+.content-body ul {
   font-size: 1.5em;
   margin-bottom: 20px;
 }

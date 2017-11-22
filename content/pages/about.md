@@ -2,6 +2,7 @@ title: About
 template: about
 category: about
 save_as: about.html
+order: 0
 
 
 Jean Cochrane designs dynamic tools for understanding geography, technology,
