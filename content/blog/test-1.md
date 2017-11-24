@@ -2,6 +2,7 @@ title: Testing lots of body text
 summary: A post to test typography for dense blocks of prose.
 date: 2017-10-09
 tags: code, art, design, music
+published: true
 
 
 ## Testing a bunch of body text 

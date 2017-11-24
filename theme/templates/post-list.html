@@ -1,37 +1,39 @@
 {% for post in dates_page.object_list %}
-    <div class="col-xs-12">
-        <div class="col-md-3">
-    {% if post.thumbnail %}
-            <a href="{{ post.url }}">
-                <img class="img-thumbnail post-thumbnail" src="{{ post.thumbnail }}"/>
-            </a>
-    {% endif %}
-        </div>
-        <div class="col-md-9">
-            <h2 class="post-title">
+    {% if post.published == 'true' %}
+        <div class="col-xs-12">
+            <div class="col-md-3">
+        {% if post.thumbnail %}
                 <a href="{{ post.url }}">
-                    {{ post.title }}
+                    <img class="img-thumbnail post-thumbnail" src="{{ post.thumbnail }}"/>
                 </a>
-            </h2>
-            <p class="small text-muted">{{ post.date.strftime('%-d %B %Y') }}</p>
-            <p class="post-summary">{{ post.summary }}</p>
-            <p class="small">
-                <a href="{{ post.url }}">
-                    Read more <i class="fa fa-fw fa-arrow-right"></i>
-                </a>
-            </p>
-            {% if post.tags %}
+        {% endif %}
+            </div>
+            <div class="col-md-9">
+                <h2 class="post-title">
+                    <a href="{{ post.url }}">
+                        {{ post.title }}
+                    </a>
+                </h2>
+                <p class="small text-muted">{{ post.date.strftime('%-d %B %Y') }}</p>
+                <p class="post-summary">{{ post.summary }}</p>
                 <p class="small">
-                {% for tag in post.tags %}
-                    <span class="label label-default">{{ tag }}</span>
-                {% endfor %}
+                    <a href="{{ post.url }}">
+                        Read more <i class="fa fa-fw fa-arrow-right"></i>
+                    </a>
                 </p>
-            {% endif %}
-            {% if not loop.last or articles_paginator.num_pages > 1 %}
-                <hr />
-            {% endif %}
+                {% if post.tags %}
+                    <p class="small">
+                    {% for tag in post.tags %}
+                        <span class="label label-default">{{ tag }}</span>
+                    {% endfor %}
+                    </p>
+                {% endif %}
+                {% if not loop.last or articles_paginator.num_pages > 1 %}
+                    <hr />
+                {% endif %}
+            </div>
         </div>
-    </div>
+    {% endif %}
 {% endfor %}
 
 {% if articles_paginator.num_pages > 1 %}

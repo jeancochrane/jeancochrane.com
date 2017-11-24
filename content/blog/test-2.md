@@ -2,6 +2,7 @@ title: Testing syntax highlighting
 summary: Highlighting courtesy of Pygments. 
 date: 2017-11-09
 tags: rock, pop, jazz
+published: true
 
 ## Testing syntax highlighting
 

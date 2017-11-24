@@ -5,6 +5,7 @@ date: 2017-11-14
 slug: machine-assisted-dossiers
 category: papers
 tags: research; knowledge systems; data architecture
+published: true
 
 
 I'm excited to announce the publication of _Machine Assisted Dossiers_, a new
