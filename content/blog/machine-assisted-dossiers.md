@@ -1,5 +1,5 @@
 title: New paper: Machine Assisted Dossiers 
-summary: Existing research tools make it difficult for teams to pursue investigations when source material is uncertain or contradictory. In a new paper written with Forest Gregg and Tim McGovern, we outline the requirements for a knowledge system that can manage ambiguity during investigations and produce useful, structured data as a byproduct. 
+summary: Requirements for a knowledge system that can manage ambiguity during investigations and produce useful, structured data as a byproduct. 
 thumbnail: /static/images/blog/machine-assisted-dossiers/new-entities.png
 date: 2017-11-14
 slug: machine-assisted-dossiers
@@ -34,9 +34,9 @@ Here's the abstract:
 >between the two.
 
 We had a lot of fun cataloguing the many layers of evidence
-that go into the collection of claims about the world. Sketching
-out some interfaces for managing that evidence was even more fun. We may have
-reinvented a few epistemological wheels, but the [Stanford Encyclopedia of
+that go into the collection of claims about the world, as well as sketching
+out some interfaces for managing that evidence. We may have
+reinvented a few epistemological wheels along the way, but the [Stanford Encyclopedia of
 Philosophy](https://plato.stanford.edu/) was an enormous help, as were our
 patient colleagues [Bob Lannon](http://boblannon.com), [Kathryn
 Lindeman](http://klindeman.com), and [Michael
