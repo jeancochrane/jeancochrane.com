@@ -16,10 +16,10 @@ communicate with each other involves encodings, too.
 Another case in point: number bases. I've struggled with number bases for as long as
 I can remember. Binary and hexadecimal in particular have always
 vexxed me, and I've relied on all sorts of kludges like color wheels to allow myself to work with
-them without really understanding what they're up to. 
+them without really understanding what they _do_. 
 
 This month, however, I had a breakthrough. I was working on some legacy
-code that my colleague had written to scrape rows from Google Sheets documents
+code that scraped rows from Google Sheets documents
 using Python and Google's old
 [API client](https://github.com/google/google-api-python-client). The sheet 
 schema had changed, and we needed to update the import script to make
@@ -169,4 +169,4 @@ in a symbolic system that machines understand: binary strings.
 
 To me, this is a foundational magic of computing. It's the insight that allows you
 to accomplish amazing and strange feats like [storing any file as an album on
-Bandcamp](). Or, if you want to, printing a T-Shirt that can rip DVDs.
+Bandcamp](). Or, if you'd like, printing a T-Shirt that can rip DVDs.

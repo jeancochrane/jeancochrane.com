@@ -1,13 +1,14 @@
 title: Process and Procedure 
-summary: As the Lisp family knows, procedures and processes are very different
-beasts. Recursion makes this distinction clear.
+summary: As Scheme knows, procedures and processes are very different beasts. Tail recursion makes this distinction clear.
 date: 2017-12-01
 category: code
 tags: recursion and iteration; lisp; scheme; abstraction and implementation
 published: false
 
+
 One of the most enlightening parts of learning a Lisp (in my case, the lovely
-research dialect [Scheme]()) has been the way that the Lisp family treats
+research dialect [Scheme](https://groups.csail.mit.edu/mac/projects/scheme/))
+has been the way that the Lisp family, and Scheme in particular, treats
 recursion. Studying recursion in Lisp has helped me develop a richer understanding
 of the distinction between process and procedure.
 
@@ -24,9 +25,11 @@ But the _process_ that the function generates, the set of instructions that a ma
 follow on execution, is not necessarily so. This is a distinction with a lot of difference,
 and it has little to do with whether or not the function "calls itself."
 
-The distinction is easier to see in Scheme, since Scheme affords more control
-over the process and has simpler execution rules than Python. Here's an
-equivalent procedure in Scheme:
+In Python, it turns out that both this function and the process it spawns will be recursive:
+that's just the way that the runtime works. But since
+Scheme is [tail-recursive](https://en.wikipedia.org/wiki/Tail_call), we can
+note an important difference in the way that the machine will follow
+our instructions. Here's an equivalent procedure in Scheme:
 
 ```scheme
 <recursive procedure>
@@ -34,14 +37,21 @@ equivalent procedure in Scheme:
 
 Stepping through the execution of the procedure reveals that its process
 maintains the same "shape" throughout: three arguments, each changing slightly,
-and an operator.
+and an operator. 
 
 ```scheme
 <iterative execution>
 ```
+Effectively, this is very similar behavior to a for-loop,
+where a counter diminishes as a state variable gets updated. Like for-loops,
+this process is _iterative_: rather than expanding on itself until it reaches
+and endpoint, it simply steps through a counter until the counter is exhausted.
+As a bonus, Scheme's tail-recursion means that we can toss the stack frame after each call,
+so we don't have to keep any data in memory other than the current values of
+the state variable at any given point in time. Nice! 
 
 For contrast, here's an implementation of the function that is recursive at the
-level of both process _and_ procedure:
+level of both process _and_ procedure: 
 
 ```scheme
 <recursive procedure>
@@ -61,8 +71,29 @@ going until you reach the first element, which is 1.
 
 [Illustration of pascal's triangle]()
 
+Since Scheme encourages recursion, writing a recursive procedure that generates
+a recursive process to calculate elements in Pascal's triangle is easy. It
+"feels" very similar to the mathematical definition of the binomial
+coefficients:
+
+```
+<math>
+```
+
+```scheme
+<pascal's triangle>
+```
+
+Following a similar logic as <procedure>, however, we can easily design
+a recursive procedure that spawns an _iterative_ process! All we need is to
+keep track of the state variables and generate a tail call.
+
+```scheme
+<pascal's iterative triangle>
+```
+
 At small scales, the distinction between recursive and iterative processes
-doesn't make much difference. I usually care more about whether the procedure is 
+doesn't make much of a difference. I usually care more about whether the procedure is 
 written in a way that will make its ideas clear to the people who have to work with it.
 But as the size of the input grows without
 bound, the nature of the process becomes much more important: does the machine
