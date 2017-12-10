@@ -46,6 +46,11 @@ h1, h2, h3, h4, h5, h6 {
   transition: all .2s ease-in-out;
 }
 
+.footnote ol,
+.footnote p {
+  font-size: 0.8em;
+}
+
 .post-thumbnail {
   margin-top: 20px;
 }

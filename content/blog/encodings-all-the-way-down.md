@@ -1,21 +1,69 @@
 title: It's Encodings All the Way Down 
-summary: Encodings define representational systems for communicating abstractions. That's why they let you do magical things, like use a haiku or a T-Shirt to rip DVDs.
+summary: Encodings define representational systems for communicating abstractions. That's why they let you do magical things, like use a haiku or a T-Shirt to decrypts DVDs.
 date: 2017-11-26
 slug: encodings-all-the-way-down
+thumbnail: /static/images/blog/encodings-all-the-way-down/decss-shirt.jpg
 category: code
 tags: abstraction and implementation; encodings; symbols 
 published: true
 
 
-Encodings are confusing. But they're also magical. Pretty much everything that
-a computer does involves encodings. Also, a lot of what we do as humans to
-communicate with each other involves encodings, too.
+Encoding is one of many simple but magical ideas that makes digital computing possible.
+Everything that a digital computer does involves an encoding. Plus, a lot of what we do as humans to
+communicate with each other involves encodings, too. I want to spend some time
+appreciating just how amazing the idea of an encoding is&mdash;even though there's
+no way I can do it the justice it deserves in one small blog post.
 
-[DVD ripping case]
+## A haiku that decrypts DVDs
 
-Another case in point: number bases. I've struggled with number bases for as long as
+Take one legendary case: DeCSS. In the 1990s, some entertainment companies used
+an encryption protocol called CSS, or "content scramble system" (no relation to
+the style sheet language)
+to prevent users from playing DVDs on unapproved hardware. It was an early and
+aggressive move toward DRM, and it proved to be a major source of frustration for
+Linux users who couldn't use approved hardware.
+
+But in 1999 Jon Lech Johansen, a sixteen-year-old from Norway, figured out how CSS worked.
+Johansen released a small C program called DeCSS that unlocked the encryption.
+One result was that a lot of Linux users could
+finally watch DVDs on their computers, and they were very grateful for Johansen's clever work.
+
+Another result was that entertainment companies lost control over critical piece of their
+copyright infrastructure, and they were very angry about Johansen's clever
+work. Johansen and his dad (because he was a minor) were arrested. Following
+pressure from the MPAA, charges were brought against Johansen in Norway, and
+the hacker magazine *2600*, among others, was sued for its involvement in
+spreading the code.
+
+In response to the aggressive legal action against DeCSS, free software
+advocates published copies of DeCSS in a variety of outrageous formats in an attempt to
+make the point that software is an encoded idea, not a product, and therefore should be
+considered protected speech. David Touretzky collected a few of the cleverest
+encodings of DeCSS in his [Gallery of CSS
+Descramblers](http://www.cs.cmu.edu/~dst/DeCSS/Gallery/): T-shirts, dramatic
+readings, mathematical proofs, and even a 456-stanza haiku.
+
+The point was simple and clear: computers run on ideas&mdash;ideas that can
+be encoded in so many different ways that attempting to restrict their spread
+is both ethically misguided and practically impossible.[^coleman]
+
+[![A picture of a T-Shirt with the C implementation of DeCSS written
+on it.](/static/images/blog/encodings-all-the-way-down/decss-shirt.jpg)
+](http://web.archive.org/web/20040310112358/http://www.copyleft.net:80/item.phtml?dynamic=1&referer=%2Fitem.phtml%3Fdynamic%3D1%26page%3Dproduct_276_back.phtml&page=product_271_front.phtml)
+
+<p class="text-center small">
+    <em>DeCSS, encoded in T-Shirt form by the old
+    <a href="http://web.archive.org/web/20040310112358/http://www.copyleft.net:80/item.phtml?dynamic=1&referer=%2Fitem.phtml%3Fdynamic%3D1%26page%3Dproduct_276_back.phtml&page=product_271_front.phtml">CopyLeft shop</a>.
+    The image is from an earlier Internet age, when bandwidth was scarce and
+    monitors were crappy; my apologies for its small size.</em>
+</p>
+
+## A function that turns words into numbers
+
+Another case that demonstrates the magic of encoding: number bases.
+I've struggled with number bases for as long as
 I can remember. Binary and hexadecimal in particular have always
-vexxed me, and I've relied on all sorts of kludges like color wheels to allow myself to work with
+vexed me, and I've relied on all sorts of kludges like color wheels to allow myself to work with
 them without really understanding what they _do_. 
 
 This month, however, I had a breakthrough. I was working on some legacy
@@ -70,11 +118,13 @@ Recall that in the Google Sheets web app, as in most spreadsheet programs,
 column indexes are displayed alphabetically. Column 1 is called 'A', column 2
 is 'B', column 27 is 'AA', and so on.
 
-[Image of the web app here]
+![A picture of a spreadsheet with alphabetic columns. The columns are 'A', 'B',
+'Z', 'AF', 'AL', and
+'AM'.](/static/images/blog/encodings-all-the-way-down/alphabetic-columns.png)
 
 For a small sheet, this wouldn't have been a problem: just count the columns to 
 find the corresponding numerical index. Except our sheets were huge!
-The biggest sheet we import has [**number of columns**] columns. 
+The biggest sheet we import has 113 columns, and there are three sheets total. 
 
 Needless to say, adjusting the schema in the importer was going to be a
 pain. I spent a few frustrated minutes trying to translate the
@@ -113,9 +163,8 @@ def col(alph):
     # Reverse the string and enforce lowercase
     alph = alph[::-1].lower()
 
-    # Treat alphabetic column names like base-26 numerics.
-    # Start at -1, since we want the result to be 0-indexed.
-    total = -1
+    # Treat alphabetic column names like base-26 numerics
+    total = 0 
     for idx, letter in enumerate(alph):
         place = (26 ** idx)
         val = string.ascii_lowercase.index(letter) + 1
@@ -171,3 +220,8 @@ in a symbolic system that machines understand: binary strings.
 To me, this is a foundational magic of computing. It's the insight that allows you
 to accomplish amazing and strange feats like [storing any file as an album on
 Bandcamp](). Or, if you'd like, printing a T-Shirt that can rip DVDs.
+
+[^coleman]: For detailed history of the DeCSS case in the context of the
+free software movement, see E. Gabriella Coleman's *[Coding Freedom: The Ethics
+and Aesthetics of Hacking](https://press.princeton.edu/titles/9883.html)*
+(Princeton: Princeton University Press, 2012), pages 170-9. [(PDF)](https://gabriellacoleman.org/Coleman-Coding-Freedom.pdf)
