@@ -106,6 +106,16 @@ p {
   margin-bottom: 20px;
 }
 
+.post-body ol,
+.post-body ul {
+  font-size: 1em;
+}
+
+.post-body li {
+  font-size: 1.4em;
+  margin-bottom: 15px;
+}
+
 .content-body p {
   margin: 0 0 20px;
 }

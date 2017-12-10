@@ -6,28 +6,33 @@ tags: SQL; declarative programming
 published: true
 
 
-> Why's everything so expensive?
+> **Why's everything so expensive?**
 > 
-> - Frances Quinlan, ["Tibetan Pop
-> Stars"](https://hopalong.bandcamp.com/track/tibetan-pop-stars)
+> *Frances Quinlan, ["Tibetan Pop
+> Stars"](https://hopalong.bandcamp.com/track/tibetan-pop-stars)*
 
 This week I learned how to read Postgres' query planner, which means I
 got to play _The Price Is Right_ with SQL queries.
 (I grew up on [_Antiques Roadshow_](https://en.wikipedia.org/wiki/Antiques_Roadshow),
 but it's not nearly as expressive of an analogy.) The query planner is a fun
-tool, and it nicely illustrates some of the costs and benefits of the
+tool that tells you how expensive a given SQL expression will be, and it nicely
+illustrates some of the costs and benefits of the
 declarative programming paradigm that SQL takes part in.
 
 First, some important background: Postgres needs a query planner because SQL is
-a declarative language. Unlike in *imperative* languages like Python and
+a *declarative* language. Unlike in *imperative* languages like Python and
 Scheme, when you run a SQL expression in a database engine like Postgres, you don't give your machine instructions on
-how to get or change the information that you care about; instead, you *ask* for
+how to get or change the information that you care about; instead, you ask for
 that information, with a statement like `SELECT id FROM products JOIN suppliers USING(id)`,
 and the database engine figures out how to get it for you. Since you're *declaring* what you would like to happen,
-instead of providing an *imperative* for how it should be done, we call SQL a "declarative"
-language. (The line between "declarative" and a "procedural" programming is
-fuzzy, of course. Most database engines provide ways of using SQL to build iterative constructs
-like for-loops, for example, and many of Python's high-level abstractions, like its dynamic
+instead of providing an *imperative* for how it should be done, SQL is a "declarative"
+language.
+
+(The line between "declarative" and a "procedural" programming is
+fuzzy, of course. Many implementations of SQL support imperative structures like
+[control
+flow](https://www.postgresql.org/docs/9.6/static/plpgsql-control-structures.html),
+for example, and many of Python's high-level abstractions, like its dynamic
 memory allocation for lists, are so far from the machine implementation
 that you could reasonably argue the model is more "declarative.")
 
@@ -36,15 +41,19 @@ who have to write the database engines that we use. The declarative paradigm
 means that Postgres has to somehow figure out how to execute expressions on its
 own.
 
-Enter the query planner: Postgres' clever piece of software
-that figures out how to get what you want from your database. Before running any
+Enter the **query planner**: Postgres' clever piece of software
+that figures out how to get what you want from your database.
+
+Before running any
 given SQL expression, Postgres uses its query planner to determine the most
-efficient way of doing what you want it to do. Best of all, the query planner
-is available to us as end users: prepend any query with the keyword `EXPLAIN`
+efficient way of doing what you want it to do. The query planner is a tool
+internal to Postgres, but it's also available to us as end users. Prepend any query with the keyword `EXPLAIN`
 (with the optional keyword `ANALYZE`) and Postgres will show you what it thinks
 is the best way to execute your expression. `EXPLAIN` shows an execution tree
 mapping out Postgres' plan for the expression; `EXPLAIN ANALYZE` will actually
 *execute* that plan, reporting back the time and memory costs that it incurs.
+
+## A dummy example: grouping fruits
 
 To see the query planner in action, take a simplified version of one recent
 puzzle that came up in our office. Say you're trying to group fruits
@@ -63,28 +72,85 @@ Here are simple tables for each relation:
 
 ### `fruit`
 
-| id | name | 
-| -- | -- |
-| 1 | eggplant |
-| 2 | strawberry |
-| 4 | grape |
-| 5 | pineapple |
+<div class="row">
+    <div class="col-xs-12 col-sm-6">
+        <table class="table table-responsive table-bordered">
+            <thead>
+                <tr>
+                    <th>id</th>
+                    <th>name</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>1</td>
+                    <td>eggplant</td>
+                </tr>
+                <tr>
+                    <td>2</td>
+                    <td>strawberry</td>
+                </tr>
+                <tr>
+                    <td>4</td>
+                    <td>grape</td>
+                </tr>
+                <tr>
+                    <td>5</td>
+                    <td>pineapple</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
 
 *Index on `record_id`*
 
 ### `category`
 
-| id | category | current |
-| --------- | ----- | ------- |
-| 1 | berry | t |
-| 2 | aggregate fruit | t |
-| 4 | berry | t | 
-| 1 | vegetable | f |
-| 2 | berry | f |
+<div class="row">
+    <div class="col-xs-12 col-sm-6">
+        <table class="table table-responsive table-bordered">
+            <thead>
+                <tr>
+                    <th>id</th>
+                    <th>category</th>
+                    <th>current</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>1</td>
+                    <td>berry</td>
+                    <td>true</td>
+                </tr>
+                <tr>
+                    <td>2</td>
+                    <td>aggregate fruit</td>
+                    <td>true</td>
+                </tr>
+                <tr>
+                    <td>4</td>
+                    <td>berry</td>
+                    <td>true</td>
+                </tr>
+                <tr>
+                    <td>1</td>
+                    <td>vegetable</td>
+                    <td>false</td>
+                </tr>
+                <tr>
+                    <td>2</td>
+                    <td>berry</td>
+                    <td>false</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
 
 *Index on (`record_id`, `current is TRUE`)*
 
-You can see how your guess history gets logged in the table above: noting that eggplants
+You can see how your guess history gets logged in `category` above: noting that eggplants
 are (botanically speaking) berries, while strawberries are [_aggregate
 fruits_](https://en.wikipedia.org/wiki/Aggregate_fruit),
 you've updated the table and marked your previous guesses with the flag
@@ -115,7 +181,7 @@ clever. We used an outer join on `id` in an attempt to expose the NULLS in
 `category`:
 
 ```sql
-SELECT 1 
+SELECT *
 FROM fruit
 LEFT JOIN (
     SELECT id
@@ -126,18 +192,34 @@ USING (id)
 WHERE current_category.id IS NULL 
 ```
 
-On our two sample tables, this query would return a join table:
+On our two sample tables, this query would return the row that had
+a representation in `fruit`, but not in `category`:
 
-```
-| id | name | category | current | 
-| -- | -- | -- | -- |
-| 1 | eggplant | berry | t | 
-| 2 | strawberry | aggregate fruit | t |
-| 4 | grape | berry | t |
-| 5 | pineapple | | |
+<div class="row">
+    <div class="col-xs-12 col-sm-6">
+        <table class="table table-responsive table-bordered">
+            <thead>
+                <tr>
+                    <th>id</th>
+                    <th>name</th>
+                    <th>category</th>
+                    <th>current</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>5</td>
+                    <td>pineapple</td>
+                    <td></td>
+                    <td></td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
 
 Then, we can wrap the query all in an `EXISTS` clause, so the query would return as soon
-as it found a tuple that was represented in `fruit` but not `current_category`
+as it found this row: 
 
 ```sql
 SELECT EXISTS(
@@ -153,10 +235,12 @@ SELECT EXISTS(
 )
 ```
 
-In the example above, the tuple encompassing `pineapple` will lead the `EXISTS` clause to
+In the example above, the row for `pineapple` will lead the `EXISTS` clause to
 return `TRUE`: there are gaps in the overlap after all! `SELECT EXISTS` doesn't
 really help in the absolute worst case, when the two tables overlap completely.
 But in all other cases, we reasoned that it would improve efficiency.
+
+## Reading the query planner
 
 Unfortunately, here's where the declarative paradigm came back to bite us:
 this query wasn't executing at all the way we had hoped. In fact, on certain tables,
@@ -172,8 +256,11 @@ EXPLAIN SELECT EXISTS(
     ...
 ```
 
-Here's what the query planner decided was the best course of action to
-execute our clever `EXISTS` query:
+In response to an `EXPLAIN` command, Postgres prints a tree representing each
+step that it plans to
+take in order to execute the expression. In our case, here's what the tree
+looked like:
+
 
 ```
                                   QUERY PLAN
@@ -189,18 +276,22 @@ execute our clever `EXISTS` query:
                        Filter: current
 ```
 
-Not bad&mdash;but also, not great. Starting at the bottom of the tree (`Seq
+Starting at the bottom of the tree (`Seq
 scan on category`), Postgres says it's going to make a hash
-map of `category` by scanning the whole table where `current IS TRUE`, then compare that map to an index scan on `fruit`. (For a good
-explanation of why Postgres would use a hash map to perform a join, see Pat
-Shaughnessy's take in ["A Look at How Postgres Executes a Tiny
-Join."](http://patshaughnessy.net/2015/11/24/a-look-at-how-postgres-executes-a-tiny-join)
+map of `category` by scanning the whole table where `current IS TRUE`, then
+compare that map to an index scan on `fruit`.[^hash-map] Each step reports two guesses
+at the `cost` of the query: the startup cost, and the total cost. In this case,
+Postgres guesses the cost will be `229.19..229.20` disk units per page,
+so it'll take about the same amount of time to return the first row as it will
+to return the whole table.
+
+Not bad&mdash;but also, not great.
 On tables with hundreds of millions of records, this query was
 noticeably slow. We'd have to figure out a smarter approach.
 
 (OK, so maybe we *weren't* actually categorizing fruits.)
 
-What if we returned a count of tuples where `current_category.id is NULL`,
+What if we returned a count of rows where `current_category.id is NULL`,
 instead of using `EXISTS`? Would the count improve anything?
 
 ```sql
@@ -231,8 +322,10 @@ The query planner reported that this would cost us... the same amount:
 ```
 
 This makes some sense: according to the query planner, the expensive part is
-the join. Everything else that happens on top of that join matters much less. We can
-confirm this is true by trying a `BOOL_OR` variant on the outer join approach: 
+the join (the first branch of the tree, starting with `-> Hash Anti Join`).
+Everything else that happens on top of that join matters much less. We can
+confirm this is true by trying a [`BOOL_OR`](https://www.postgresql.org/docs/9.6/static/functions-aggregate.html)
+variant on the outer join approach: 
 
 ```sql
 SELECT BOOL_OR(TRUE)
@@ -242,7 +335,7 @@ LEFT JOIN (
     ...
 ```
 
-The query plan reports an identical cost:
+Again, the query planner reports an identical cost:
 
 ```
                                   QUERY PLAN
@@ -272,7 +365,7 @@ WHERE NOT EXISTS(
 )
 ```
 
-Unfortunately, the query plan revealed that this too required a join, in spite
+Unfortunately, the query plan revealed that this query also required a join, in spite
 of its different syntax:
 
 
@@ -288,9 +381,13 @@ of its different syntax:
                Filter: current
 ```
 
+There's some sense to this. Finding the overlap `WHERE fruit.id = category.id`
+is basically a join, even if we don't use the `JOIN` keyword. Correspondingly,
+the total cost is the same, although the startup cost is a little bit faster.
+
 Our breakthrough came when we realized that we didn't actually have to know the
 contents of the tables. Since every fruit can have at most one current
-category, we could find the overlap by counting the records in each table:
+category, we could find the overlap by counting the rows in each table:
 
 ```sql
 WITH
@@ -333,8 +430,8 @@ While it might not look like much, we've knocked off 15% of the cost! At scale,
 that's a nice improvement.
 
 Now, if we had confidence that the sequence of IDs used by the two tables was
-continuous (i.e. that there were no gaps, like how we're missing a tuple for
-`3` that we would expect), we could get *even more efficient* by using the
+continuous (i.e. that there were no gaps, like how we're missing a row that we
+would expect for the ID `3`), we could get *even more efficient* by using the
 `MAX` aggregate function instead of an expensive `COUNT`:
 
 ```sql
@@ -379,6 +476,10 @@ Our game of *The Price Is Right: SQL Edition* nicely illustrates a hidden conund
 machine is figuring out its own clever ways of retrieving information, we as
 users can't rely on our queries being interpreted in the ways that make the
 most intuitive sense to us. In our case, a join&mdash;which
-felt to us like the hip, SQL-ish way of doing what we wanted&mdash;wound up
+felt to us like the most "relational" way of doing what we wanted&mdash;wound up
 being *more expensive* than a naive, indexed table count. Luckily, the query planner is
 always on hand to `EXPLAIN` it to us.
+
+[^hash-map]: For a good explanation of why Postgres would use a hash map to perform a join, see Pat
+Shaughnessy's take in ["A Look at How Postgres Executes a Tiny
+Join."](http://patshaughnessy.net/2015/11/24/a-look-at-how-postgres-executes-a-tiny-join)

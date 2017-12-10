@@ -4,7 +4,7 @@ date: 2017-11-26
 slug: encodings-all-the-way-down
 category: code
 tags: abstraction and implementation; encodings; symbols 
-published: false
+published: true
 
 
 Encodings are confusing. But they're also magical. Pretty much everything that
@@ -77,7 +77,7 @@ find the corresponding numerical index. Except our sheets were huge!
 The biggest sheet we import has [**number of columns**] columns. 
 
 Needless to say, adjusting the schema in the importer was going to be a
-pain in the ass. I spent a few frustrated minutes trying to translate the
+pain. I spent a few frustrated minutes trying to translate the
 alphabetic columns to numerical indices, making sure the whole time to validate
 that I was assigning the correct data type to each field. It was slow going,
 and it was easy to mess up.
@@ -155,9 +155,10 @@ so the translation to and from alphabetic columns is different:
 One key piece for me to understand was that there is no essential representation
 of the set of all integers: base-10, binary, hexadecimal, and the alphabet are
 all valid ways of communicating the abstraction that is "the integers." The
-same can be said for the alphabet. Transliteration systems like Pinyin, for
+same can be said for the alphabet. Transliteration systems like
+[Pinyin](https://en.wikipedia.org/wiki/Pinyin), for
 instance, help capture the meaning of a text when moving from one encoding
-(Kanji) to another (the Roman alphabet).
+(hànzì) to another (the Roman alphabet).
 
 So much of computing relies on this fundamental insight. Relatively simple ideas like
 file types, converters, and compression obviously implicate encodings, since

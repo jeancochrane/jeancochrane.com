@@ -45,7 +45,7 @@ GITHUB = 'https://github.com/jeancochrane'
 TWITTER = 'https://twitter.com/jean_cochrane'
 
 # Pagination
-DEFAULT_PAGINATION = 5  # Max articles per page
+DEFAULT_PAGINATION = 10  # Max articles per page
 PAGINATION_PATTERNS = (
     (1, '{base_name}/', '{base_name}/index.html'),
     (2, '{base_name}/page/{number}/', '{base_name}/page/{number}/index.html'),
