@@ -1,6 +1,6 @@
 title: It's Encodings All the Way Down 
-summary: Encodings define representational systems for communicating abstractions. That's why they let you do magical things, like use a haiku or a T-Shirt to decrypts DVDs.
-date: 2017-11-26
+summary: Encodings define representational systems for communicating abstractions. That's why they let you do magical things, like use a haiku, or a T-Shirt, to decrypt DVDs.
+date: 2017-12-12
 slug: encodings-all-the-way-down
 thumbnail: /static/images/blog/encodings-all-the-way-down/decss-shirt.jpg
 category: code
@@ -16,19 +16,19 @@ no way I can do it the justice it deserves in one small blog post.
 
 ## A haiku that decrypts DVDs
 
-Take one legendary case: DeCSS. In the 1990s, some entertainment companies used
+In the 1990s, some entertainment companies used
 an encryption protocol called CSS, or "content scramble system" (no relation to
 the style sheet language)
 to prevent users from playing DVDs on unapproved hardware. It was an early and
 aggressive move toward DRM, and it proved to be a major source of frustration for
 Linux users who couldn't use approved hardware.
 
-But in 1999 Jon Lech Johansen, a sixteen-year-old from Norway, figured out how CSS worked.
+But in 1999 a sixteen-year-old from Norway named Jon Lech Johansen figured out how CSS worked.
 Johansen released a small C program called DeCSS that unlocked the encryption.
 One result was that a lot of Linux users could
 finally watch DVDs on their computers, and they were very grateful for Johansen's clever work.
 
-Another result was that entertainment companies lost control over critical piece of their
+Another result was that entertainment companies lost control over a critical piece of their
 copyright infrastructure, and they were very angry about Johansen's clever
 work. Johansen and his dad (because he was a minor) were arrested. Following
 pressure from the MPAA, charges were brought against Johansen in Norway, and
