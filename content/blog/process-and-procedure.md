@@ -1,6 +1,6 @@
 title: Process and Procedure 
 summary: As Scheme knows, procedures and processes are very different beasts. Tail recursion makes this distinction clear.
-date: 2017-12-01
+date: 2017-11-26
 category: code
 tags: recursion and iteration; lisp; scheme; abstraction and implementation
 published: true 
@@ -299,29 +299,59 @@ triangle is a snap. Instead of recursing back down the entire triangle to
 compute any given value, an iterative process should instead start at the
 base of the triangle and work its way up.
 
+First, we need a procedure that can take an existing row of coefficients
+and compute the next row in the sequence. Since each element is comprised of
+two corresponding elements in the preceding row, all we have to do is treat
+each row as if it starts and ends with a 0 element and sum successive elements
+as we iterate over the row.
+
+```scheme
+(define (next-row curr-coefs row)
+  (cond ((null? (cdr row)) ; End of the list: make sure to append last elem
+           (append curr-coefs (list (car row))))
+        ((null? curr-coefs) ; Start of the list: make sure to append first elem
+           (next-row (list (car row)) row))
+        (else ; Sum two successive elements and move down the list
+           (next-row (append curr-coefs (list (+ (car row) (cadr row))))
+                     (cdr row)))))
+```
+
+We'll also need a procedure to convert lists to strings, so that we can print
+the results to the console. To avoid printing the leading and trailing zeroes,
+which don't actually exist in the triangle, chop the start and the end off of
+any given row.
+
+```scheme
+(define (list-to-string str lst)
+  (cond ((null? (cdr lst)) str)
+        ((string=? str "") (list-to-string (string (cadr lst)) (cdr (cdr lst))))
+        (else (list-to-string (string-append str " " (string (car lst))) (cdr lst)))))
+```
+
+Finally, we need a procedure to successively build up rows. The key to doing
+this iteratively is to recognize that we actually need two state variables:
+one to hold the current row as a list (`lst`) and one to hold the string that
+collates all of the lists for printing (`str`).
+
+```scheme
+(define (build-triangle str lst n count)
+  (let ((next-str (string-append str "\n" (list-to-string "" (next-row (list) lst)))))
+    (if (= count n)
+        next-str
+        (build-triangle next-str (next-row (list) lst) n (+ count 1)))))
+```
+
+Putting it all together with initial values:
+
+
 ```scheme
 (define (pascal-iter n)
   ;;; Compute and display Pascal's triangle up to row `n` -- iteratively!
-  (define (list-to-string str lst)
-    (cond ((null? lst) str)
-          ((string=? str "") (list-to-string (string (car lst)) (cdr lst)))
-          (else (list-to-string (string-append str " " (string (car lst))) (cdr lst)))))
-  (define (next-row curr-coefs row)
-    (cond ((null? (cdr row)) ; End of the list: make sure to append last elem
-             (append curr-coefs (list (car row))))
-          ((null? curr-coefs) ; Start of the list: make sure to append first elem
-             (next-row (list (car row)) row))
-          (else
-             (next-row (append curr-coefs (list (+ (car row) (cadr row))))
-                       (cdr row)))))
-  (define (build-triangle str lst n count)
-    (let ((next-str (string-append str "\n" (list-to-string "" (next-row (list) lst)))))
-      (if (= count n)
-          next-str
-          (build-triangle next-str (next-row (list) lst) n (+ count 1)))))
   (let ((init-value (list 0 1 0)))
     (display (build-triangle (list-to-string "" init-value) init-value n 1))))
+```
 
+```
 (pascal-iter 5)
 1
 1 1
@@ -330,7 +360,7 @@ base of the triangle and work its way up.
 1 4 6 4 1
 ```
 
-## Conclusion
+## Thinking like the machine 
 
 At small scales, the distinction between recursive and iterative processes
 doesn't make much of a difference. I usually care more about whether a procedure is 
@@ -340,12 +370,13 @@ bound, the nature of the process that a procedure spawns becomes much more impor
 have to store ever-expanding function calls for every step of the procedure, or
 can it get away with only storing three arguments and an operator?
 
-As a functional, tail-call optimized language, Scheme encourages a sublter kind
+As a functional, tail-call optimized language, Scheme encourages a more
+sophisticate treatment 
 of recursion than Python. Recursive procedures in Scheme can spawn processes that are
 either iterative or recursive, depending on the context, allowing the
 programmer
-finer-grained control over the machine execution&mdash;if they know what
-they're doing.
+finer-grained control over the machine execution&mdash;if they can think like
+the machine.
 
 -----
 
