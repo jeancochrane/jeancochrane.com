@@ -197,36 +197,137 @@ procedure.
 
 ## Fun with recursion and iteration in Scheme
 
-In Scheme, recursive procedures are easy to re-implement as iterative
-processes.
+Thanks to tail-call optimization, recursive procedures are easy to re-implement as iterative
+processes in Scheme. Since `add` was a toy example, let's take on a more
+challenging algorithm: Pascal's triangle.
 
-Pascal's triangle (also known as the binomial coefficients) is a fun example.
-It's a classic recursive algorithm:
+Pascal's triangle&mdash;also known as the binomial coefficients&mdash;
+is a classic recursive algorithm:
 to find any given element in the triangle, sum the two elements that precede it. Keep
 going until you reach the first element, which is 1.
 
-[Illustration of pascal's triangle]()
+```
+    1
+   1 1
+  1 2 1
+ 1 3 3 1
+1 4 6 4 1
+```
+<p><em>Pascal's triangle, computed up to </em>`n = 5`.</p>
 
 Writing a recursive procedure that generates
-a recursive process to calculate elements in Pascal's triangle is easy. It
-"feels" very similar to the mathematical definition of the binomial
-coefficients:
+a recursive process to calculate elements in Pascal's triangle is relatively
+simple. There are four key insights:
 
-```
-<math>
-```
+1. Every element in the triangle has a row position (`row`)
+and a column position (`col`)
+2. The value of any given element in the triangle can be computed by summing
+   together the elements in the preceding row that have column positions `col - 1` and `col`
+3. Elements at the edge and peak of the triangle, where `row = col`, always have a value
+   of 1 (the base case of the algorithm)
+4. All elements with row/column positions that would seem to lie "outside" the
+   triangle can be treated as if they have the value 0
 
-```scheme
-<pascal's triangle>
-```
-
-Following a similar logic as `add_iter`, however, we can easily design
-a recursive procedure that spawns an _iterative_ process to generate Pascal's
-triangle. All we need to do is to
-keep track of the state variables and generate a tail call.
+Based on these insights, we can write a procedure that uses a recursive process
+to calculate the value for any given `row, col` position:
 
 ```scheme
-<pascal's iterative triangle>
+(define (pascal row col)
+  ;;; Calculate a value in Pascal's triangle for a given row and col
+  (cond ((= row col) 1)  ; Edges of the triangle
+        ((or (< col 1) (> col row)) 0)  ; Ignore values beyond triangle bounds
+        (else (+ (pascal (- row 1) (- col 1))  ; Preceding value on the left
+                 (pascal (- row 1) col)))))    ; Preceding value on the right
+```
+
+Then, we can use this procedure to calculate the coefficients for any given row
+by iterating over the column positions in that row:
+
+```scheme
+(define (binom-coef n)
+  ;;; Display the binomial coefficients for `n`
+  (define (pascal-row row col)
+      (if (= row col)
+          (write-to-string (pascal row col))
+          (string-append (write-to-string (pascal row col))
+                          " "
+                          (pascal-row row (+ col 1)))))
+  (pascal-row n 1))
+```
+
+A similar logic applies for the triangle itself, which we can build from the
+ground up.
+
+```scheme
+(define (build-triangle n count)
+  (if (= count n)
+      (binom-coef count)
+      (string-append (binom-coef count)
+                     "\n"
+                     (build-triangle n (+ count 1)))))
+```
+
+Putting it all together:
+
+```scheme
+(define (pascals-triangle n)
+  (display (build-triangle n 1)))
+
+(pascals-triangle 5)
+1
+1 1
+1 2 1
+1 3 3 1
+1 4 6 4 1
+```
+
+There are two reasons that this solution is inefficient:
+
+1. The procedure that computes the value for any given position, `pascal`,
+   spawns a recursive process
+
+2. Since `pascal` recurses the entire triangle every time it computes a value,
+   the procedure winds up doing a bunch of redundant work
+
+What if we used an iterative process to improve on both of these weaknesses? 
+
+## Iterative Pascal
+
+Following a similar logic as `add_iter`, designing
+a recursive procedure that spawns an iterative process to generate Pascal's
+triangle is a snap. Instead of recursing back down the entire triangle to
+compute any given value, an iterative process should instead start at the
+base of the triangle and work its way up.
+
+```scheme
+(define (pascal-iter n)
+  ;;; Compute and display Pascal's triangle up to row `n` -- iteratively!
+  (define (list-to-string str lst)
+    (cond ((null? lst) str)
+          ((string=? str "") (list-to-string (string (car lst)) (cdr lst)))
+          (else (list-to-string (string-append str " " (string (car lst))) (cdr lst)))))
+  (define (next-row curr-coefs row)
+    (cond ((null? (cdr row)) ; End of the list: make sure to append last elem
+             (append curr-coefs (list (car row))))
+          ((null? curr-coefs) ; Start of the list: make sure to append first elem
+             (next-row (list (car row)) row))
+          (else
+             (next-row (append curr-coefs (list (+ (car row) (cadr row))))
+                       (cdr row)))))
+  (define (build-triangle str lst n count)
+    (let ((next-str (string-append str "\n" (list-to-string "" (next-row (list) lst)))))
+      (if (= count n)
+          next-str
+          (build-triangle next-str (next-row (list) lst) n (+ count 1)))))
+  (let ((init-value (list 0 1 0)))
+    (display (build-triangle (list-to-string "" init-value) init-value n 1))))
+
+(pascal-iter 5)
+1
+1 1
+1 2 1
+1 3 3 1
+1 4 6 4 1
 ```
 
 ## Conclusion
