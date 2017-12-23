@@ -159,34 +159,99 @@ have made more sense.
 ## Out with the stack: tail-call optimization in Scheme
 
 Unlike Python, Scheme doesn't hang on to the outer frames of the stack when it
-executes a tail-recursive function. Instead, Scheme is _tail-call optimized_: it
+executes a tail-recursive function. Instead, Scheme is _tail-call
+optimized_: the interpreter 
 figures out when it can afford to toss unnecessary stack frames in
 tail-recursive functions. Because tail
 calls are optimized in Scheme, the interpreter can execute iterative processes
 from recursive procedures.
 
-Take an equivalent procedure to `add_iter`, implemented in Scheme:
+Take an equivalent procedure to `add_iter`, implemented in Scheme. Using the
+built-in procedure `debug`, we can inspect the stack interactively at the
+moment when the interpreter reaches the base case:
 
 ```scheme
 (define (add-iter a b)
   ;; Sum `a` and `b`.
   (if (= b 0)
-      a
+      (debug) 
       (add-iter (+ a 1) (- b 1))))
 ```
 
-Stepping through the execution of the procedure reveals that its process
-maintains the same "shape" throughout: three arguments, each changing slightly,
-and an operator. 
+Here's the output:
 
 ```
-(add 1 5)
-(add 2 4)
-(add 3 3)
-(add 4 2)
-(add 5 1)
-(add 6 0)
-6
+1 ]=> (add-iter 1 5)
+
+There are 4 subproblems on the stack.
+
+Subproblem level: 0 (this is the lowest subproblem level)
+Compiled code expression unknown
+#[compiled-return-address 13 ("rep" #x2f) #xd8 #x247d3f8]
+There is no current environment.
+There is no execution history for this subproblem.
+You are now in the debugger.  Type q to quit, ? for commands.
+```
+
+The interpreter claims that there are 4 problems on the stack. We can use the
+command `H` to print a summary of the problems:
+
+```
+2 debug> H
+SL#  Procedure-name          Expression
+
+0                            ;compiled code
+1                            ;compiled code
+2                            ;compiled code
+3                            ;compiled code
+```
+
+Whatever the interpreter's doing, it's not hanging onto calls to `add-iter`.
+
+For contrast, we can run a version of the procedure without a tail call and see
+what it prints:
+
+```scheme
+(define (add-rec a b)
+  ;; Sum `a` and `b`.
+  (if (= b 0)
+      (debug)
+      (+ 1 (add-rec a (- b 1)))))
+```
+
+```
+1 ]=> (add-rec 1 5)
+
+There are 9 subproblems on the stack.
+
+Subproblem level: 0 (this is the lowest subproblem level)
+Expression (from stack):
+    (+ 1 ###)
+ subproblem being executed (marked by ###):
+    (add-rec a (- b 1))
+Environment created by the procedure: ADD-REC
+
+ applied to: (1 1)
+The execution history for this subproblem contains 3 reductions.
+You are now in the debugger.  Type q to quit, ? for commands.
+```
+
+Already, we can see that the interpreter is holding onto 9 procedures on the
+stack. We can confirm that these are calls to `add-rec` by printing the
+summary:
+
+2 debug> H
+SL#  Procedure-name          Expression
+
+0    add-rec                 (+ 1 (add-rec a (- b 1)))
+1    add-rec                 (+ 1 (add-rec a (- b 1)))
+2    add-rec                 (+ 1 (add-rec a (- b 1)))
+3    add-rec                 (+ 1 (add-rec a (- b 1)))
+4    add-rec                 (+ 1 (add-rec a (- b 1)))
+5                            ;compiled code
+6                            ;compiled code
+7                            ;compiled code
+8                            ;compiled code
 ```
 
 With optimized tail calls, the Scheme interpreter doesn't have to keep any extra
@@ -360,7 +425,7 @@ Putting it all together with initial values:
 1 4 6 4 1
 ```
 
-## Thinking like the machine 
+## Thinking like the interpreter
 
 At small scales, the distinction between recursive and iterative processes
 doesn't make much of a difference. I usually care more about whether a procedure is 
