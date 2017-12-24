@@ -1,5 +1,5 @@
-title: The Price Is Right: PostgreSQL Edition
-summary: The costs and benefits of declarative programming.
+title: The Price Is Right: SQL Edition
+summary: The PostgreSQL query planner makes clear the costs and benefits of declarative programming.
 date: 2017-12-04
 category: code
 slug: price-is-right
@@ -15,34 +15,25 @@ published: true
 A hidden gem of the PostgreSQL database system is its **query planner**, which
 you can use to play _The Price Is Right_ with SQL
 expressions.[^antiques-roadshow]
-the query planner is a fun
-tool that tells you how expensive a given SQL expression will be, and it nicely
+By estimating how expensive a given SQL expression will be, the query planner nicely
 illustrates some of the costs and benefits of the
 declarative programming paradigm that SQL takes part in.
 
 First, some important background: Postgres needs a query planner because SQL is
-a *declarative* language. Unlike in *imperative* languages like Python and
-Scheme, when you run a SQL expression in a database engine like Postgres, you don't give your machine instructions on
-how to get or change the information that you care about; instead, you ask for
-that information, with a statement like `SELECT id FROM products JOIN suppliers USING(id)`,
+a *declarative* language. Unlike in *imperative* languages like Python,
+when you run a SQL expression in a database engine like Postgres, you don't give your machine instructions on
+how to get or change the information that you care about; instead, you describe
+the information you want with a statement like `SELECT id FROM products JOIN suppliers USING(id)`
 and the database engine figures out how to get it for you. Since you're *declaring* what you would like to happen,
 instead of providing an *imperative* for how it should be done, SQL is a "declarative"
-language.
+language.[^declarative-programming]
 
-(The line between "declarative" and a "procedural" programming is
-fuzzy, of course. Many implementations of SQL support imperative structures like
-[control
-flow](https://www.postgresql.org/docs/9.6/static/plpgsql-control-structures.html),
-for example, and many of Python's high-level abstractions, like its dynamic
-memory allocation for lists, are so far from the machine implementation
-that you could reasonably argue the model is more "declarative.")
-
-Declarative programming is really fun as a user, but it poses a conundrum for the people
+Declarative programming is really fun for the user, but it poses a conundrum for the people
 who have to write the database engines that we use. The declarative paradigm
 means that Postgres has to somehow figure out how to execute expressions on its
 own.
 
-Enter the **query planner**: Postgres' clever piece of software
+Enter the query planner: Postgres' clever piece of software
 that figures out how to get what you want from your database.
 
 Before running any
@@ -482,7 +473,12 @@ being *more expensive* than a naive, indexed table count. Luckily, the query pla
 always on hand to `EXPLAIN` it to us.
 
 [^antiques-roadshow]: I grew up on [_Antiques Roadshow_](https://en.wikipedia.org/wiki/Antiques_Roadshow),
-but it's not nearly as expressive of an analogy.)
+but it's not nearly as expressive of an analogy.
+
+[^declarative-programming]: The line between "declarative" and a "procedural" programming is
+fuzzy, of course, and definitions vary. See the [Wikipedia page for declarative
+programming](https://en.wikipedia.org/wiki/Declarative_programming) for an
+overview of different approaches to a definition.
 
 [^hash-map]: For a good explanation of why Postgres would use a hash map to perform a join, see Pat
 Shaughnessy's take in ["A Look at How Postgres Executes a Tiny
