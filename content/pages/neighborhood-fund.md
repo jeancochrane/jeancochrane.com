@@ -19,12 +19,9 @@ website for the Fund in **under two weeks**. On the Neighborhood Opportunity
 Fund website, users can search for their property, see if they qualify, and
 apply for funding all at once.
 
-[![About the Fund](/static/images/work/neighborhood-fund/nof-about.png)
-](https://neighborhoodopportunityfund.com/#about)
+![About the Fund](/static/images/work/neighborhood-fund/nof-about.png)
 
-[![Eligible zones](/static/images/work/neighborhood-fund/nof-eligibility.png)
-](https://neighborhoodopportunityfund.com/#browse)
+![Eligible zones](/static/images/work/neighborhood-fund/nof-eligibility.png)
 
-[![Search an address to see if it
+![Search an address to see if it
 qualifies](/static/images/work/neighborhood-fund/nof-search.png)
-](https://neighborhoodopportunityfund.com/apply/#step-1)

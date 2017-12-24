@@ -21,17 +21,17 @@ Smith-Nuevelle](https://kalil.fyi/), I helped create a new media campaign to
 explore this question. We built **a website, a Twitter account, and a meme
 generator** to help people play with our vision of a more just Chicago.
 
-[![An excerpt from chano4mayor.com. Text is excerpted from Chance's song
+![An excerpt from chano4mayor.com. Text is excerpted from Chance's song
 "Somewhere in Paradise". It reads: "They say I'm savin' my city,
 say I'm stayin' for good, they screamin' #chano4mayor, I'm thinkin' maybe I 
-should"](/static/images/work/chano4mayor/chano2.png)](https://chano4mayor.com)
-[!["An excerpt from chano4mayor.com. An illustration of Chance's famous
+should"](/static/images/work/chano4mayor/chano2.png)
+!["An excerpt from chano4mayor.com. An illustration of Chance's famous
 hat shows that 44 people have tweeted the hashtag #chano4mayor
-this week."](/static/images/work/chano4mayor/chano3.png)](https://chano4mayor.com)
-[![An excerpt from chano4mayor.com.](/static/images/work/chano4mayor/chano4.png)](https://chano4mayor.com)
-[![An excerpt from chano4mayor.com. Text gives information about how and when
+this week."](/static/images/work/chano4mayor/chano3.png)
+![An excerpt from chano4mayor.com.](/static/images/work/chano4mayor/chano4.png)
+![An excerpt from chano4mayor.com. Text gives information about how and when
 to register to vote in the 2018 mayoral
-election](/static/images/work/chano4mayor/chano6.png)](https://chano4mayor.com)
+election.](/static/images/work/chano4mayor/chano6.png)
 
 ## Twitter campaign
 
@@ -41,7 +41,7 @@ account**](https://twitter.com/chano4mayor2k19) with a
 generator**](https://github.com/jeancochrane/chanomemes) that takes text
 from mentions and creates memes about Chance.
 
-[![Twitter account for Chano4Mayor2k19](/static/images/work/chano4mayor/twitter.png)](https://twitter.com/chano4mayor2k19)
+![Twitter account for Chano4Mayor2k19](/static/images/work/chano4mayor/twitter.png)
 ![Twitter feed of people using the hashtag #chano4mayor](/static/images/work/chano4mayor/chano5.png)
 
 <div class="row">
@@ -83,9 +83,26 @@ that powered our presentation.
 
 We got a lot of press for Chano4Mayor. The following are the highlights.
 
-[![Ebony magazine](/static/images/work/chano4mayor/ebony.png)](http://ebony.com/entertainment-culture/chance-the-rapper-ebony)
-[![Fader](/static/images/work/chano4mayor/fader.png)](http://thefader.com/2017/04/04/chance-the-rapper-chano4mayor-chicago-mayor-campaign-website)
-[![The Chicago Sun-Times](/static/images/work/chano4mayor/sun-times.png)](https://chicago.suntimes.com/chicago-politics/chance-the-mayor-website-aims-to-draft-rapper-to-challenge-rahm/)
-[![Complex](/static/images/work/chano4mayor/complex.png)](http://complex.com/music/2017/04/what-it-would-look-like-if-chance-the-rapper-ran-for-mayor-chicago)
-[![The Chicago Tribune](/static/images/work/chano4mayor/tribune.png)](http://chicagotribune.com/news/ct-chance-the-rapper-mayoral-push-met-20170405-story.html)
-[![ABC Chicago](/static/images/work/chano4mayor/abc7.png)](http://abc7chicago.com/careers/chance-for-mayor-online-effort-urges-rapper-to-run-in-2019/1837035/)
+![Ebony magazine](/static/images/work/chano4mayor/ebony.png)
+Ebony Magazine, ["June Cover Issue Exclusive: Chance the Rapper for
+President?"](http://ebony.com/entertainment-culture/chance-the-rapper-ebony)
+
+![The Fader](/static/images/work/chano4mayor/fader.png)
+The Fader, ["Fans Have Launched A Campaign To Convince Chance The Rapper To Run
+For Mayor Of Chicago"](http://thefader.com/2017/04/04/chance-the-rapper-chano4mayor-chicago-mayor-campaign-website)
+
+![The Chicago Sun-Times](/static/images/work/chano4mayor/sun-times.png)
+The Chicago Sun-Times, ["Chance the Mayor? Website aims to draft rapper to
+challenge Rahm"](https://chicago.suntimes.com/chicago-politics/chance-the-mayor-website-aims-to-draft-rapper-to-challenge-rahm/)
+
+![Complex](/static/images/work/chano4mayor/complex.png)
+Complex, ["Chance the Mayor: This Is What It Would Look Like If Chance Ran
+for Office in Chicago"](http://complex.com/music/2017/04/what-it-would-look-like-if-chance-the-rapper-ran-for-mayor-chicago)
+
+![The Chicago Tribune](/static/images/work/chano4mayor/tribune.png)
+The Chicago Tribune, ["Chance the Rapper for
+mayor?"](http://chicagotribune.com/news/ct-chance-the-rapper-mayoral-push-met-20170405-story.html)
+
+![ABC Chicago](/static/images/work/chano4mayor/abc7.png)
+ABC Chicago, ["Chance for Chicago mayor? Online effort urges rapper to enter
+2019 race"](http://abc7chicago.com/careers/chance-for-mayor-online-effort-urges-rapper-to-run-in-2019/1837035/)

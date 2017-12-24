@@ -24,21 +24,17 @@ sourced from news articles and released to the public through an explorable inte
 For a guided tour of WhoWasInCommand, see my [blog post announcing the
 launch](https://datamade.us/blog/whowasincommand).
 
-[![The Countries page of
+![The Countries page of
 WhoWasInCommand](/static/images/work/whowasincommand/wwic-countries.png)
-](https://whowasincommand.com/en/countries)
 
-[![The Search page of
+![The Search page of
 WhoWasInCommand](/static/images/work/whowasincommand/wwic-search.png)
-](https://whowasincommand.com/en/search)
 
-[![A detail view for a unit on
+![A detail view for a unit on
 WhoWasInCommand](/static/images/work/whowasincommand/wwic-detail.png)
-](https://whowasincommand.com/en/organization/detail/7)
 
-[![A command chain for a unit on
+![A command chain for a unit on
 WhoWasInCommand](/static/images/work/whowasincommand/wwic-chain.png)
-](https://whowasincommand.com/en/organization/detail/7#parent-units)
 
 ![Sources and confidence for a piece of information on
 WhoWasInCommand](/static/images/work/whowasincommand/wwic-source.png)

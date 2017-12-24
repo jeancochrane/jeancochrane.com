@@ -13,7 +13,7 @@ code_url: https://github.com/Crains-Chicago/where-to-buy
 a collaboration between [Crain's Chicago Business](http://chicagobusiness.com)
 and [DataMade](https://datamade.us) to help Crain's
 readers find the right Chicagoland neighborhood based on their needs. I worked
-with Forest Gregg to **prepare the data** for the app and **design the
+to **prepare the data** for the app and **design the
 UI interactions**.
 
 We scored places based on five variables of interest:
@@ -28,8 +28,7 @@ Users can rearrange the variables to reflect their own personal priorities and
 get an updated neighborhood recommendation. They can also select from one of a few preset
 profiles put together by Crain's reporters.
 
-[![The main site page](/static/images/work/where-to-buy/wtb-main.png)
-](http://chicagobusiness.com/section/where-to-buy)
+![The main site page](/static/images/work/where-to-buy/wtb-main.png)
 
 ![Detailed stats on Hyde Park, my hometown
 neighborhood](/static/images/work/where-to-buy/wtb-detail.png)
@@ -56,4 +55,3 @@ While parts of the pipeline remain closed source in order to respect the privacy
 policies of certain data sources, take a look at the [`data` subdirectory on the GitHub
 page](https://github.com/datamade/where-to-buy/tree/master/data) for 
 a taste.
-

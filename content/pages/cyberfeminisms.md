@@ -31,6 +31,9 @@ Manifesto](http://faculty.georgetown.edu/irvinem/theory/Haraway-CyborgManifesto-
 
 ## Slides
 
+You can [view slides for the talk on Google
+Drive](https://docs.google.com/presentation/d/14dNwSvPpt2LX9e1L0AATfN_FuC337AKh4LiqqQ9LHt4/edit?usp=sharing).
+
 <a href="https://docs.google.com/presentation/d/14dNwSvPpt2LX9e1L0AATfN_FuC337AKh4LiqqQ9LHt4/edit?usp=sharing">
     ![Slides from the talk](/static/images/work/cyberfeminisms/slides.png)
 </a>

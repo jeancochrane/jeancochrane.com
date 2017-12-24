@@ -25,9 +25,17 @@ h1, h2, h3, h4, h5, h6 {
   font-size: 1.4em;
 }
 
+.post-body li p {
+  font-size: 1em;
+}
+
 .post-body blockquote {
   font-size: inherit;
   color: #777;
+}
+
+.post-body .footnote {
+  font-size: 0.85em;
 }
 
 .work-body img,
@@ -59,13 +67,13 @@ pre {
   margin: 0 0 20px;
 }
 
-a, a:visited, a:hover {
-  color: lightcoral;
+a, a:visited {
+  color: #c82626;
 }
 
 a:hover,
 a:focus {
-  color: #bd6060;
+  color: #d37575;
   text-decoration: none;
 }
 
@@ -312,10 +320,9 @@ p {
   font-size: 1.3em;
 }
 
-.navbar-collapse > ul.navbar-nav > li > a:hover,
-.navbar-collapse > ul.navbar-nav > li > a:focus,
-.navbar-collapse > ul.navbar-nav > li > a.active {
-  border-bottom: 2px dotted #777;
+span.menu-item.active {
+  padding-bottom: 5px;
+  border-bottom: 2px dashed #777;
 }
 
 .content-container {
@@ -674,6 +681,12 @@ p {
 
 /* -- media queries -- */
 
+@media (min-width: 768px) and (max-width: 992px) {
+    .main-logo {
+        font-size: 28px;
+    }
+}
+
 @media (max-width: 1265px) {
   .header {
     padding-top: 20px;
@@ -745,7 +758,7 @@ p {
   }
 }
 
-@media (min-width: 768px) and (max-width: 988px) {
+@media (min-width: 768px) and (max-width: 992px) {
   .large1 {
     display: none;
   }
@@ -755,7 +768,7 @@ p {
   }
 }
 
-@media (min-width: 989px) and (max-width: 1195px) {
+@media (min-width: 992px) and (max-width: 1195px) {
   .large2 {
     display: none;
   }

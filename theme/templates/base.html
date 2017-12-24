@@ -97,41 +97,27 @@
         <div class="collapse navbar-collapse navbar-right" id="bs-example-navbar-collapse-1">
             <ul class="nav navbar-nav">
                 <li>
-                    <a href="{{ PORTFOLIO_URL }}"
-                    {% if output_file == 'index.html' %}
-                        class="active"
-                    {% endif %}>
-                        <i class="fa fa-fw fa-code" aria-hidden="true"></i>
-                        Work
-                    </a>
-                </li>
-                <!--
-                <li>
-                    <a href="{{ PLAY_URL }}"
-                    {% if PLAY_URL[1:] in output_file %}
-                        class="active"
-                    {% endif %}>
-                        <i class="fa fa-fw fa-music" aria-hidden="true"></i>
-                        Play
-                    </a>
-                </li>
-                -->
-                <li>
-                    <a href="{{ BLOG_URL }}"
-                    {% if BLOG_URL[1:] in output_file %}
-                        class="active"
-                    {% endif %}>
-                        <i class="fa fa-fw fa-book" aria-hidden="true"></i>
-                        Blog
+                    <a href="{{ PORTFOLIO_URL }}">
+                        <span class="menu-item {% if output_file == 'index.html' %}active{% endif %}">
+                            <i class="fa fa-fw fa-code" aria-hidden="true"></i>
+                            Work
+                        </span>
                     </a>
                 </li>
                 <li>
-                    <a href="{{ ABOUT_URL }}"
-                    {% if ABOUT_URL[1:] in output_file %}
-                        class="active"
-                    {% endif %}>
-                        <i class="fa fa-fw fa-info-circle" aria-hidden="true"></i>
-                        About
+                    <a href="{{ BLOG_URL }}">
+                        <span class="menu-item {% if BLOG_URL[1:] in output_file %}active{% endif %}">
+                            <i class="fa fa-fw fa-book" aria-hidden="true"></i>
+                            Blog
+                        </span>
+                    </a>
+                </li>
+                <li>
+                    <a href="{{ ABOUT_URL }}">
+                        <span class="menu-item {% if ABOUT_URL[1:] in output_file %}active{% endif %}">
+                            <i class="fa fa-fw fa-info-circle" aria-hidden="true"></i>
+                            About
+                        </span>
                     </a>
                 </li>
             </ul>
