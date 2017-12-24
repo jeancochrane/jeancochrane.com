@@ -1,7 +1,8 @@
-title: The Price Is Right: SQL Edition
+title: The Price Is Right: PostgreSQL Edition
 summary: The costs and benefits of declarative programming.
 date: 2017-12-04
 category: code
+slug: price-is-right
 tags: SQL; declarative programming
 published: true
 
@@ -11,10 +12,10 @@ published: true
 > *Frances Quinlan, ["Tibetan Pop
 > Stars"](https://hopalong.bandcamp.com/track/tibetan-pop-stars)*
 
-This week I learned how to read Postgres' query planner, which means I
-got to play _The Price Is Right_ with SQL queries.
-(I grew up on [_Antiques Roadshow_](https://en.wikipedia.org/wiki/Antiques_Roadshow),
-but it's not nearly as expressive of an analogy.) The query planner is a fun
+A hidden gem of the PostgreSQL database system is its **query planner**, which
+you can use to play _The Price Is Right_ with SQL
+expressions.[^antiques-roadshow]
+the query planner is a fun
 tool that tells you how expensive a given SQL expression will be, and it nicely
 illustrates some of the costs and benefits of the
 declarative programming paradigm that SQL takes part in.
@@ -479,6 +480,9 @@ most intuitive sense to us. In our case, a join&mdash;which
 felt to us like the most "relational" way of doing what we wanted&mdash;wound up
 being *more expensive* than a naive, indexed table count. Luckily, the query planner is
 always on hand to `EXPLAIN` it to us.
+
+[^antiques-roadshow]: I grew up on [_Antiques Roadshow_](https://en.wikipedia.org/wiki/Antiques_Roadshow),
+but it's not nearly as expressive of an analogy.)
 
 [^hash-map]: For a good explanation of why Postgres would use a hash map to perform a join, see Pat
 Shaughnessy's take in ["A Look at How Postgres Executes a Tiny

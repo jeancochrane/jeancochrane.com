@@ -7,7 +7,8 @@ published: true
 
 
 One of the most enlightening parts of learning a Lisp (in my case, the lovely
-research dialect [Scheme](https://groups.csail.mit.edu/mac/projects/scheme/))
+research dialect
+Scheme[^scheme])
 has been getting familiar with the way that functional languages like Scheme treat
 recursion. Studying recursion in Scheme has helped me develop a richer understanding
 of the distinction between **process and procedure**, two different ways of
@@ -31,10 +32,7 @@ def add(a, b):
         return (1 + (add(a, b)))
 ```
 
-In all cases where `b != 0`, `add` will indeed call itself. In fact, since
-the call to `add` will be the last instruction that the function executes, we
-can more precisely say that `add` is _tail recursive_.
-
+In all cases where `b != 0`, `add` will indeed call itself. 
 But there's a second, more subtle property that makes `add` recursive: 
 its calls to itself will expand as it executes, and the _stack frame_, the queue that the Python
 interpreter uses to monitor and execute function calls, will grow.
@@ -118,12 +116,12 @@ function&mdash;the way it's written for the human eye, or what I'll call its
 will execute it (that is, the "process," or machine instructions, that it spawns).
 
 As an example, take a modified version of `add` that makes use of a slightly
-different reflexive call:
+different recursive call:
 
 ```python
 def add_iter(a, b):
     '''
-    Sum positive integers `a` and `b`.
+    Sum positive integers `a` and `b`, with a (potentially) iterative process.
     '''
     if b == 0:
         return a
@@ -131,12 +129,28 @@ def add_iter(a, b):
         return add_iter((a + 1), (b - 1))
 ```
 
-In contrast to `add`, the modified `add_iter` appears to behave similarly to a
-for-loop: the argument `a` stores the state as it increments, while the argument
+Notice the altered `return` statement: rather than nest the recursive call in
+an addition expression like `(1 + add_iter(a, b))`, `add_iter` increments and decrements `a` in
+place. Since the call to `add` will be the last instruction that the function executes, we
+can more precisely say that `add` is _tail-recursive_.
+
+Thanks to tail-recursion, the modified `add_iter` appears to behave similarly to a
+classic for-loop. The argument `a` stores the state as it increments, while the argument
 `b` acts like a counter, progressively stepping towards 0. A state variable and
 a counter&mdash;that's a decidedly
 _iterative_ relationship! When `add_iter` executes, then, we might expect its
-process to behave iteratively rather than recursively.
+process to behave iteratively rather than recursively. We could imagine something like
+the following evaluation history, where a new stack gets created for each call:
+
+```
+add_iter(1, 5)
+add_iter(2, 4)
+add_iter(3, 3)
+add_iter(4, 2)
+add_iter(5, 1)
+add_iter(6, 0)
+6
+```
 
 In Python, however, it turns out that `add_iter` executes recursively, in the exact same fashion
 as `add`. Calling a traced version of `add_iter` reveals the expansion of the stack:
@@ -153,7 +167,7 @@ return add_iter((a + 1), (b - 1))
 The interpreter doesn't really need the outer frames to keep track of where
 `add_iter` is: as in a for-loop, the state variable `a` and the
 counter `b` do a fine job of keeping time all on their own. But Python holds
-onto them anyway, producing a recursive process where an iterative one would
+on to them anyway, producing a recursive process where an iterative one would
 have made more sense.
 
 ## Out with the stack: tail-call optimization in Scheme
@@ -172,7 +186,7 @@ moment when the interpreter reaches the base case:
 
 ```scheme
 (define (add-iter a b)
-  ;; Sum `a` and `b`.
+  ;; Sum `a` and `b`, iteratively.
   (if (= b 0)
       (debug) 
       (add-iter (+ a 1) (- b 1))))
@@ -193,8 +207,12 @@ There is no execution history for this subproblem.
 You are now in the debugger.  Type q to quit, ? for commands.
 ```
 
-The interpreter claims that there are 4 problems on the stack. We can use the
-command `H` to print a summary of the problems:
+There's a lot of information here! The relevant content for our purposes is the status of the
+subproblems on the stack.[^subproblems] 
+The interpreter reports that `There are 4 problems on the stack`, meaning there
+are four procedures that need to be evaluated in this frame.
+The history command `H` can print a summary
+of those subproblems:
 
 ```
 2 debug> H
@@ -206,10 +224,11 @@ SL#  Procedure-name          Expression
 3                            ;compiled code
 ```
 
-Whatever the interpreter's doing, it's not hanging onto calls to `add-iter`.
+Whatever the interpreter's doing, it's not hanging on to calls to
+`add-iter`.[^compiled-code]
 
-For contrast, we can run a version of the procedure without a tail call and see
-what it prints:
+To see the contrast with a recursive process, we can run a version of the
+procedure without a tail call and see what the debugger reports:
 
 ```scheme
 (define (add-rec a b)
@@ -218,6 +237,8 @@ what it prints:
       (debug)
       (+ 1 (add-rec a (- b 1)))))
 ```
+
+Here's the output:
 
 ```
 1 ]=> (add-rec 1 5)
@@ -236,10 +257,10 @@ The execution history for this subproblem contains 3 reductions.
 You are now in the debugger.  Type q to quit, ? for commands.
 ```
 
-Already, we can see that the interpreter is holding onto 9 procedures on the
-stack. We can confirm that these are calls to `add-rec` by printing the
-summary:
+The debugger reports that the interpreter is holding on to 9 procedures in this
+stack. Printing a summary reveals the culprit: nested calls to `add-rec`!
 
+```
 2 debug> H
 SL#  Procedure-name          Expression
 
@@ -257,8 +278,8 @@ SL#  Procedure-name          Expression
 With optimized tail calls, the Scheme interpreter doesn't have to keep any extra
 data in memory other than the current values of
 the state variable and the counter at any given point in time during the
-function execution. Nice and clean iteration, in the form of a recursive
-procedure. 
+function execution. If we design a function to use a tail call we can
+achieve nice and clean iteration&mdash;in the form of a recursive procedure. 
 
 ## Fun with recursion and iteration in Scheme
 
@@ -266,19 +287,23 @@ Thanks to tail-call optimization, recursive procedures are easy to re-implement 
 processes in Scheme. Since `add` was a toy example, let's take on a more
 challenging algorithm: Pascal's triangle.
 
-Pascal's triangle&mdash;also known as the binomial coefficients&mdash;
-is a classic recursive algorithm:
+Building [Pascal's
+triangle](https://en.wikipedia.org/wiki/Pascal%27s_triangle) involves a classic
+recursive algorithm:
 to find any given element in the triangle, sum the two elements that precede it. Keep
 going until you reach the first element, which is 1.
 
-```
-    1
-   1 1
-  1 2 1
- 1 3 3 1
-1 4 6 4 1
-```
-<p><em>Pascal's triangle, computed up to </em>`n = 5`.</p>
+<img class="center-block img img-responsive"
+     src="/static/images/blog/process-and-procedure/pascal.gif"
+     alt="An animation of Pascal's triangle">
+
+<p class="text-center">
+    <small class="text-center">
+        <em>
+            Pascal's triangle, computed up to </em><code>n = 5</code>.<em>This animation by Wikipedia user <a href="https://commons.wikimedia.org/wiki/File:PascalTriangleAnimated2.gif">Hersfold</a> illustrates an iterative version of the algorithm.
+        </em>
+    </small>
+</p>
 
 Writing a recursive procedure that generates
 a recursive process to calculate elements in Pascal's triangle is relatively
@@ -346,7 +371,8 @@ Putting it all together:
 1 4 6 4 1
 ```
 
-There are two reasons that this solution is inefficient:
+There's the triangle! Unfortunately, there are at least two reasons that this solution
+is highly inefficient:
 
 1. The procedure that computes the value for any given position, `pascal`,
    spawns a recursive process
@@ -354,7 +380,7 @@ There are two reasons that this solution is inefficient:
 2. Since `pascal` recurses the entire triangle every time it computes a value,
    the procedure winds up doing a bunch of redundant work
 
-What if we used an iterative process to improve on both of these weaknesses? 
+Luckily, an iterative process can help improve on both of these weaknesses.
 
 ## Iterative Pascal
 
@@ -365,8 +391,8 @@ compute any given value, an iterative process should instead start at the
 base of the triangle and work its way up.
 
 First, we need a procedure that can take an existing row of coefficients
-and compute the next row in the sequence. Since each element is comprised of
-two corresponding elements in the preceding row, all we have to do is treat
+and compute the next row in the sequence. Since each element is computed using
+two successive elements in the preceding row, all we have to do is treat
 each row as if it starts and ends with a 0 element and sum successive elements
 as we iterate over the row.
 
@@ -393,7 +419,7 @@ any given row.
         (else (list-to-string (string-append str " " (string (car lst))) (cdr lst)))))
 ```
 
-Finally, we need a procedure to successively build up rows. The key to doing
+Finally, we need a procedure to build up rows. The key to doing
 this iteratively is to recognize that we actually need two state variables:
 one to hold the current row as a list (`lst`) and one to hold the string that
 collates all of the lists for printing (`str`).
@@ -428,24 +454,40 @@ Putting it all together with initial values:
 ## Thinking like the interpreter
 
 At small scales, the distinction between recursive and iterative processes
-doesn't make much of a difference. I usually care more about whether a procedure is 
-written in a way that will make its ideas clear to the people who have to work with it.
-But as the size of the input grows without
+doesn't make much of a difference. But as the size of the input grows without
 bound, the nature of the process that a procedure spawns becomes much more important: does the machine
 have to store ever-expanding function calls for every step of the procedure, or
 can it get away with only storing three arguments and an operator?
 
 As a functional, tail-call optimized language, Scheme encourages a more
-sophisticate treatment 
+sophisticated treatment 
 of recursion than Python. Recursive procedures in Scheme can spawn processes that are
 either iterative or recursive, depending on the context, allowing the
 programmer
 finer-grained control over the machine execution&mdash;if they can think like
-the machine.
+the machine.[^sicp]
 
------
+[^scheme]: More specifically, I've been learning the [MIT/GNU implementation of
+Scheme](https://www.gnu.org/software/mit-scheme/). While Scheme implementations
+follow common standards, I can't promise that everything in this post
+will hold true for all Scheme interpreters.
 
-_For more on recursive and iterative processes, I recommend chapter 1.2 in Abelson,
+[^compiled-code]:
+Running `(debug (debug))` reveals that these compiled procedures seem to be part of the evaluation of 
+the `debug` procedure itself. I can't figure out what they're actually doing, since inspecting the procedure
+objects doesn't reveal anything interesting. [Drop me
+a line](/about) if you know what
+these procedures are!
+
+[^subproblems]: To evaluate a compound expression, the Scheme interpreter tries
+to split it up into smaller expressions which are called "subproblems." By examining
+the subproblems for `add-iter` we can get a sense of what procedures are being
+considered in a given stack frame. For a deeper dive into subproblems and
+expression evaluation, see [the excellent MIT/GNU Scheme
+documentation.](https://www.gnu.org/software/mit-scheme/documentation/mit-scheme-user/Subproblems-and-Reductions.html))
+
+[^sicp]:
+For more on recursive and iterative processes in Scheme, I recommend chapter 1.2 in Abelson,
 Sussman, and Sussman's [_Structure and Interpretation of Computer
-Programs_](https://mitpress.mit.edu/sicp/full-text/book/book.html), from which
-much of this post was cribbed._
+Programs_](https://mitpress.mit.edu/sicp/full-text/book/book.html).
+
