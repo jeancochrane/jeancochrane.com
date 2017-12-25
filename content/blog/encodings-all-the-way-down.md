@@ -205,7 +205,7 @@ def parse(post):
 
 print(col(parse(post)))
 
-<the post in base-10>
+18229398602302566940514681623746853173134292647
 ```
 
 The fundamental insight of encodings, as I see it, is that **all symbolic

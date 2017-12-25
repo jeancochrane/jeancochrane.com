@@ -475,7 +475,7 @@ always on hand to `EXPLAIN` it to us.
 [^antiques-roadshow]: I grew up on [_Antiques Roadshow_](https://en.wikipedia.org/wiki/Antiques_Roadshow),
 but it's not nearly as expressive of an analogy.
 
-[^declarative-programming]: The line between "declarative" and a "procedural" programming is
+[^declarative-programming]: The line between "declarative" and a "imperative" programming is
 fuzzy, of course, and definitions vary. See the [Wikipedia page for declarative
 programming](https://en.wikipedia.org/wiki/Declarative_programming) for an
 overview of different approaches to a definition.
