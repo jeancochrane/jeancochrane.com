@@ -1,0 +1,35 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<div class="container">
+    {% include 'header.html' %}
+
+    <div class="row">
+        <div class="col-xs-12 col-lg-11">
+            <h2 class="section-header">
+                <i class="fa fa-fw fa-file-text"></i>
+                Resume
+            </h2>
+            <hr />
+
+            <div class="content-body">
+                {{ page.content }}
+            </div>
+        </div>
+    </div>
+    <br />
+    <div class="row">
+        <div class="col-xs-12 col-sm-10 col-sm-offset-1 text-center">
+            <a href="{{ GITHUB }}">
+                <i class="fa fa-fw fa-3x fa-github"></i>
+            </a>
+            <a href="{{ TWITTER }}">
+                <i class="fa fa-fw fa-3x fa-twitter"></i>
+            </a>
+        </div>
+    </div>
+    <br />
+</div>
+
+{% endblock %}
