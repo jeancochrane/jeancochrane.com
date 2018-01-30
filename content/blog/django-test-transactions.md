@@ -1,15 +1,25 @@
-title: Transaction types in Django tests
+title: Transaction Types in Django Tests
 summary: Django provides two classes for running tests in transactions: `TestCase` and `TransactionTestCase`. What's the difference? 
-date: 2017-01-16
+date: 2018-01-30
+slug: django-test-transactions
+thumbnail: /static/images/blog/django-test-transactions/transactions.jpg
 category: code
 tags: testing; transactions; django
-published: false
+published: true
 
 
-One of the most fun parts about writing tests in [Django](https://www.djangoproject.com/)
-is its built-in testing tools. Compared to smaller, more modular frameworks like
-[Flask](http://flask.pocoo.org/), Django offers lots of neat testing utilities out of
-the box. Some of the my favorite tools are the **built-in database transactions**.
+<div class="text-center">
+   <p class="small"><em>Illustration by
+        <a href="https://www.flickr.com/photos/adambrock/247810564/in/photolist-FafBgf-nU6rW-9nJT9A-Z2Hjh7-nBjevj-9CwW5a-Ya9gqe-9pkk7Y-bu7Gss-9tc1kA-cVDQQ1-cF6n5b-4fRkkB-2nN82-h3kLi7-GKQUmP-hLgrEm-8t9tf8-9dgKMr-6DWVpW-7uWjeo-66Aee9-deQNwp-eZNCde-h3ZiBo">Adam Brock</a>,
+        licensed
+        <a href="https://creativecommons.org/licenses/by-nc/2.0/">CC BY-NC 2.0</a>.</em></p>
+</div>
+
+One of the best parts about testing in [Django](https://www.djangoproject.com/)
+is the built-in testing tools that the framework provides. Compared to smaller, more modular frameworks like
+[Flask](http://flask.pocoo.org/), Django offers lots of neat utilities out of
+the box. Some of the my favorite tools are the **built-in database transactions
+in tests**.
 
 Quick background: a *transaction* is a term that describes one
 "unit of work" on a database. Say, for example, that a customer wants to buy
@@ -19,52 +29,53 @@ order information in the `customer` table, and decrement the inventory in the
 simultaneously**: if the order fails to go through, the inventory shouldn't
 decrement. To make sure that happens, we can wrap the two changes (update
 `customers`, decrement `widgets`) in one transaction, and if one change fails,
-the other will get *rolled back*, so that it doesn't enter the database. Since all
-the changes in a transaction must succeed or else none of them will succeed,
-database transactions are [atomic](https://en.wikipedia.org/wiki/Atomicity_(database_systems)).
+the other will get *rolled back*, meaning that it won't ever enter the database. Since all
+of the changes in a transaction must succeed or else none of them will succeed,
+database transactions are [*atomic*](https://en.wikipedia.org/wiki/Atomicity_(database_systems)).
 
 ## Why use transactions in tests?
 
 Opinionated programmers have argued for and against the idea that unit tests
-should use databases at all.[^unit-vs-integration] Their points are well taken, but in the real
-world, we often need to test that our apps are interacting with their databases
-properly. This is an unfortunate fact of life.
+should touch the database at all.[^unit-vs-integration] Their points are well taken, but
+it's an unfortunate fact of life that we often need to test that our apps are interacting with their databases
+properly.
 
-One major benefit that transactions provide to testing is that **we can edit
-the database while maintaining test isolation.** Whether or not our unit tests
-touch the database, they should always be *isolated*: if we run them in
+If you're going to touch the database in a test, one major benefit that transactions
+provide is that **you can edit
+the database while maintaining test isolation.** Whether or not your unit tests
+touch the database, they should always be *isolated*: if you run them in
 a different order, nothing should be different. If tests can change the
 state of the database in unexpected ways, they can become non-deterministic and hard to
-maintain, since you can't be certain of the environment that your tests run in. If
+maintain, since you can't be certain of the environment that your tests will run in. If
 one test tries to create five `customers`, say, and then verify that
 a `Customer.count()` method works properly, your count will be off if a test
 somewhere else accidentally creates a `cusomter` object without cleaning it up
 (for example, during a test for the `sign-up` route).
 
-The benefits of transactions to tests are nice, but it's important to note that
-not all transactions are the same. A "transaction" is an abstraction, not an
-implementation: there are many ways to make sure that two things happen
-simultaneously in a database. This is why Django offers **two types of test cases**
-with different transaction implmentations.
+Transactions provide nice benefits for testing, but it's important to note that
+not all transactions are the same. A "transaction" is an **abstraction, not an
+implementation**: there are many ways to make sure that two things happen
+simultaneously in a database. This is why Django offers two types of test cases
+with different transaction implementations.
 
 ## Two types of transactions: `TestCase` and `TransactionTestCase`
 
 The two transaction-oriented test cases in Django are
 [`TestCase`](https://docs.djangoproject.com/en/2.0/topics/testing/tools/#testcase)
 and
-[`TransactionTestCase`.](https://docs.djangoproject.com/en/2.0/topics/testing/tools/#django.test.TransactionTestCase).
+[`TransactionTestCase`](https://docs.djangoproject.com/en/2.0/topics/testing/tools/#django.test.TransactionTestCase).
 Both test cases will wrap all of your tests in a database transaction, but they
 implement these transactions differently&mdash;with important consequences
 for your tests.
 
-**`TestCase`** achieves isolation by **wrapping tests in transaction blocks,
-and rolling back any changes when tearing down the test.** The critical point here is that
+`TestCase` achieves isolation by wrapping tests in transaction blocks,
+and rolling back any changes that were made before tearing down the test. The critical point here is that
 *updates never touch the database at all.* At no point in the test will any
 changes reach the database. This means your tests will be **lightning fast**,
 but with **no observable changes to your database**.
 
-**`TransactionTestCase`**, on the other hand, achieves isolation by **updating
-tables and truncating them when tearing down the test**. In contrast to
+`TransactionTestCase`, on the other hand, achieves isolation by updating
+tables and truncating them when tearing down the test. In contrast to
 `TestCase`, updates *will* touch the database during the test&mdash;they'll
 just get deleted before the test exits. With this implementation, your tests
 will be **much slower**, but they'll **allow you to see changes in the
@@ -75,7 +86,7 @@ database.**
 The different implementations of transactions in `TestCase` and
 `TransactionTestCase` provide subtle but important advantages for testing
 data-intensive apps. Using **`TestCase`**
-allows your tests to be lightning fast, but you won't be able to query 
+allows your tests to be fast, but you won't be able to query 
 changes to the database. Using **`TransactionTestCase`** will make your tests
 much slower&mdash;maybe even by a factor of 10&mdash;but you'll be able to
 query changes as you go. Together, they allow you to **optimize the level of
@@ -137,8 +148,8 @@ class TestCampaign(TestCase, FakeTestData):
                              sum(flg.total_contributions for flg in filing))
 ```
 
-This setup worked great! Even with a large number of fixtures the tests ran
-lightning fast&mdash;thanks in no small part to the Django test framework's
+This setup worked great! Even with the large number of new objects that `FakeTestData` created, the tests ran
+very quickly&mdash;thanks in no small part to the Django test framework's
 [`--keepdb`](https://docs.djangoproject.com/en/2.0/ref/django-admin/#cmdoption-test-keepdb)
 option for preserving the test database between test runs:
 
@@ -153,13 +164,13 @@ Ran 4 tests in 0.048s
 OK
 ```
 
-Everything hit a snag, however, when I realized I **needed to interact directly with
+Everything hit a snag, however, when I realized **I needed to interact directly with
 the database**. By writing a function method to count the total funds raised
 by a campaign, a method that ran a raw SQL query for performance reasons, I wound
 wound up collapsing the abstraction layer between the ORM and the database.
 
-Here's how it went down: getting the total amount of funds raised in a race
-meant we would have to join up every transaction associated with
+Here's how it went down: getting the total amount of funds raised by a campaign 
+meant that the ORM would have to join up every transaction associated with
 a campaign in order to count up their total contributions. I designed the sum of
 funds by campaign as a simple method on the `Campaign` model:
 
@@ -304,7 +315,6 @@ Leave it to Django to have two separate test cases for dealing with
 transactions&mdash;and for both of them to prove to be huge
 timesavers, either separately or in concert.[^read-more] 
 
-With two separate 
 [^unit-vs-integration]: For more on the (hotly contested) theories of database
 access in tests, see Harry Percival's [Fast Tests, Slow Tests, and Hot
 Lava](http://www.obeythetestinggoat.com/book/chapter_hot_lava.html).
