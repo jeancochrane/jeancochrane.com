@@ -49,7 +49,7 @@ state of the database in unexpected ways, they can become non-deterministic and 
 maintain, since you can't be certain of the environment that your tests will run in. If
 one test tries to create five `customers`, say, and then verify that
 a `Customer.count()` method works properly, your count will be off if a test
-somewhere else accidentally creates a `cusomter` object without cleaning it up
+somewhere else accidentally creates a `customer` object without cleaning it up
 (for example, during a test for the `sign-up` route).
 
 Transactions provide nice benefits for testing, but it's important to note that
