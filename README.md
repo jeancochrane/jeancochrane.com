@@ -1,36 +1,28 @@
-# Jean Cochrane's portfolio site
+# jeancochrane.com
 
-Under rapid development. Check back soon.
+My personal website.
 
 ## Developing
 
-First, make a virtualenv with pip:
+### Requirements
 
-```console
-mkvirtualenv jeancochrane.com
-pip install -U -r requirements.txt
+- Docker
+- Docker Compose
+
+### Installation
+
+Install development requirements with Docker Compose:
+
+```
+docker-compose build
 ```
 
-Next, use the Makefile to build and serve files:
+### Running a development server
 
-```console
-# Clean up the output directory, if it exists
-make clean
+Run a development server with Docker Compose:
 
-# Create the output directory
-make build
-
-# Serve the site locally
-make serve
-
-# Recreate and serve the build (for rapid development)
-make reload
+```
+docker-compose up
 ```
 
-## Deployment
-
-SSH into the server, then:
-
-```console
-make deploy
-```
+This will start a server on http://localhost:9000.

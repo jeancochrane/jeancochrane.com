@@ -1,0 +1,18 @@
+version: '3'
+services:
+  app:
+    build: ./app
+    volumes:
+      - ./app:/usr/local/src
+      - node_modules:/usr/local/src/node_modules
+    working_dir: /usr/local/src
+    ports:
+      - 9000:9000
+    entrypoint: yarn
+    # 'start' is a custom Node.js script defined in app/package.json.
+    command: start
+volumes:
+  # Making node_modules a named volume prevents the ./app volume mount from
+  # clobbering the node_modules directory in the container. Since the volume only
+  # has to be named, it doesn't require any configuration directives.
+  node_modules:
