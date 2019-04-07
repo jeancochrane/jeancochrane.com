@@ -1,10 +1,11 @@
-title: The Price Is Right: SQL Edition
+---
+title: "The Price Is Right: SQL Edition"
 summary: The PostgreSQL query planner makes clear the costs and benefits of declarative programming.
 date: 2017-12-04
 category: code
-slug: price-is-right
 tags: SQL; declarative programming
 published: true
+---
 
 
 > **Why's everything so expensive?**

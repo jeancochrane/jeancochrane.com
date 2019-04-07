@@ -15,10 +15,18 @@ module.exports = {
         path: `${__dirname}/src/images`,
       },
     },
+    {
+      resolve: "gatsby-source-filesystem",
+      options: {
+        name: "posts",
+        path: `${__dirname}/src/posts`,
+      },
+    },
     // Image handling
     // See: https://www.gatsbyjs.org/packages/gatsby-plugin-sharp/
     "gatsby-transformer-sharp",
     "gatsby-plugin-sharp",
+    "gatsby-transformer-remark",
     // Ship site with a manifest file that allows it to be saved to a smartphone
     // See: https://www.gatsbyjs.org/packages/gatsby-plugin-manifest/
     {

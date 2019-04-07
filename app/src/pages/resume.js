@@ -1,4 +1,5 @@
 import React from "react"
+import { Link } from "gatsby"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 import { faFileText, faGraduationCap, faWrench, faCode } from "@fortawesome/free-regular-svg-icons"
 
@@ -27,11 +28,7 @@ const ResumePage = () => (
             University of Chicago <small>2012 &mdash; 2016</small>
           </h2>
           <p>
-            B.A. with honors in
-            <a href="http://gendersexuality.uchicago.edu/">
-              Gender and Sexuality Studies
-            </a>
-            (3.9 GPA)
+            B.A. with honors in <a href="http://gendersexuality.uchicago.edu/">Gender and Sexuality Studies</a> (3.9 GPA)
           </p>
           <h2>
             Recurse Center <small>Fall 2018</small>
@@ -53,9 +50,9 @@ const ResumePage = () => (
             <i>Lead Developer</i> | <a href="https://datamade.us">datamade.us</a>
           </p>
           <ul>
-            <li>Managed small teams of junior developers building client projects</li>
-            <li>Provided technical leadership on proposals, scopes, and work plans</li>
-            <li>Speardheaded company research and development</li>
+            <li>Manages small teams of junior developers building client projects</li>
+            <li>Provides technical leadership on proposals, scopes, and work plans</li>
+            <li>Speardheads company research and development</li>
           </ul>
           <h2 id="azavea-2018-2019">
             Azavea <small>Summer 2018 &mdash; Spring 2019</small>
@@ -64,9 +61,9 @@ const ResumePage = () => (
             <i>Open Source Fellow, Operations Engineer</i> | <a href="https://azavea.com">azavea.com</a>
           </p>
           <ul>
-            <li>Built out an open source framework, <a href="https://github.com/azavea/grout">Grout</a> for flexible schema management with geospatial data</li>
+            <li>Built out an open source framework, <a href="https://github.com/azavea/grout">Grout</a>, for flexible schema management with geospatial data</li>
             <li>Moved from a fellow to an engineer on a team in charge of performance, reliability, and cost-effectiveness of production infrastructure</li>
-            <li>Managed cloud infrastructure for a wide variety of small-and-medium-sized client apps</li>
+            <li>Managed cloud infrastructure for a wide variety of apps, from small client projects to large SaaS products</li>
           </ul>
           <h2 id="datamade-2016-2018">
             DataMade <small>Fall 2016 &mdash; Summer 2018</small>

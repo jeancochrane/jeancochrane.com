@@ -1,11 +1,12 @@
-title: Transactional Testing with Pytest and Flask-SQLAlchemy 
-summary: Announcing a new pytest plugin for isolating tests in highly stateful Flask-SQLAlchemy apps. 
+---
+title: Transactional Testing with Pytest and Flask-SQLAlchemy
+summary: Announcing a new pytest plugin for isolating tests in highly stateful Flask-SQLAlchemy apps.
 date: 2018-07-18
 category: code
-slug: pytest-flask-sqlalchemy
 thumbnail: /static/images/blog/pytest-flask-sqlalchemy/testing.gif
-tags: python; pytest; testing 
+tags: python; pytest; testing
 published: true
+---
 
 
 Today I'm excited to finally open-source some work I did with

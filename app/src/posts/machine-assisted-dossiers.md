@@ -1,11 +1,12 @@
-title: New paper: Machine Assisted Dossiers 
-summary: Requirements for a knowledge system that can manage ambiguity during investigations and produce useful, structured data as a byproduct. 
+---
+title: "New paper: Machine Assisted Dossiers"
+summary: Requirements for a knowledge system that can manage ambiguity during investigations and produce useful, structured data as a byproduct.
 thumbnail: /static/images/blog/machine-assisted-dossiers/new-entities.png
 date: 2017-11-14
-slug: machine-assisted-dossiers
 category: papers
 tags: research; knowledge systems; data architecture
 published: true
+---
 
 
 I'm excited to announce the publication of _Machine Assisted Dossiers_, a new

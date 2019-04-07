@@ -1,11 +1,12 @@
+---
 title: Transaction Types in Django Tests
-summary: Django provides two classes for running tests in transactions: `TestCase` and `TransactionTestCase`. What's the difference? 
+summary: "Django provides two classes for running tests in transactions: `TestCase` and `TransactionTestCase`. What's the difference?" 
 date: 2018-01-30
-slug: django-test-transactions
 thumbnail: /static/images/blog/django-test-transactions/transactions.jpg
 category: code
 tags: testing; transactions; django
 published: true
+---
 
 
 <div class="text-center">

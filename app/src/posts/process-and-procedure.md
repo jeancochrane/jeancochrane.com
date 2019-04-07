@@ -1,9 +1,11 @@
-title: Process and Procedure 
+---
+title: Process and Procedure
 summary: As Scheme knows, procedures and processes are very different beasts. Tail recursion makes this distinction clear.
 date: 2017-11-26
 category: code
 tags: recursion and iteration; lisp; scheme; abstraction and implementation
-published: true 
+published: true
+---
 
 
 One of the most enlightening parts of learning a Lisp (in my case, the lovely
