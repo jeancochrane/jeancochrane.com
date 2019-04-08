@@ -78,7 +78,7 @@ const metaDescription = description || site.siteMetadata.description
         )
         .concat(meta)}
     >
-      <link href="https://fonts.googleapis.com/css?family=Press+Start+2P|Ubuntu+Mono:700|Montserrat:600|Source+Sans+Pro:400,300,600'"
+      <link href="https://fonts.googleapis.com/css?family=Press+Start+2P|Ubuntu+Mono:700|Montserrat:600|Source+Sans+Pro:400,300,600|Lora:400,400i,700"
             rel="stylesheet" type="text/css" />
     </Helmet>
   )

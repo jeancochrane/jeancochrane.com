@@ -3,6 +3,7 @@ title: "The Price Is Right: SQL Edition"
 summary: The PostgreSQL query planner makes clear the costs and benefits of declarative programming.
 date: 2017-12-04
 category: code
+thumbnail: ./images/pytest-flask-sqlalchemy/testing.gif
 tags: SQL; declarative programming
 published: true
 ---

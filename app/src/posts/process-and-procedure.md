@@ -3,6 +3,7 @@ title: Process and Procedure
 summary: As Scheme knows, procedures and processes are very different beasts. Tail recursion makes this distinction clear.
 date: 2017-11-26
 category: code
+thumbnail: ./images/pytest-flask-sqlalchemy/testing.gif
 tags: recursion and iteration; lisp; scheme; abstraction and implementation
 published: true
 ---

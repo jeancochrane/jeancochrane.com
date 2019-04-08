@@ -2,7 +2,7 @@
 title: It's Encodings All the Way Down
 summary: Encodings define representational systems for communicating abstractions. That's why they let you do magical things, like use a haiku, or a T-Shirt, to decrypt DVDs.
 date: 2017-12-12
-thumbnail: /static/images/blog/encodings-all-the-way-down/decss-shirt.jpg
+thumbnail: ./images/encodings-all-the-way-down/decss-shirt.jpg
 category: code
 tags: abstraction and implementation; encodings; symbols
 published: true

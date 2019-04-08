@@ -40,7 +40,7 @@
     "develop": "gatsby develop -H 0.0.0.0 -p 9000",
     "start": "yarn develop",
     "serve": "gatsby serve",
-    "lint": "eslint src/components/*.js src/pages/*.js",
+    "lint": "eslint src/components/*.js src/pages/*.js src/templates/*.js",
     "test": "echo \"Write tests! -> https://gatsby.dev/unit-testing\""
   },
   "repository": {
