@@ -8,8 +8,8 @@ import comicsIcon from "../images/icon_comics_color.png"
 import blogIcon from "../images/icon_comics_color.png"
 
 
-const IndexPage = () => (
-  <Layout>
+const IndexPage = ({ location }) => (
+  <Layout location={location}>
     <SEO title="Home" />
     <div className="container">
       <div className="row">

@@ -5,46 +5,48 @@ import Navbar from "react-bootstrap/Navbar"
 import Nav from "react-bootstrap/Nav"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 import { faQuestionCircle, faBook, faCode } from "@fortawesome/free-solid-svg-icons"
-import "bootstrap/dist/css/bootstrap.min.css"
 
 
-const NavItem = props => (
-  <div className="nav-item" style={{ fontSize: '15px', margin: '10px' }}>
-    <p style={{ textAlign: 'left', marginTop: '10px' }}>
-      <Link to={props.href}>
-        <FontAwesomeIcon icon={props.icon} />&nbsp;
-        <strong>{props.title}</strong>
-      </Link>
-    </p>
-  </div>
-)
-
-const Header = ({ siteTitle }) => (
-  <Navbar collapseOnSelect expand="lg" bg="light" variant="light">
-    <div className="navbar-left">
-      <Link to="/">
-        <h2 style={{
-          fontFamily: "Press Start 2P, sans-serif",
-          display: "inline-block",
-          padding: "10px 10px",
-          paddingLeft: "0",
-          marginTop: "0",
-          color: "lightcoral"
+const NavItem = props => {
+  const isActive = (props.href === '/')
+                    ? props.currentPath === props.href
+                    : props.currentPath.startsWith(props.href)
+  return (
+    <li>
+      <Link to={props.href} className="menu-link">
+        <span className={`menu-item ${(isActive) ? 'active' : ''}`} style={{
+          fontSize: "1.2rem",
+          fontWeight: "400",
         }}>
-          {siteTitle}
-        </h2>
+          <FontAwesomeIcon icon={props.icon} />&nbsp;
+          {props.title}
+        </span>
       </Link>
+    </li>
+  )
+}
+
+const Header = props => (
+  <Navbar className="navbar-default navbar-transparent" collapseOnSelect expand="lg" bg="light" variant="light">
+    <div className="container nav-container">
+      <div className="navbar-left">
+        <Link to="/">
+          <h2 className="main-logo">
+            {props.siteTitle}
+          </h2>
+        </Link>
+      </div>
+      <Navbar.Toggle aria-controls="responsive-navbar-nav" />
+      <Navbar.Collapse id="responsive-navbar-nav">
+        <Nav className="mr-auto">
+        </Nav>
+        <Nav className="navbar-nav">
+          <NavItem href="/" icon={faCode} title="Work" currentPath={props.location.pathname} />
+          <NavItem href="/blog" icon={faBook} title="Blog" currentPath={props.location.pathname} />
+          <NavItem href="/about" icon={faQuestionCircle} title="About" currentPath={props.location.pathname} />
+        </Nav>
+      </Navbar.Collapse>
     </div>
-    <Navbar.Toggle aria-controls="responsive-navbar-nav" />
-    <Navbar.Collapse id="responsive-navbar-nav">
-      <Nav className="mr-auto">
-      </Nav>
-      <Nav>
-        <NavItem href="/" icon={faCode} title="Work" />
-        <NavItem href="/blog" icon={faBook} title="Blog" />
-        <NavItem href="/about" icon={faQuestionCircle} title="About" />
-      </Nav>
-    </Navbar.Collapse>
   </Navbar>
 )
 

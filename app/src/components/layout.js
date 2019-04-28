@@ -14,7 +14,7 @@ import Footer from "./footer"
 import "./layout.css"
 
 
-const Layout = ({ children }) => (
+const Layout = props => (
   <StaticQuery
     query={graphql`
       query SiteTitleQuery {
@@ -27,9 +27,9 @@ const Layout = ({ children }) => (
     `}
     render={data => (
       <>
-        <Header siteTitle={data.site.siteMetadata.title} />
+        <Header siteTitle={data.site.siteMetadata.title} location={props.location} />
         <div class="container" style={{marginTop: '1rem'}}>
-          {children}
+          {props.children}
         </div>
         <Footer />
       </>

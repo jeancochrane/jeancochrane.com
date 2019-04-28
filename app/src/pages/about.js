@@ -7,8 +7,8 @@ import SEO from "../components/seo"
 import SocialLinks from "../components/social"
 
 
-const AboutPage = () => (
- <Layout>
+const AboutPage = ({ location }) => (
+ <Layout location={location}>
     <SEO title="About" />
     <div className="row">
       <div className="col-xs-12 col-sm-10 col-sm-offset-1 col-md-8

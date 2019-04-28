@@ -3,7 +3,7 @@ import React from "react"
 
 const Footer = () => (
   <footer className="container-fluid">
-    <div className="row text-center" style={{
+    <div className="text-center" style={{
       paddingTop: "20px",
       marginTop: "20px",
       paddingBottom: "10px",
