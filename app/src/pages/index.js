@@ -5,7 +5,7 @@ import SEO from "../components/seo"
 
 import musicIcon from "../images/icon_music_color.png"
 import comicsIcon from "../images/icon_comics_color.png"
-import blogIcon from "../images/icon_comics_color.png"
+import blogIcon from "../images/icon_blog_color.png"
 
 
 const IndexPage = ({ location }) => (
