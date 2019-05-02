@@ -1,0 +1,14 @@
+[build]
+    publish = "output/"
+    command = "make build-deploy"
+
+[[redirects]]
+    from = "https://jeancochrane.netlify.com/*"
+    to = "https://www.jeancochrane.com/:splat"
+    status = 301
+
+[[redirects]]
+    to = "https://jeancochrane.com/:splat"
+    from = "https://www.jeancochrane.com/*"
+    status = 301
+

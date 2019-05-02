@@ -23,6 +23,17 @@ h1, h2, h3, h4, h5, h6 {
 
 .post-body p {
   font-size: 1.4em;
+  line-height: 1.5em;
+}
+
+.post-body h1,
+.post-body h2,
+.post-body h3,
+.post-body h4,
+.post-body h5,
+.post-body h6 {
+  margin-top: 40px;
+  margin-bottom: 20px;
 }
 
 .post-body li p {
