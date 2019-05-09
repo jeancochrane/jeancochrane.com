@@ -1,17 +1,18 @@
 import React from "react"
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
+import { faGithub, faTwitter } from "@fortawesome/free-brands-svg-icons"
 
 
 const SocialLinks = () => (
-  <div class="row">
-    <div class="col-xs-12 col-sm-10 col-sm-offset-1 text-center">
-      <a href="https://github.com/jeancochrane">
-        <i class="fa fa-fw fa-3x fa-github"></i>
-      </a>
-      <a href="https://twitter.com/jean_cochrane">
-        <i class="fa fa-fw fa-3x fa-twitter"></i>
-      </a>
-    </div>
-  </div>
+  <>
+    <a href="https://github.com/jeancochrane" title="GitHub account">
+      <FontAwesomeIcon icon={faGithub} />
+    </a>
+    &nbsp;
+    <a href="https://twitter.com/jean_cochrane" title="Twitter account">
+      <FontAwesomeIcon icon={faTwitter} />
+    </a>
+  </>
 )
 
 export default SocialLinks

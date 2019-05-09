@@ -1,6 +1,4 @@
 import React from "react"
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
-import { faInfoCircle } from "@fortawesome/free-regular-svg-icons"
 
 import Layout from "../components/layout"
 import SEO from "../components/seo"
@@ -11,10 +9,8 @@ const AboutPage = ({ location }) => (
  <Layout location={location}>
     <SEO title="About" />
     <div className="row">
-      <div className="col-xs-12 col-sm-10 col-sm-offset-1 col-md-8
-                      col-md-offset-2 content-body">
+      <div className="col-xs-12 col-md-10 offset-md-1 content-body">
         <h2 className="section-header">
-          <FontAwesomeIcon icon={faInfoCircle} />
           About
         </h2>
         <hr />
@@ -38,8 +34,10 @@ const AboutPage = ({ location }) => (
           Fall 2018 to study neural networks and deep learning. If you're interested
           in attending Recurse yourself, they highly recommend it.
         </p>
+        <h1 className="text-center">
+          <SocialLinks />
+        </h1>
       </div>
-      <SocialLinks />
     </div>
  </Layout>
 )

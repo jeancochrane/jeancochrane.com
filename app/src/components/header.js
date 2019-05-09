@@ -18,7 +18,6 @@ const NavItem = props => {
           fontSize: "1.2rem",
           fontWeight: "400",
         }}>
-          <FontAwesomeIcon icon={props.icon} />&nbsp;
           {props.title}
         </span>
       </Link>
@@ -41,9 +40,9 @@ const Header = props => (
         <Nav className="mr-auto">
         </Nav>
         <Nav className="navbar-nav">
-          <NavItem href="/" icon={faCode} title="Work" currentPath={props.location.pathname} />
-          <NavItem href="/blog" icon={faBook} title="Blog" currentPath={props.location.pathname} />
-          <NavItem href="/about" icon={faQuestionCircle} title="About" currentPath={props.location.pathname} />
+          <NavItem href="/" title="Work" currentPath={props.location.pathname} />
+          <NavItem href="/blog" title="Blog" currentPath={props.location.pathname} />
+          <NavItem href="/about" title="About" currentPath={props.location.pathname} />
         </Nav>
       </Navbar.Collapse>
     </div>
