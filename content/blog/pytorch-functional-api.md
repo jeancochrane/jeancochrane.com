@@ -193,11 +193,10 @@ def g(x): return torch.mean(x)
 x = torch.rand((3, 5), requires_grad=True)
 
 # Calculate the output of the function composition for the input tensor
-f_out = f(x)
-g_out = g(f_out)
+output = g(f(x))
 
 # Compute the gradients for the function composition
-g_out.backward()
+output.backward()
 ```
 
 Now, inspecting `x` shows the gradient:
