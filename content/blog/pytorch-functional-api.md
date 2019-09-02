@@ -1,18 +1,19 @@
-title: A Functional API For Neural Nets in PyTorch
-summary: What would PyTorch look like if state was properly encapsulated?
-date: 2018-07-18
+title: A Functional API For Feedforward Neural Nets in PyTorch
+summary: What would training feedforward neural networks in PyTorch look like if the library were committed to functional programming?
+date: 2019-09-02
 category: code
-slug: pytorch-api
+slug: pytorch-functional-api
+thumbnail: /static/images/blog/pytorch-functional-api/pytorch-logo.png
 tags: python; pytorch; ml; ai
-published: false
+published: true
 
 
-The encapsulation of model state in PyTorch is, to be frank, confusing. The API for
-defining a module container is pleasantly functional (as in functional programming),
-but to train the model, suddenly the user is required to share its parameters and
+The encapsulation of model state in PyTorch is, to be frank, confusing. To train a model,
+the user is required to share its parameters and
 its gradient among multiple disconnected objects, including an optimization algorithm
-and a loss function. These objects are in turn called upon to mutate the parameters
-in specific, unintuitive ways, such as through the `loss.backward()` and `optimizer.step()` methods.
+and a loss function. These objects are in turn called upon to mutate the gradient
+and the parameters in specific, unintuitive ways, including the `loss.backward()`
+and `optimizer.step()` methods.
 
 What's going on with state in PyTorch? Why are model parameters shared and mutated between
 three distinct objects? And what would PyTorch look like with an API that was
@@ -36,9 +37,10 @@ model = torch.nn.Sequential(
 )
 ```
 
-So far, this API is nicely functional. We define the network's layers declaratively,
-mirroring an interpretation of the network as a composition of linear transformations.
-No classes, and no state to deal with.
+So far, this API feels intuitive. We define the network's layers declaratively,
+mirroring an interpretation of the network as a composition of linear transformations,
+and PyTorch returns to us a module container that can operate on inputs and outputs
+to the network. No class inheritence, and no state to deal with.
 
 Things get weird when it comes time to train the network. To perform training,
 PyTorch requires us to initialize an optimizer -- that is, an optimization algorithm,
@@ -50,17 +52,17 @@ parameter state with the optimizer object in order to initialize it:
 optimizer = torch.optim.SGD(model.parameters(), lr=0.01)
 ```
 
-PyTorch also requires us to initialize a second object, a criterion (or loss
-function) to calculate the gradient of the network. This object is entirely
+PyTorch also requires us to initialize a second object, a loss
+function, to calculate the gradient of the network. This object is entirely
 decoupled from the module container `model`:
 
 ```python
 # Initialize a loss function using negative log-likelihood loss
-criterion = torch.nn.NLLLoss()
+loss_fn = torch.nn.NLLLoss()
 ```
 
 When training the model, these three objects -- the module container, the optimizer,
-and the criterion -- all come together to mutate the same state, the model's
+and the loss function -- all come together to mutate the same state, the model's
 parameters and gradient. Here's what a simple training loop might look like:
 
 ```python
@@ -73,7 +75,7 @@ for epoch in range(epochs):
         output = model(feature)
 
         # Calculate the loss
-        loss = criterion(output, label)
+        loss = loss_fn(output, label)
 
         # Compute the gradient
         loss.backward()
@@ -82,10 +84,10 @@ for epoch in range(epochs):
         optimizer.step()
 ```
 
-Let's take these steps one-by-one and try to figure out how the parameter state
+Let's take these steps one-by-one to try to figure out how the parameter state
 is shared between the three objects.
 
-### 1. Zero out the gradient
+### 1. Clear out the gradient
 
 In PyTorch, optimizers know nothing about the training loop, so they will continue
 to accumulate gradients indefinitely unless instructed to stop. Hence, to initiate a
@@ -96,10 +98,10 @@ may have previously been calculated:
 optimizer.zero_grad()
 ```
 
-This method raises some confusing questions. Why should the optimizer own this
+This method is not particularly intuitive. Why should the optimizer own this
 method, instead of the module container `model` (which initialized the weights)?
 Why is the optimizer responsible for storing the gradient, and not the `model`?
-The situation will become even more  confusing later on, when we start to see
+The situation will become even more confusing later on, when we consider
 how the gradient is calculated.
 
 ### 2. Foward pass through the network
@@ -116,11 +118,11 @@ No funny business here, just input and output.
 ### 3. Calculate the loss
 
 Calculating the loss is also relatively straightforward. We can treat our `NLLLoss`
-criterion as a function and apply it to the output and the labels to calculate
+object as a function and apply it to the output and the labels to calculate
 the loss:
 
 ```python
-loss = criterion(output, label)
+loss = loss_fn(output, label)
 ```
 
 ### 4. Compute the gradient
@@ -132,14 +134,14 @@ gradient across the network's layers:
 loss.backward()
 ```
 
-From a mathematical perspective, it makes some sense that the loss function owns the
+From a mathematical perspective, it makes some sense that the output of the loss function owns the
 `backward()` method: after all, the gradient represents the partial derivative of the loss
 function with respect to the network's weights. Yet by assigning `backward()` to
 the loss function output, PyTorch is obscuring the fact that it is using the
 layers contained by `model` to propagate the gradient backward through the network --
-layers which have been passed through to `output` by the criterion, in order to
+layers which have been passed through to `output` by the loss function, in order to
 calculate the gradient in `loss.backward()`. Instead of making this shared state clear,
-the API obscures it.
+the API obscures it, returning `None` and mutating gradient state in-place.
 
 ### 5. Update the weights
 
@@ -153,7 +155,7 @@ optimizer.step()
 ```
 
 Defining `step()` as an optimizer method with no inputs or outputs obfuscates the
-stakes of the operation. What was the shape of the gradient? How large were the
+consequences of the operation. What was the shape of the gradient? How large were the
 weights that it updated? There's no way to know without inspecting the `optimizer` object,
 which has further obscured the underlying parameter state.
 
@@ -171,27 +173,50 @@ bad API design?
 ## The benefits of a composable API
 
 One advantage to spreading ownership of state between the model, loss function,
-and optimizer is that it makes PyTorch more _composable_,
+and optimizer is that it makes PyTorch more composable,
 and hence in some sense more flexible. In PyTorch, loss functions and optimization
 algorithms aren't tightly coupled to neural networks, since the three types of
-objects are fully separate from one another. Because of this, PyTorch can be used to
-optimize _any_ function, not just a neural network. Take `x**2` as an example:
+objects are fully separate from one another. One interesting consequence of this is that PyTorch
+can be used to compute gradients for _any_ composition of functions that returns
+a scalar, not just neural networks, using the `backward()` method of a Variable
+and the [autograd module](https://pytorch.org/docs/stable/notes/autograd.html):
 
 ```python
-def f(x): return x**2
+# Set the random seed for PyTorch to enforce reproducibility
+torch.manual_seed(0)
 
-x = torch.Tensor([[1, 2, 3]])
-output = f(x)
-# TODO: Compute the gradient of the feature
+# Define two simple functions to compose, returning a scalar
+def f(x): return torch.log(x)
+def g(x): return torch.mean(x)
+
+# Initialize a 3 x 5 tensor and mark it as requiring a gradient
+x = torch.rand((3, 5), requires_grad=True)
+
+# Calculate the output of the function composition for the input tensor
+f_out = f(x)
+g_out = g(f_out)
+
+# Compute the gradients for the function composition
+g_out.backward()
 ```
 
-This composability is nice, but it comes at a cost of clarity for working
+Now, inspecting `x` shows the gradient:
+
+```python
+print(x.grad)
+>>> tensor([[0.1343, 0.0868, 0.7535, 0.5049, 0.2169],
+            [0.1051, 0.1360, 0.0744, 0.1463, 0.1054],
+            [0.1911, 0.1660, 2.9861, 0.3948, 0.2268]])
+```
+
+This composability makes PyTorch useful for gradient computation in a variety of
+circumstances, not just neural network training. But it comes at a cost of clarity for working
 with neural networks -- supposedly the primary purpose of PyTorch.
 
 ## Clearing up the API for neural nets
 
-One easy way to improve the API for neural nets would be to encapsulate all mutation
-of the weights in the module container object `model`. We could accomplish this
+One simple way to clarify the API for neural nets would be to fully encapsulate
+the weights and the gradient the module container object `model`. We could accomplish this
 by requiring the module container to be explicitly initialized with a loss function and
 an optimization algorithm:
 
@@ -226,7 +251,7 @@ and update the weights -- something along the lines of the following pseudocode:
 ```python
 class Module:
     def step(self, feature, label):
-        self.zero_grad()
+        self.optimizer.zero_grad()
         output = self.forward(feature)
         loss = self.loss(output, label)
         loss.backward()
@@ -236,7 +261,7 @@ class Module:
 With this API, the weights and their respective gradients more clearly "belong"
 to the network, not to its loss function or optimization algorithm.
 
-In fact, this API winds up being much more similar to the one that scikit-learn uses
+In fact, this API winds up being more similar to the one that scikit-learn uses
 for neural networks. In scikit-learn, the entire training loop above is replaced
 by the [`model.fit(X, y)` method](https://scikit-learn.org/stable/modules/generated/sklearn.neural_network.MLPClassifier.html#sklearn.neural_network.MLPClassifier.fit),
 which takes care of looping over the training features `X` and labels `y`. In this
@@ -246,8 +271,10 @@ training state in the `model` object, including the training epochs.
 And yet, by encapsulating state in the module container `model`, the API
 still suffers from a lack of clarity in terms of how `zero_grad()`, `backward()`, and `step()`
 are adjusting the module container's internal parameter state. In order to inspect
-the gradient, for example, the user would need to drop some form of debugger and
-introspect the internal state of `model`. Is there a way to make this state even clearer?
+the gradient at a particular point in the training loop, for example, the user
+would need to drop some form of debugger at the right moment and introspect the
+internal state of `model`. Is there a way to make the state mutations even clearer, such
+that this kind of detailed debugging could receive first-class support?
 
 ## Functional programming with PyTorch
 
@@ -269,7 +296,7 @@ ModelFactory = torch.nn.Sequential(
 model = ModelFactory(torch.nn.Parameters())
 
 # Initialize a loss function
-criterion = torch.nn.NLLLoss()
+loss_fn = torch.nn.NLLLoss()
 
 for epoch in range(epochs):
     for feature, label in training_data:
@@ -277,7 +304,7 @@ for epoch in range(epochs):
         output = model(feature)
 
         # Calculate the loss
-        loss = criterion(output, label)
+        loss = loss_fn(output, label)
 
         # Compute the gradient
         gradient = model.backward(loss)
@@ -291,7 +318,7 @@ for epoch in range(epochs):
 
 The training pass is now more verbose, but as as a result, its output is
 inspectable at every step, and no state is shared between objects. Each step in
-the training loop -- forward pass, calculating loss, computing gradients, and
+the training loop -- passing input forward, calculating loss, computing gradients, and
 updating the weights -- produces immutable output that can be passed into the
 next step.
 
@@ -305,7 +332,7 @@ There are a few critical differences with this API:
   empty weights when passed into a module container constructor function.
 
 - Parameters can now be made immutable. Instead of updating weights in-place,
-  the `step()` method produces a _new_ set of weights based on the gradient.
+  for instance, the `step()` method produces a _new_ set of weights based on the gradient.
 
 - The module container `model` must now own the `backward()` and `step()` methods,
   in order to produce the gradient and the updated parameters, respectively. This makes
