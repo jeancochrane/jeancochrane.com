@@ -47,7 +47,7 @@ a variety of different domains and data types.
 
 Simple approaches to schema matching, as outlined by [Rahm and Bernstein
 (2001)](https://dl.acm.org/citation.cfm?id=767154), compare the names of the fields
-to find matches (what Rahm and Bernstein call _schema-based matching_). `address`
+to find matches (what Rahm and Bernstein call _schema-level matching_). `address`
 and `street_addr` are reasonably similar strings, so we can infer that their columns
 probably have similar meaning. However, this approach breaks down when the column
 names are _opaque_, or uninformative, which is often the case in large heterogenous data stores.
@@ -64,5 +64,108 @@ comparing distributions -- and to use those neural networks to cluster low-dimen
 encodings of the columns instead of comparing them directly.
 
 ## The method: Neural networks and deep embeddings
+
+The crux of Mueller and Smola's method is to train a neural network to produce
+_embeddings_ based on the distribution of the columns. An embedding is a smaller-dimensional
+vector representation of the data that encodes some type of semantic meaning
+that the neural network has learned to recognize. With columns converted to embeddings,
+they can be clustered together using fast approximate nearest neighbor algorithms,
+as described by [Muja and Lowe (2009)](https://www.researchgate.net/publication/221416047_Fast_Approximate_Nearest_Neighbors_with_Automatic_Algorithm_Configuration).
+Figure 1 above shows a visualization of these clusters of embeddings projected
+into two dimensions, where the relationship between distance and semantic meaning
+of columns is clearer.
+
+In Mueller and Smola's architecture, there are actually two neural networks at work: $h_{\theta}$,
+which learns to produces embeddings from columns, and $g_{\psi}$, which learns to produce
+an adjustment term based on how common the column's distribution is. $h_{\theta}$
+and $g_{\theta}$ interact to produce probabilities $p_{ij}$ that two columns $D_i$ and $D_j$ and were produced
+by the same variable:
+
+\begin{equation} p_{ij} = e^{-D_{ij}} \end{equation}
+
+Where:
+
+\begin{equation} D_{ij} = (h_{\theta}(D_i) - h_{\theta}(D_j))^2 + g_{\psi}(D_i) + g_{\psi}(D_j) \end{equation}
+
+Standard triaining rules apply: both $h_{\theta}$ and $g_{\psi}$ are trained
+via stochastic gradient descent, where the loss function is cross-entropy loss
+for binary classification.
+
+In essence, Mueller and Smola's probabilities suggest that the degree of similarity between
+two columns can be thought of as the squared distance between their
+embeddings $(h_{\theta}(D_i) - h_{\theta}(D_j))^2$ scaled by a factor $g_{\psi}(D_i) + g_{\psi}(D_j)$
+representing how common the distributions of the columns are.
+
+### Two networks are better than one
+
+Why train two networks? It turns out $g_{\psi}$ adds an important element by
+learning to adjust for columns with common distributions.
+
+Columns with very common sets of values, such as Boolean `True`/`False` columns, will tend to produce very
+high confidence matches when only their embeddings are compared. The adjustment
+factor $g_{\psi}$ learns to produce a large value in response to these types
+of columns, making them categorically less likely to match. Mueller and Smola's
+experiments showed that models lacking $g_{\psi}$ performed much more poorly.
+
+### Different architectures for different data types
+
+One major challenge facing Mueller and Smola's architecture is that the types of
+data represented by different columns can vary widely. Columns can contain strings,
+integers, floats, blocks of free text -- and each of these columns needs to be
+legible to the networks $h_{\theta}$ and $g_{\psi}$.
+
+The biggest hurdle involved in making heterogenous data legible to the networks
+is that columns with different data types cannot be encoded and input into the network
+in the same way. A column with a string data type, like our `address` column above,
+needs to be encoded differently from a numeric column like `price` before being
+converted to a vector that can pass through the networks. Another hurdle is that
+networks with inputs of widely-varying magnitudes tend to train poorly, so even
+if two columns are both numeric, they may have completely different ranges and
+will be hard to compare as a result.
+
+Mueller and Smola tackle the problem of heterogenous data types by training separate
+networks for different data types. String columns that represent discrete English words
+are converted to vector inputs using the [`fastText` word vector embeddings](https://fasttext.cc/)
+before being fed into the networks; if a string column represents indeterminate free
+text instead of discrete English words, $h_{\theta}$ and $g_{\psi}$ are instead
+trained as character-level LSTM recurrent networks. Numeric data is converted to
+a 32-dimensional vector representing the 32-bit representation of the number as
+a form of normalization.
+
+In all cases, $h_{\theta}$ and $g_{\psi}$ have three fully-connected hidden layers
+of 300 nodes each, with ReLU activations in $g_{\psi}$ and tanh activations in
+$h_{\theta}$, and where $h_{\theta}$ produces a 300-dimensional vector output and
+$g_{\psi}$ produces a scalar. Thus while there are substantial differences in the input to each
+network as determined by the column's data type, the networks themselves are largely
+identical.
+
+_Image TK_
+
+Mueller and Smola don't make it clear how the data types of each column are
+determined prior to encoding the input to the networks. Since the training
+data for the paper was generated from [OpenML](https://www.openml.org) source data,
+which provides feature type metadata for each dataset, we can assume that Mueller
+and Smola used dataset metadata to determine the data types in each column.
+This metadata is unlikely to exist outside of a lab context, however, so methods
+of accurately approximating the data types of each column would be a necessary
+improvement in order to put Mueller and Smola's work into production.
+
+### The need for speed
+
+While Mueller and Smola show that their network architecture outperforms other statistical
+classifiers on key metrics like precision, recall, and AUC, their metric results
+aren't extremely exciting. As their charts demonstrate, the embeddings approach produces
+incremental imrpovements in most domains, and breakthrough improvement in only a few.
+
+_Image TK_
+
+To me, the key advantage of using deep embeddings for schema matching is speed.
+Instead of producing pairwise classifications of columns, Mueller and Smola's method only requires
+passing each column through each network once. Clustering is performed outside the network using
+nearest-neighbor algorithms that don't require high-dimensional computation.
+
+Mueller and Smola don't compare speed across different approaches, but this, to me,
+is the biggest attraction of their approach. I'd love to see a follow-up paper that
+compares approaches based on speed.
 
 ## Potential applications beyond schema matching

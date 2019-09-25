@@ -62,3 +62,7 @@ CATEGORY_SAVE_AS = ''
 # Save index of blog articles to a custom location
 INDEX_SAVE_AS = 'blog/index.html'
 ARTICLE_SAVE_AS = 'blog/{slug}.html'
+
+# Plugins
+PLUGIN_PATHS = ['plugins/']
+PLUGINS = ['render_math']
