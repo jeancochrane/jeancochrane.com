@@ -21,7 +21,8 @@ h1, h2, h3, h4, h5, h6 {
   font-family: "Lora", serif;
 }
 
-.post-body p {
+.post-body p,
+.post-body div.math {
   font-size: 1.4em;
   line-height: 1.5em;
 }
