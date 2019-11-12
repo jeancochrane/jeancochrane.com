@@ -1,6 +1,6 @@
-title: Udacity Deep Learning Nanodegree\: A Review
-summary: I completed the Udacity Deep Learning Nanodegree so you don't have to. Unless, of course, you want to. In which case, this post can help you make that decision.
-date: 2019-11-11
+title: Udacity Deep Learning Nanodegree: A Review
+summary: I completed the Udacity Deep Learning Nanodegree so you don't have to. Unless, of course, you want to. In which case, this post can help you decide if it's right for you.
+date: 2019-11-12
 slug: udacity-deep-learning-nanodegree-review
 category: code
 tags: ml; ai; deep learning; udacity
