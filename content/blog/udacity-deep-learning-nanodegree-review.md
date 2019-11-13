@@ -3,6 +3,7 @@ summary: I completed the Udacity Deep Learning Nanodegree so you don't have to. 
 date: 2019-11-12
 slug: udacity-deep-learning-nanodegree-review
 category: code
+thumbnail: /static/images/blog/udacity-deep-learning-nanodegree-review/udacity.svg
 tags: ml; ai; deep learning; udacity
 published: true
 
