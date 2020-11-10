@@ -3,7 +3,7 @@ slug: whowasincommand
 template: work
 category: code
 type: work
-order: 2
+order: 3
 summary: A web tool to track security force activity and make it harder for human rights abusers to hide. 
 thumbnail: /static/images/work/whowasincommand/whowasincommand.png
 work_url: https://whowasincommand.com
