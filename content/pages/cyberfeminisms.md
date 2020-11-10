@@ -3,7 +3,7 @@ slug: cyberfeminisms
 template: work
 category: talks
 type: work
-order: 6
+order: 7
 summary: My talk on cyberfeminisms at !!Con 2017. 
 thumbnail: /static/images/work/cyberfeminisms/title.png
 work_url: https://www.youtube.com/watch?v=5GiQovHaT_g
