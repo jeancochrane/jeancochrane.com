@@ -3,7 +3,7 @@ slug: where-to-buy
 template: work
 category: code
 type: work
-order: 6
+order: 7 
 summary: Find the Chicagoland neighborhood that fits your needs, based on a variety of heuristics. 
 thumbnail: /static/images/work/where-to-buy/wtb-distributions.png
 work_url: http://chicagobusiness.com/section/where-to-buy

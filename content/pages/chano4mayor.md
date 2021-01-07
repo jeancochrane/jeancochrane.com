@@ -3,7 +3,7 @@ slug: chano4mayor
 template: work
 category: code
 type: work
-order: 2
+order: 3 
 summary: A New Media campaign to convince Chance the Rapper to run for mayor of Chicago. 
 thumbnail: /static/images/work/chano4mayor/chano1.png
 work_url: https://chano4mayor.com
