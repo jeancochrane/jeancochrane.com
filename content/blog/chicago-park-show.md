@@ -87,11 +87,11 @@ Here's a detailed breakdown of everything we had to pay for:
         </tr>
         <tr>
             <td>Money for supporting acts</td>
-            <td>$150</td>
+            <td>$175</td>
         </tr>
         <tr>
             <td><strong>Total</strong></td>
-            <td>$645</td>
+            <td>$670</td>
         </tr>
     </tbody>
 </table>
@@ -150,7 +150,7 @@ that it was fast and they knew exactly what we needed.
 This was the first show I'd thrown in years and I was a little bit
 overwhelmed at how much equipment we needed. When you throw a show in a park, you're
 starting from a completely blank slate, and you don't have anyone to fall back on
-if you forget a guitar cable and need to borrow one. The following is as
+if you forget an extension cord and need to borrow one. The following is as
 exhaustive of a list of our gear as I can remember.
 
 ### Amps
