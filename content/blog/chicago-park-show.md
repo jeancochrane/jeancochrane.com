@@ -7,7 +7,7 @@ thumbnail: /static/images/blog/chicago-park-show/thumbnail.jpg
 tags: music; chicago;
 published: true
 
-_Hard Femme playing in Ping Tom Park on 8/1/21. Photo by [Jibreel Powell](http://www.jibreelpowell.com/)._
+_Hard Femme playing in Ping Tom Park on August 1st, 2021. Photo by [Jibreel Powell](http://www.jibreelpowell.com/)._
 
 This past weekend my band [Hard Femme](https://hardfemme.bandcamp.com/) threw
 an [album release show](https://www.eventbrite.com/e/hard-femme-album-release-picnic-feat-ester-solo-and-ire-ola-registration-161577202763)
@@ -22,7 +22,7 @@ so I want to document what we learned in case anyone else wants
 to try making a lot of noise in a city park.
 
 Before reading this guide, you should probably check out [the Park District website](https://www.chicagoparkdistrict.com/permits-rentals/special-event-permit-application-process)
-to see how they describe the application process. It's surprisingly clear
+to see how they describe the permitting process. It's surprisingly clear
 and it will give you a sense of the basic tasks you need to complete in order to secure a permit.
 Consider the following guide to be an addendum to the city's FAQ, providing
 some extra flavor based on my own personal experience.
@@ -49,7 +49,7 @@ is a good thing, but it's something to keep in mind.
      src="/static/images/blog/chicago-park-show/ester.jpg" />
 
 <p class="text-center small">
-    <em>Anna from the band Ester playing a solo set to the crowd in Ping Tom Park.</em>
+    <em>Anna from the band Ester playing a solo set featuring Ping Tom's enormous skyline views.</em>
 </p>
 
 ## Confirm your budget
@@ -99,10 +99,10 @@ Here's a detailed breakdown of everything we had to pay for:
 We also considered renting a portable toilet, which would have cost us around $200
 for the day. We knew there wouldn't be bathrooms on site because the City has
 decided to keep the bathrooms in the REI boathouse closed for the forseeable
-future (thanks guys!) Luckily the Chinatown library had a public bathroom
+future (thanks guys!) but luckily the Chinatown library had a public bathroom
 and was open on a Sunday.
 
-You may face even more fees depending on if you want to do things like
+You may face even more fees depending on whether you want to do things like
 serve alcohol or... bring animals, which is apparently a thing you can do.
 Check the Park District's [pricing page](https://www.chicagoparkdistrict.com/permits-rentals/special-event-permit-pricing)
 for details.
@@ -137,18 +137,21 @@ and it only cost us $100. There may be better deals to be had, but I appreciated
 that it was fast and they knew exactly what we needed.
 
 <img class="img img-responsive center-block"
-     alt="ire ola performing in Ping Tom Park."
-     src="/static/images/blog/chicago-park-show/ireola.jpg" />
+     alt="Hard Femme setting up the gear. Remember that half of playing music is carrying heavy stuff."
+     src="/static/images/blog/chicago-park-show/setup.jpg" />
 
 <p class="text-center small">
-    <em>ire ola performing in Ping Tom Park.</em>
+    <em>Hard Femme setting up the gear. Remember that half of playing music is carrying heavy stuff.</em>
 </p>
+
 
 ## Gather your equipment
 
-This was the first show I'd thrown in years and I was surprised and a little bit
-overwhelmed at how much equipment we needed. The following is as
-exhaustive of a list as I can remember.
+This was the first show I'd thrown in years and I was a little bit
+overwhelmed at how much equipment we needed. When you throw a show in a park, you're
+starting from a completely blank slate, and you don't have anyone to fall back on
+if you forget a guitar cable and need to borrow one. The following is as
+exhaustive of a list of our gear as I can remember.
 
 ### Amps
 
@@ -179,7 +182,7 @@ neighborhood hardware store, [Clark Devon Hardware](https://www.clarkdevon.com/)
 
 3500 watts turned out to be more than enough to power two PA speakers, one monitor,
 and four amps. We ran the generator on the low-power
-"eco-mode" and ran it continuously from about 3pm to 7pm, which used up about half
+"eco-mode" and ran it continuously from 3pm to 7pm, which used up half
 of the gas in the tank.
 
 ### Power strips and extension cords
@@ -206,7 +209,7 @@ station wagon. When less than half the equipment fit, we realized we would need
 a real-deal cargo van.
 
 Luckily we were able to get a cargo van on Getaround at the last minute on one of the 
-biggest moving days of the year. I'm still not sure how we managed this and I consider it
+biggest moving days of the year. I'm still not sure how we managed to pull this off and I consider it
 an act of providence.
 
 ### Drinks
@@ -218,11 +221,11 @@ entrepreneurial spirit could have sold these drinks for a profit
 but it felt good to be able to offer them to our thirsty friends at no charge.
 
 <img class="img img-responsive center-block"
-     alt="Hard Femme setting up the gear. Remember that half of playing music is carrying heavy stuff."
-     src="/static/images/blog/chicago-park-show/setup.jpg" />
+     alt="ire ola performing in Ping Tom Park."
+     src="/static/images/blog/chicago-park-show/ireola.jpg" />
 
 <p class="text-center small">
-    <em>Setting up the gear. Remember that half of playing music is carrying heavy stuff.</em>
+    <em>ire ola performing in Ping Tom Park.</em>
 </p>
 
 ## Get to the park early
