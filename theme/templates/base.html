@@ -79,14 +79,14 @@
     <meta property="og:type" content="website">
     <meta property="og:description" content="{% if article and article.summary %}{{ article.summary|replace("<p>", "")|replace("</p>", "") }}{% elif page and page.summary %}{{ page.summary|replace("<p>", "")|replace("</p>", "") }}{% else %}Jean Cochrane's portfolio website and blog.{% endif %}">
     <meta property="og:url" content="https://jeancochrane.com{% if article and article.slug %}/blog/{{ article.slug }}{% elif page and page.slug %}/pages/{{ page.slug }}{% endif %}">
-    <meta property="og:title" content="{% if article and article.title %}{{ article.title }}{% elif page and page.title %}{{ page.title }}{% endif %}{% if article or page %} - {% endif %}Jean Cochrane">
+    <meta property="og:title" content="{% if article and article.title %}{{ article.title }}{% elif page and page.title %}{{ page.title }}{% endif %}{% if article or page %}{% else %}Jean Cochrane{% endif %}">
     <meta property="og:image" content="https://jeancochrane.com{% if article and article.thumbnail %}{{ article.thumbnail }}{% elif page and page.thumbnail %}{{ page.thumbnail }}{% else %}/theme/images/icon_music_color.png{% endif %}">
 
     <!-- Twitter metadata -->
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:site" content="Jean Cochrane">
     <meta name="twitter:creator" content="@jean_cochrane">
-    <meta name="twitter:title" content="{% if article and article.title %}{{ article.title }}{% elif page and page.title %}{{ page.title }}{% endif %}{% if article or page %} - {% endif %}Jean Cochrane">
+    <meta name="twitter:title" content="{% if article and article.title %}{{ article.title }}{% elif page and page.title %}{{ page.title }}{% endif %}{% if article or page %}{% else %}Jean Cochrane{% endif %}">
     <meta name="twitter:url" content="https://jeancochrane.com{% if article and article.slug %}/blog/{{ article.slug }}{% elif page and page.slug %}/pages/{{ page.slug }}{% endif %}">
     <meta name="twitter:description" content="{% if article and article.summary %}{{ article.summary|replace("<p>", "")|replace("</p>", "") }}{% elif page and page.summary %}{{ page.summary|replace("<p>", "")|replace("</p>", "") }}{% else %}Jean Cochrane's portfolio website and blog.{% endif %}">
     <meta name="twitter:image" content="https://jeancochrane.com{% if article and article.thumbnail %}{{ article.thumbnail }}{% elif page and page.thumbnail %}{{ page.thumbnail }}{% else %}/theme/images/icon_music_color.png{% endif %}">

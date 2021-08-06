@@ -2,6 +2,7 @@ title: About
 template: about
 category: about
 save_as: about.html
+summary: Jean Cochrane builds dynamic tools for understanding geography, technology, and distributions of power. They strive to be a steward of the commons and to make the work of others more productive and more meaningful.
 order: 0
 
 
