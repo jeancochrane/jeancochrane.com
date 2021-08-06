@@ -164,10 +164,11 @@ at the same degree of loudness, however, and I wish we'd had time to get a bigge
 
 ### PA, monitor, and mixer
 
-We chained together two 500 watt PA speakers on stands (borrowed from our friends at
+We chained together two 500 watt PA speakers (borrowed from our friends at
 [Build Coffee](https://buildcoffee.org/)) with one 250 watt speaker acting as
-a monitor facing the bands. Sound went out to the speakers via the main and
-control room outputs of a small mixer.
+a monitor facing the bands (borrowed from Wendy Zeldin and [Shelby Turner](https://richardalbum.bandcamp.com/),
+who run the show house Big Forever). Sound went out to the speakers via the main and
+control room outputs of a small mixer, also borrowed from Wendy and Shelby.
 
 In hindsight, this was not enough speaker power to give us the kind of vocal
 volume we needed to be heard over four amps and a drum kit. We pushed the vocals
@@ -195,7 +196,7 @@ Lesson learned: always bring more extension cords than you need.
 ### Lots of audio cables
 
 Similar to extension cords, we should have brought more XLR and guitar cables than
-we thought we needed. We were lucky enough to be able to borrow from friends, but we wound
+we thought we needed. We were lucky enough to be able to borrow from Wendy and Shelby, but we wound
 up needing to chain more than a few 15' XLRs together to reach the speakers, and
 we needed an XLR to DI converter to have enough mic inputs on our mixer.
 
