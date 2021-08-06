@@ -3,7 +3,7 @@ summary: A guide to getting your friends together for an outdoor concert in the 
 date: 2021-08-05
 category: music
 slug: chicago-park-show 
-thumbnail: /static/images/blog/pytorch-functional-api/pytorch-logo.png
+thumbnail: /static/images/blog/chicago-park-show/thumbnail.jpg
 tags: music; chicago;
 published: true
 
@@ -41,15 +41,15 @@ and has unparalleled views of the skyline. All of these factors worked out in ou
 we underestimated how many of our friends would want to drive and end up
 frantically searching for parking right in the middle of the Chinatown summer festival.
 
-I don't feel too bad about this since discouraging your audience from driving
+I don't feel too bad about this since I think discouraging your audience from driving
 is a good thing, but it's something to keep in mind.
 
 <img class="img img-responsive center-block"
-     alt="Anna from the band Ester plays a solo set to the crowd in Ping Tom Park."
+     alt="Anna from the band Ester playing a solo set to the crowd in Ping Tom Park."
      src="/static/images/blog/chicago-park-show/ester.jpg" />
 
 <p class="text-center small">
-    <em>Anna from the band Ester plays a solo set to the crowd in Ping Tom Park.</em>
+    <em>Anna from the band Ester playing a solo set to the crowd in Ping Tom Park.</em>
 </p>
 
 ## Confirm your budget
@@ -218,7 +218,7 @@ entrepreneurial spirit could have sold these drinks for a profit
 but it felt good to be able to offer them to our thirsty friends at no charge.
 
 <img class="img img-responsive center-block"
-     alt="Setting up the gear. Remember that half of playing music is carrying heavy stuff."
+     alt="Hard Femme setting up the gear. Remember that half of playing music is carrying heavy stuff."
      src="/static/images/blog/chicago-park-show/setup.jpg" />
 
 <p class="text-center small">
