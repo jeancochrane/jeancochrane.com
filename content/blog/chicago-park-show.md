@@ -1,4 +1,4 @@
-title: How To Throw a Show in a Chicago Park 
+title: How To Throw a DIY Show in a Chicago Park 
 summary: A guide to getting your friends together for an outdoor concert in the Midwest's best park district. 
 date: 2021-08-05
 category: music
