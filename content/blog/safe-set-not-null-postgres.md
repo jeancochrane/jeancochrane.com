@@ -3,7 +3,6 @@ summary: SET NOT NULL can be dangerous on large production tables. It doesn't ha
 date: 2022-05-02
 category: code
 slug: safe-set-not-null-postgres.md 
-thumbnail: /static/images/blog/netlify-identity-dealbreakers/netlify-logo.png
 tags: postgres; databases; migrations; ddl 
 published: true 
 
@@ -14,11 +13,14 @@ records cannot be null, and it's cool that the psql shell will display this aspe
 you in the little table when you describe the table with `\d $tablename`.
 
 On the other hand, running `SET NOT NULL` on a large production table can easily bring down 
-your service if you're not careful.
+your service if you're not careful. I'll explain how this works, describe the conventional
+solution that uses constraints instead, and then show an interesting way to write a custom
+function that can do the same thing as `SET NOT NULL` but in a safer fashion.
 
 ## How `SET NOT NULL` can crash your app
 
 There are three key problems with `ALTER TABLE... SET NOT NULL`:
+
 1. The operation immediately validates the not-null constraint for all existing rows in your table.
 2. Postgres always performs this validation using a full table scan, whether or not an index 
 exists on the column in question.
@@ -26,14 +28,15 @@ exists on the column in question.
 completes. 
 
 Put simply, we're looking at:
+
 1. A long-running DDL operation;
 2. via a mandatory full-table scan;
 3. holding an exclusive lock on your table. 
 
 This is a recipe for disaster. Holding an exclusive lock on a large, high-throughput 
-table for as little as four seconds can produce measurable downtime as connections begin
-to block and your request queue balloons. A full table scan of 50m records will easily
-run you ten seconds, if you're lucky.
+table for as little as five seconds can produce measurable downtime as connections begin
+to block and your request queue balloons. A full table scan of 50m records can run 
+much longer than that.
 
 There has to be a better way.
 
@@ -45,8 +48,8 @@ CONSTRAINT` with the option `NOT VALID`, Postgres will defer validation of exist
 until you run a separate `ALTER TABLE... VALIDATE CONSTRAINT` operation, which acquires a
 less strict lock on the table (`SHARE UPDATE EXCLUSIVE`).
 
-I find this solution to be unhygienic because it's not _actually_ setting the column to not-null,
-it's setting a _constraint_, which are similar but distinct concepts. The end behavior is
+I find this solution to be unsatisfying because it's not _actually_ setting the column to not-null,
+it's setting a _constraint_, which are similar but distinct concepts. The resulting `INSERT`/`UPDATE` behavior is
 identical (both existing and incoming rows are validated to be not-null) but constraints and
 not-null columns are represented as two different attributes in the schema, which can be 
 confusing. Engineers often jump to the field definition to check if an unfamiliar field is 
@@ -67,8 +70,8 @@ things under the hood:
 3. Update `pg_catalog.pg_attributes` to set `attnotnull = TRUE` for the column
 
 That's it! Pretty easy, and actually quite fast, except for the full-table scan. If we can
-replace the second step with a check that leverages indexes, we can speed up the oeration to the
-point where it executes basically instantly.
+replace the second step with a check that leverages indexes instead of a full-table scan, we 
+can speed up the operation to the point where it executes basically instantly.
 
 First, make sure you have an index on the column. If you don't have one, make one temporarily
 (remembering to use `CONCURRENTLY` so you don't issue another `ACCESS EXCLUSIVE` lock):
@@ -95,8 +98,8 @@ _NULLExists boolean;
 _OK         boolean;
 BEGIN
 
+-- Raise errors and abort the migration if the statement locks for more than 4s
 SET LOCAL lock_timeout = '4s';
-
 SET LOCAL statement_timeout = '4s';
 
 -- Take an ACCESS EXCLUSIVE lock on the entire table,
@@ -133,8 +136,7 @@ IF _NULLExists THEN
     RAISE 'column "%%.%%.%%" contains null values', _Schema, _Table, _Column USING ERRCODE = 'check_violation';
 END IF;
 
--- Set NOT NULL for the column by updating the pg_catalog directly:
-
+-- Set NOT NULL for the column by updating the pg_catalog directly
 EXECUTE format('
     UPDATE pg_catalog.pg_attribute SET attnotnull = TRUE
     WHERE attrelid = %%L::oid
