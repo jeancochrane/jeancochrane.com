@@ -1,6 +1,6 @@
 [build]
     publish = "output/"
-    command = "make build-deploy"
+    command = "pip install uv && make build-deploy"
 
 [[redirects]]
     from = "https://jeancochrane.netlify.com/*"
