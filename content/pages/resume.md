@@ -9,7 +9,7 @@ order: 0
 ## Cook County Assessor's Office <small>July 2023 &mdash; present</small>
 _Senior Data Scientist and Interim Director of Data Science_ | [cookcountyassessoril.gov](https://www.cookcountyassessoril.gov/)
 
-Reform administration working to **improve the fairness and accuracy of
+Reform administration working to improve the **fairness and accuracy of
 property tax assessments** in Cook County.
 
 - Led a **4-person data science and engineering team** responsible for the mass
@@ -21,14 +21,15 @@ property tax assessments** in Cook County.
   models using GitHub Actions, Docker, Terraform, and AWS Batch
 - Supervised an intern and a junior data scientist in the design and development
   of an **automated system for extracting and cleaning building permits** in
-  Python, with a sophisticated Excel workbook to help subject-matter experts
-  manually review the messiest permits
+  Python, featuring a sophisticated Excel workbook to help subject-matter
+  experts manually review the messiest permits
 - Supervised a junior data scientist in the design and development of a **static
-  web app to explain significant sales and characteristics for every modeled
-  home value** in the County using Hugo, AWS CloudFront, and GitHub Actions
-- **Automated a mission-critical QC process** by working with stakeholders to move
-  slow, manual queries into Athena views using dbt, with a Tableau dashboard
-  providing a user-friendly review interface
+  web app to explain significant sales and characteristics** for every
+  estimated home value in the County using Hugo, AWS CloudFront, and GitHub
+  Actions
+- **Automated a mission-critical QC process** by working with stakeholders to
+  migrate slow, manual queries into Athena views using dbt, with a Tableau
+  dashboard providing a user-friendly interface for review
 
 ## Sendwave <small>November 2020 &mdash; June 2023</small>
 _Senior Backend Engineer_ | [sendwave.com](https://sendwave.com)
