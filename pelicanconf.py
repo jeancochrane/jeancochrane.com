@@ -41,8 +41,7 @@ LINKS = (('Pelican', 'http://getpelican.com/'),
          ('You can modify those links in your config file', '#'),)
 
 # Social links
-GITHUB = 'https://github.com/jeancochrane'
-TWITTER = 'https://twitter.com/jean_cochrane'
+GITHUB = "https://github.com/jeancochrane"
 
 # Pagination
 DEFAULT_PAGINATION = 10  # Max articles per page

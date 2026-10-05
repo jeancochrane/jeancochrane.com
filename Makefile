@@ -3,13 +3,13 @@ clean:
 	rm -Rf output
 
 build:
-	pelican -o output -t theme
+	uv run pelican -o output -t theme
 
 build-deploy:
-	pelican -o output -t theme -s publishconf.py
+	uv run pelican -o output -t theme -s publishconf.py
 
 serve:
-	(cd output && python -m http.server --bind 127.0.0.1 8000)
+	(cd output && uv run python -m http.server --bind 127.0.0.1 8000)
 
 reload:
 	make clean

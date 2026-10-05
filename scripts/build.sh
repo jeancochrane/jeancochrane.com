@@ -2,8 +2,6 @@
 
 set -ex
 
-export VIRTUALENV=/home/jean/.virtualenvs/jeancochrane.com/bin
-
-$VIRTUALENV/pip install -U -r requirements.txt
-$VIRTUALENV/pelican content -s publishconf.py
+uv sync --frozen
+uv run pelican content -s publishconf.py
 

@@ -1,14 +1,11 @@
 # Jean Cochrane's portfolio site
 
-Under rapid development. Check back soon.
-
 ## Developing
 
-First, make a virtualenv with pip:
+First, install [uv](https://docs.astral.sh/uv/) and sync dependencies:
 
 ```console
-mkvirtualenv jeancochrane.com
-pip install -U -r requirements.txt
+uv sync
 ```
 
 Next, use the Makefile to build and serve files:
