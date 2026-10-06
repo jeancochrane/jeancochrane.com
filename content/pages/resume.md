@@ -23,10 +23,10 @@ property tax assessments** in Cook County.
   of an **automated system for extracting and cleaning building permits** in
   Python, featuring a sophisticated Excel workbook to help subject-matter
   experts manually review the messiest permits
-- Supervised a junior data scientist in the design and development of a **static
-  web app to explain significant sales and characteristics** for every
-  estimated home value in the County using Hugo, AWS CloudFront, and GitHub
-  Actions
+- Supervised a junior data scientist in the design and development of a
+  [**static web app to explain machine learning model
+  predictions**](/pages/homeval) for every home in Cook County using Hugo,
+  AWS CloudFront, and GitHub Actions
 - **Automated a mission-critical QC process** by working with stakeholders to
   migrate slow, manual queries into Athena views using dbt, with a Tableau
   dashboard providing a user-friendly interface for review
