@@ -3,7 +3,7 @@ slug: 2021-predictions
 template: work
 category: code
 type: work
-order: 3
+order: 4
 summary: A real-time web game for making New Year's Eve predictions with friends.
 thumbnail: /static/images/work/predictions/predictions.png
 work_url: https://predictions.netlify.app/2021/
