@@ -51,7 +51,7 @@ Simple approaches to schema matching, as outlined by [Rahm and Bernstein
 to find matches (what Rahm and Bernstein call _schema-level matching_). `address`
 and `street_addr` are reasonably similar strings, so we can infer that their columns
 probably have similar meaning. However, this approach breaks down when the column
-names are _opaque_, or uninformative, which is often the case in large heterogenous data stores.
+names are _opaque_, or uninformative, which is often the case in large heterogeneous data stores.
 In these cases, we have to consider the data contained in the column, not just
 its name.
 
@@ -128,7 +128,7 @@ data represented by different columns can vary widely. Columns can contain strin
 integers, floats, blocks of free text &mdash; and each of these columns needs to be
 legible to the networks $h_{\theta}$ and $g_{\psi}$.
 
-The biggest hurdle involved in making heterogenous data legible to the networks
+The biggest hurdle involved in making heterogeneous data legible to the networks
 is that columns with different data types cannot be encoded and input into the network
 in the same way. A column with a string data type, like our `address` column above,
 needs to be encoded differently from a numeric column like `price` before being
@@ -137,7 +137,7 @@ networks with inputs of widely-varying magnitudes tend to train poorly, so even
 if two columns are both numeric, they may have completely different ranges and
 will be hard to compare as a result.
 
-Mueller and Smola tackle the problem of heterogenous data types by training separate
+Mueller and Smola tackle the problem of heterogeneous data types by training separate
 networks for different data types. String columns that represent discrete English words
 are converted to vector inputs using the [`fastText` word vector embeddings](https://fasttext.cc/),
 while numeric columns are converted to 32-dimensional vectors representing the signed 32-bit binary

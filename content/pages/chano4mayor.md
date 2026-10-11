@@ -8,6 +8,7 @@ summary: A New Media campaign to convince Chance the Rapper to run for mayor of 
 thumbnail: /static/images/work/chano4mayor/chano1.png
 work_url: https://chano4mayor.com
 code_url: https://github.com/jeancochrane/chano4mayor
+status: draft
 
 
 [Chano4Mayor](https://chano4mayor.com) launched in April 2017 as an **exercise in political imagination**.

@@ -3,7 +3,7 @@ slug: mellow-bike-map
 template: work
 category: code
 type: work
-order: 2
+order: 1
 summary: A web app and routing API for finding safe, chill bike routes.
 thumbnail: /static/images/work/mellow-bike-map/mbm.png
 work_url: https://mellowbikemap.com

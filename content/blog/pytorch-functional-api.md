@@ -40,7 +40,7 @@ model = torch.nn.Sequential(
 So far, this API feels intuitive. We define the network's layers declaratively,
 mirroring an interpretation of the network as a composition of linear transformations,
 and PyTorch returns to us a module container that can operate on inputs and outputs
-to the network. No class inheritence, and no state to deal with.
+to the network. No class inheritance, and no state to deal with.
 
 Things get weird when it comes time to train the network. To perform training,
 PyTorch requires us to initialize an optimizer -- that is, an optimization algorithm,
@@ -104,7 +104,7 @@ Why is the optimizer responsible for storing the gradient, and not the `model`?
 The situation will become even more confusing later on, when we consider
 how the gradient is calculated.
 
-### 2. Foward pass through the network
+### 2. Forward pass through the network
 
 The forward pass is straightfowrad. We can treat our module container `model` as
 a function and use it to generate the output of the network:
@@ -311,7 +311,7 @@ for epoch in range(epochs):
         # Update the weights
         parameters = model.step(gradient)
 
-        # Initilize a new model with the weights
+        # Initialize a new model with the weights
         model = ModelFactory(parameters)
 ```
 
