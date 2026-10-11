@@ -3,10 +3,11 @@ slug: ccao-data-architecture
 template: work
 category: code
 type: work
-order: 3
+order: 2
 summary: Data engineering and MLOps at the Cook County Assessor's Office.
 thumbnail: /static/images/blog/ccao-data-architecture/dataflow-diagram.png
 work_url: https://ccao-data.github.io/blog/posts/data-architecture/
+code_url: https://github.com/ccao-data/data-architecture/
 
 While my official job titles during my time on the [Data team at the Cook County
 Assessor's Office (CCAO)](https://ccao-data.github.io/) have technically been

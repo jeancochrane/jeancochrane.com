@@ -3,10 +3,11 @@ slug: homeval
 template: work
 category: code
 type: work
-order: 2
+order: 3
 summary: A data-driven web app to explain machine learning model predictions.
-thumbnail:
+thumbnail: /static/images/work/homeval/homeval.png
 work_url: https://www.cookcountyassessoril.gov/home-value-report
+code_url: https://github.com/ccao-data/homeval/
 
 The Home Value Report (HomeVal) is a web app whose development I led as a member
 of the Data team at the Cook County Assessor's Office. HomeVal aims to **explain
@@ -50,4 +51,8 @@ the app is entirely serverless, so it requires zero maintenance to run and it
 can send responses in a handful of milliseconds over a CloudFront CDN.
 
 If you'd like to see HomeVal in action, try [the Home Alone house in
-2026](https://homeval.cookcountyassessoril.gov/2025/05174170200000.html).
+2025](https://homeval.cookcountyassessoril.gov/2025/05174170200000.html).
+
+<video autoplay loop muted playsinline poster="/static/images/work/homeval/homeval.png" style="max-width: 100%;">
+  <source src="/static/images/work/homeval/homeval.mp4" type="video/mp4">
+</video>
