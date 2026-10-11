@@ -98,7 +98,7 @@ Here's a detailed breakdown of everything we had to pay for:
 
 We also considered renting a portable toilet, which would have cost us around $200
 for the day. We knew there wouldn't be bathrooms on site because the City has
-decided to keep the bathrooms in the REI boathouse closed for the forseeable
+decided to keep the bathrooms in the REI boathouse closed for the foreseeable
 future (thanks guys!) but luckily the Chinatown library had a public bathroom
 and was open on a Sunday.
 
